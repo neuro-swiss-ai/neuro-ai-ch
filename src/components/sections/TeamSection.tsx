@@ -33,7 +33,7 @@ const TeamSection = () => {
       name: "Jude Monkam",
       title: "CSO Chief Sales Officer",
       location: "Genève",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+      image: "/lovable-uploads/1665bc22-218f-4d16-b74a-9a4e0a81cdbc.png",
     },
     {
       name: "Sabine",
