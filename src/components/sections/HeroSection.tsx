@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import Button from "../ui/Button";
+import Button from "../ui/button";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -52,8 +52,8 @@ const HeroSection = () => {
       <div className="container-custom relative z-10 pt-16">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="animate-fade-in inline-block px-4 py-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
-              <span className="text-white/80 text-sm font-medium">
+            <div className="animate-fade-in inline-block px-5 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+              <span className="text-white/80 text-base font-medium">
                 IA • Innovation • Performance
               </span>
             </div>
@@ -68,7 +68,7 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
-            <a href="/reservation">
+            <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
               <Button variant="mauve" size="lg" className="w-full sm:w-auto">
                 <span>Réservez votre appel découverte</span>
               </Button>

@@ -1,5 +1,5 @@
 
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Flag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface TeamMember {
@@ -69,7 +69,7 @@ const TeamSection = () => {
       name: "Nada",
       title: "Chef de Projet IA",
       location: "Zurich",
-      image: "https://images.unsplash.com/photo-1547212371-eb5e6a4b590c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+      image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
     },
     {
       name: "Soumia",
@@ -108,7 +108,7 @@ const TeamSection = () => {
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-64 h-64 object-cover object-center"
+                    className="w-56 h-56 object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -133,7 +133,7 @@ const TeamSection = () => {
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-56 object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
