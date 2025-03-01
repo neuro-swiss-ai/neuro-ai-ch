@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Flag } from "lucide-react";
-import Button from "../ui/button";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,7 +78,7 @@ const Navbar = () => {
             </ul>
             <div className="ml-8">
               <a href="https://calendly.com/neuroai-ch/neuro-ai-interview" target="_blank" rel="noopener noreferrer">
-                <Button variant="mauve" size="sm">
+                <Button variant="default" size="sm">
                   Nous contacter
                 </Button>
               </a>
@@ -137,7 +137,7 @@ const Navbar = () => {
                 className="inline-block mt-2"
                 onClick={() => setIsOpen(false)}
               >
-                <Button variant="mauve" size="sm">
+                <Button variant="default" size="sm">
                   Nous contacter
                 </Button>
               </a>

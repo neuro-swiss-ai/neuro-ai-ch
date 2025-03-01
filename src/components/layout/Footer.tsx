@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../ui/Button";
+import { Button } from "../ui/button";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -87,7 +87,7 @@ const Footer = () => {
                   className="flex-1 px-4 py-2.5 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-mauve transition-all"
                 />
               </div>
-              <Button type="submit" variant="mauve" className="w-full">
+              <Button type="submit" variant="default" className="w-full">
                 S'abonner
               </Button>
             </form>

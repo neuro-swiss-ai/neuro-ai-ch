@@ -1,8 +1,9 @@
+
 import HeroSection from "@/components/sections/HeroSection";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import TeamSection from "@/components/sections/TeamSection";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 
@@ -174,7 +175,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="w-full"
                 >
-                  <Button variant="mauve" className="w-full">
+                  <Button variant="default" className="w-full">
                     <span>Prendre rendez-vous</span>
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -228,7 +229,7 @@ const FinalCtaSection = () => {
           </p>
           
           <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
-            <Button variant="mauve" size="lg">
+            <Button variant="default" size="lg">
               Prendre rendez-vous
             </Button>
           </a>
