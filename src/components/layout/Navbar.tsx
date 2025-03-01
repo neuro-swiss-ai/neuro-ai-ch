@@ -62,12 +62,12 @@ const Navbar = () => {
           </div>
 
           <Link to="/blog" className="nav-link">Blog</Link>
-          <Link to="/reservation" className="nav-link">Réservation</Link>
+          <a href="https://calendly.com/neuroai-ch/neuro-ai-interview" target="_blank" rel="noopener noreferrer" className="nav-link">Réservation</a>
           <Link to="/about" className="nav-link">À propos</Link>
 
-          <Link to="/reservation">
+          <a href="https://calendly.com/neuroai-ch/neuro-ai-interview" target="_blank" rel="noopener noreferrer">
             <Button variant="mauve" size="md">Nous contacter</Button>
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Menu Button (hidden on desktop) */}

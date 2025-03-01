@@ -34,22 +34,18 @@ const Reservation = () => {
               <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
                 Découvrez en une heure comment l'IA peut booster votre activité. Nous analysons vos besoins et vous proposons des solutions sur mesure.
               </p>
-              <Button variant="mauve" size="lg" onClick={() => {
-                // Faire défiler jusqu'au calendrier
-                const calendar = document.getElementById('calendly-container');
-                if (calendar) {
-                  calendar.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}>
-                Réservez maintenant votre consultation gratuite
-              </Button>
+              <a href="https://calendly.com/neuroai-ch/neuro-ai-interview" target="_blank" rel="noopener noreferrer">
+                <Button variant="mauve" size="lg">
+                  Réservez maintenant votre consultation gratuite
+                </Button>
+              </a>
             </div>
             
             <div className="mt-16 glass-effect p-6 rounded-2xl" id="calendly-container">
               {/* Le widget Calendly sera injecté ici */}
               <div 
                 className="calendly-inline-widget" 
-                data-url="https://calendly.com/d/abc-123/consultation"
+                data-url="https://calendly.com/neuroai-ch/neuro-ai-interview"
                 style={{ minWidth: '320px', height: '700px' }}
               ></div>
             </div>

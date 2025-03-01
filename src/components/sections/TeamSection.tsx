@@ -16,7 +16,7 @@ const TeamSection = () => {
       name: "Amine Nueve",
       title: "COO & Co-founder",
       location: "Genève",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+      image: "/lovable-uploads/821594a6-44e3-4d2c-884a-6cd3a84016af.png",
       isFounder: true,
     },
     {
