@@ -3,6 +3,8 @@ import HeroSection from "@/components/sections/HeroSection";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import TeamSection from "@/components/sections/TeamSection";
+import TrustSection from "@/components/sections/TrustSection";
+import ApproachSection from "@/components/sections/ApproachSection";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
@@ -250,6 +252,8 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <ServicesSection />
+        <ApproachSection />
+        <TrustSection />
         <TeamSection />
         <ContactSection />
         <FinalCtaSection />
