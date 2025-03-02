@@ -56,22 +56,29 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <div className="flex justify-between items-center">
-          {/* Logo with WhatsApp icon */}
+          {/* Logo Neuro Swiss AI with brain icon */}
           <Link to="/" className="flex items-center group">
-            <a 
-              href="https://wa.me/message/OFHBXHWDIADHA1" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="mr-2 bg-black rounded-full p-1.5 hover:bg-black/80 transition-colors"
-              aria-label="WhatsApp"
-            >
-              <MessageCircle className="h-5 w-5 text-green-500" />
-            </a>
-            <div className="relative font-display text-white font-semibold text-xl mr-10 flex items-center">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-                Neuro Swiss AI
-              </span>
-              <Flag className="h-4 w-4 text-red-500 ml-1.5" />
+            <div className="flex items-center">
+              <img 
+                src="/lovable-uploads/4c24d903-facb-485b-93ff-1228cfc68c5b.png" 
+                alt="Neuro Swiss AI Brain Logo" 
+                className="h-8 w-8 mr-2"
+              />
+              <a 
+                href="https://wa.me/message/OFHBXHWDIADHA1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="mr-2 bg-black rounded-full p-1.5 hover:bg-black/80 transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5 text-green-500" />
+              </a>
+              <div className="relative font-display text-white font-semibold text-xl mr-10 flex items-center">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+                  Neuro Swiss AI
+                </span>
+                <Flag className="h-4 w-4 text-red-500 ml-1.5" />
+              </div>
             </div>
           </Link>
 
