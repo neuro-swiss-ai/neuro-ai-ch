@@ -1,3 +1,4 @@
+
 import HeroSection from "@/components/sections/HeroSection";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -6,7 +7,7 @@ import TrustSection from "@/components/sections/TrustSection";
 import ApproachSection from "@/components/sections/ApproachSection";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
-import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowRight, MessageCircle } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
@@ -96,11 +97,19 @@ const CtaSection = () => {
             Réservez dès maintenant votre consultation gratuite d'une heure et découvrez comment l'IA peut révolutionner votre activité.
           </p>
           
-          <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
-            <Button variant="default" size="lg">
-              Réservez votre consultation
-            </Button>
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
+              <Button variant="default" size="lg">
+                Réservez votre consultation
+              </Button>
+            </a>
+            <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="border-white/20 bg-transparent hover:bg-white/10">
+                <MessageCircle className="mr-2 h-5 w-5 text-green-500" />
+                Contactez-nous sur WhatsApp
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -127,11 +136,19 @@ const FinalCtaSection = () => {
             Contactez-nous pour découvrir comment nous pouvons vous aider à atteindre vos objectifs.
           </p>
           
-          <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
-            <Button variant="default" size="lg">
-              Prendre rendez-vous
-            </Button>
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
+              <Button variant="default" size="lg">
+                Prendre rendez-vous
+              </Button>
+            </a>
+            <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="border-white/20 bg-transparent hover:bg-white/10">
+                <MessageCircle className="mr-2 h-5 w-5 text-green-500" />
+                Contactez-nous sur WhatsApp
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -150,7 +167,7 @@ const Index = () => {
         <HeroSection />
         <ServicesSection />
         <ApproachSection />
-        <TrustSection />
+        {/* Removed spacing between ApproachSection and TeamSection */}
         <TeamSection />
         <FinalCtaSection />
       </main>

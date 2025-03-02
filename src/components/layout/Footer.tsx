@@ -81,7 +81,7 @@ const Footer = () => {
                 className="inline-flex items-center mt-2 text-white/70 hover:text-white transition-colors"
               >
                 <Button variant="outline" className="border-white/10 hover:border-white/20 bg-transparent text-white">
-                  <MessageCircle className="h-4 w-4 mr-2" /> Contactez-nous dès maintenant sur WhatsApp
+                  <MessageCircle className="h-4 w-4 mr-2 text-green-500" /> Contactez-nous dès maintenant sur WhatsApp
                 </Button>
               </a>
             </div>
@@ -92,19 +92,23 @@ const Footer = () => {
                 href="https://www.instagram.com/neuroswissai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-white/70 hover:text-white transition-colors group"
                 aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5" />
+                <div className="p-2 rounded-full bg-gradient-to-tr from-purple-600 via-pink-600 to-yellow-500">
+                  <Instagram className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
+                </div>
               </a>
               <a 
                 href="https://www.linkedin.com/company/neuro-swiss-ai?_l=fr_FR" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-white/70 hover:text-white transition-colors group"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <div className="p-2 rounded-full bg-[#0a66c2]">
+                  <Linkedin className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
+                </div>
               </a>
             </div>
           </div>

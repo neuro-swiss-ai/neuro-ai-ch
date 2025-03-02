@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Flag } from "lucide-react";
+import { Menu, X, Flag, MessageCircle } from "lucide-react";
 import { Button } from "../ui/button";
 
 const Navbar = () => {
@@ -56,8 +56,17 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo with WhatsApp icon */}
           <Link to="/" className="flex items-center group">
+            <a 
+              href="https://wa.me/message/OFHBXHWDIADHA1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mr-2 bg-black rounded-full p-1.5 hover:bg-black/80 transition-colors"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="h-5 w-5 text-green-500" />
+            </a>
             <div className="relative font-display text-white font-semibold text-xl mr-10 flex items-center">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
                 Neuro Swiss AI
@@ -94,9 +103,10 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="ml-8 flex items-center space-x-4">
-              <a href="https://calendly.com/neuroai-ch/neuro-ai-interview" target="_blank" rel="noopener noreferrer">
-                <Button variant="default" size="sm">
-                  {isEnglish ? "Contact us" : "Nous contacter"}
+              <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="border-white/20 bg-transparent text-white hover:bg-white/10">
+                  <MessageCircle className="h-4 w-4 mr-2 text-green-500" />
+                  {isEnglish ? "WhatsApp" : "WhatsApp"}
                 </Button>
               </a>
               <button 
@@ -112,6 +122,14 @@ const Navbar = () => {
 
           {/* Mobile view: Language toggle and menu button */}
           <div className="md:hidden flex items-center space-x-4">
+            <a 
+              href="https://wa.me/message/OFHBXHWDIADHA1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mr-1"
+            >
+              <MessageCircle className="h-5 w-5 text-green-500" />
+            </a>
             <button 
               onClick={toggleLanguage}
               className="flex items-center justify-center px-2 py-1 bg-transparent border border-white/20 rounded-md text-white hover:bg-white/10 transition-all"
