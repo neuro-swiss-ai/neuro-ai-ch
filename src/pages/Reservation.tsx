@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 const Reservation = () => {
   useEffect(() => {
@@ -35,7 +35,7 @@ const Reservation = () => {
                 Découvrez en une heure comment l'IA peut booster votre activité. Nous analysons vos besoins et vous proposons des solutions sur mesure.
               </p>
               <a href="https://calendly.com/neuroai-ch/neuro-ai-interview" target="_blank" rel="noopener noreferrer">
-                <Button variant="mauve" size="lg">
+                <Button variant="default" size="lg">
                   Réservez maintenant votre consultation gratuite
                 </Button>
               </a>
