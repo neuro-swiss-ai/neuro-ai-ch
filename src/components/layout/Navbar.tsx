@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(false);
   const location = useLocation();
 
   // Ajouter un écouteur de scroll
@@ -23,13 +24,29 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Menu items
-  const menuItems = [
-    { title: "Services", path: "/#services" },
-    { title: "Blog", path: "/blog" },
-    { title: "Réservation", path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
-    { title: "À propos", path: "/about" },
-  ];
+  // Toggle language
+  const toggleLanguage = () => {
+    setIsEnglish(!isEnglish);
+    // In a real app, this would trigger a language change in the entire site
+    console.log(`Language changed to: ${!isEnglish ? 'English' : 'French'}`);
+    // Example of how to show a notification to the user in a real application
+    alert(`Site web traduit en ${!isEnglish ? 'anglais' : 'français'}`);
+  };
+
+  // Menu items - with translations
+  const menuItems = isEnglish 
+    ? [
+        { title: "Services", path: "/#services" },
+        { title: "Blog", path: "/blog" },
+        { title: "Booking", path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
+        { title: "About", path: "/about" },
+      ]
+    : [
+        { title: "Services", path: "/#services" },
+        { title: "Blog", path: "/blog" },
+        { title: "Réservation", path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
+        { title: "À propos", path: "/about" },
+      ];
 
   return (
     <header
@@ -76,23 +93,42 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <div className="ml-8">
+            <div className="ml-8 flex items-center space-x-4">
               <a href="https://calendly.com/neuroai-ch/neuro-ai-interview" target="_blank" rel="noopener noreferrer">
                 <Button variant="default" size="sm">
-                  Nous contacter
+                  {isEnglish ? "Contact us" : "Nous contacter"}
                 </Button>
               </a>
+              <button 
+                onClick={toggleLanguage}
+                className="flex items-center justify-center px-3 py-1 bg-transparent border border-white/20 rounded-md text-white hover:bg-white/10 transition-all"
+                aria-label="Toggle language"
+              >
+                <Flag className="h-4 w-4 mr-1" />
+                {isEnglish ? "FR" : "ENG"}
+              </button>
             </div>
           </nav>
 
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden flex items-center justify-center"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle navigation menu"
-          >
-            {isOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
-          </button>
+          {/* Mobile view: Language toggle and menu button */}
+          <div className="md:hidden flex items-center space-x-4">
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center justify-center px-2 py-1 bg-transparent border border-white/20 rounded-md text-white hover:bg-white/10 transition-all"
+              aria-label="Toggle language"
+            >
+              <Flag className="h-3 w-3 mr-1" />
+              {isEnglish ? "FR" : "ENG"}
+            </button>
+            
+            <button 
+              className="flex items-center justify-center"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle navigation menu"
+            >
+              {isOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -138,7 +174,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <Button variant="default" size="sm">
-                  Nous contacter
+                  {isEnglish ? "Contact us" : "Nous contacter"}
                 </Button>
               </a>
             </li>

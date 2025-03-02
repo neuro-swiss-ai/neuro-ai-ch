@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, MessageCircle, MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -56,10 +56,35 @@ const Footer = () => {
           {/* Contact Column */}
           <div className="flex flex-col">
             <h3 className="text-white font-display text-lg font-medium mb-6">Contact</h3>
-            <a href="mailto:contact@neuroswissai.ch" className="text-white/70 hover:text-white transition-colors mb-2">
-              Email: contact@neuroswissai.ch
-            </a>
-            <p className="text-white/70 mb-2">Adresse: Genève, Suisse</p>
+            <div className="space-y-3">
+              <a href="mailto:contact@neuro-ai.ch" className="text-white/70 hover:text-white transition-colors flex items-center">
+                <Mail className="h-4 w-4 mr-2" />
+                contact@neuro-ai.ch
+              </a>
+              <a href="tel:+41795488967" className="text-white/70 hover:text-white transition-colors flex items-center">
+                <Phone className="h-4 w-4 mr-2" />
+                +41 79 548 89 67
+              </a>
+              <a 
+                href="https://maps.app.goo.gl/jHTE3sCaRPj4uBZt6" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors flex items-start"
+              >
+                <MapPin className="h-4 w-4 mr-2 mt-1 flex-shrink-0" />
+                <span>Rue du Prince 9, 1206 Genève, Switzerland</span>
+              </a>
+              <a 
+                href="https://wa.me/message/OFHBXHWDIADHA1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-2 text-white/70 hover:text-white transition-colors"
+              >
+                <Button variant="outline" className="border-white/10 hover:border-white/20 bg-transparent text-white">
+                  <MessageCircle className="h-4 w-4 mr-2" /> Contactez-nous dès maintenant sur WhatsApp
+                </Button>
+              </a>
+            </div>
             
             {/* Social Media Links */}
             <div className="flex items-center mt-4 space-x-4">
