@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import { Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -27,19 +28,19 @@ const Footer = () => {
             <h3 className="text-white font-display text-lg font-medium mb-6">Nos services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/#audit-conseil" className="text-white/70 hover:text-white transition-colors">
+                <a href="/#audit-conseil" className="text-white/70 hover:text-white transition-colors">
                   Audit et conseil
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/#formations" className="text-white/70 hover:text-white transition-colors">
+                <a href="/#formations" className="text-white/70 hover:text-white transition-colors">
                   Formations
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/#solutions-ia" className="text-white/70 hover:text-white transition-colors">
+                <a href="/#solutions-ia" className="text-white/70 hover:text-white transition-colors">
                   Solutions IA
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -59,6 +60,28 @@ const Footer = () => {
               Email: contact@neuroswissai.ch
             </a>
             <p className="text-white/70 mb-2">Adresse: Genève, Suisse</p>
+            
+            {/* Social Media Links */}
+            <div className="flex items-center mt-4 space-x-4">
+              <a 
+                href="https://www.instagram.com/neuroswissai/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/neuro-swiss-ai?_l=fr_FR" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
 

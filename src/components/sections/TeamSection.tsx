@@ -23,7 +23,8 @@ const TeamSection = () => {
       name: "Yohan Lahmani",
       title: "CEO & Co-founder",
       location: "Genève",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+      // Updated Yohan's image to a younger-looking version
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
       isFounder: true,
     }
   ];
@@ -69,7 +70,8 @@ const TeamSection = () => {
       name: "Nada",
       title: "Chef de Projet IA",
       location: "Zurich",
-      image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+      // Replaced with a more professional image
+      image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
     },
     {
       name: "Soumia",
@@ -133,7 +135,7 @@ const TeamSection = () => {
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-56 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-48 object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
