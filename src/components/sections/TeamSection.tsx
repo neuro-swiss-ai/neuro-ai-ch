@@ -13,18 +13,17 @@ interface TeamMember {
 const TeamSection = () => {
   const founders: TeamMember[] = [
     {
-      name: "Amine Nueve",
-      title: "COO & Co-founder",
+      name: "Amine",
+      title: "CEO & Co-founder",
       location: "Genève",
       image: "/lovable-uploads/821594a6-44e3-4d2c-884a-6cd3a84016af.png",
       isFounder: true,
     },
     {
-      name: "Yohan Lahmani",
-      title: "CEO & Co-founder",
+      name: "Yousra",
+      title: "CLO Chief Legal Officer & Co-founder",
       location: "Genève",
-      // Updated Yohan's image to a younger-looking version
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+      image: "/lovable-uploads/97931759-c598-4abe-b8ce-897dcc90cef3.png",
       isFounder: true,
     }
   ];
@@ -70,7 +69,6 @@ const TeamSection = () => {
       name: "Nada",
       title: "Chef de Projet IA",
       location: "Zurich",
-      // Replaced with a more professional image
       image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
     },
     {

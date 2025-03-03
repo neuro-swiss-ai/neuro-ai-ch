@@ -3,8 +3,8 @@ import HeroSection from "@/components/sections/HeroSection";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import TeamSection from "@/components/sections/TeamSection";
-import TrustSection from "@/components/sections/TrustSection";
 import ApproachSection from "@/components/sections/ApproachSection";
+import PressSection from "@/components/sections/PressSection";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { MapPin, Phone, Mail, ArrowRight, MessageCircle } from "lucide-react";
@@ -167,8 +167,8 @@ const Index = () => {
         <HeroSection />
         <ServicesSection />
         <ApproachSection />
-        {/* Removed spacing between ApproachSection and TeamSection */}
         <TeamSection />
+        <PressSection />
         <FinalCtaSection />
       </main>
       <Footer />
