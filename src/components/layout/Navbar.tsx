@@ -1,13 +1,14 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Flag, MessageCircle } from "lucide-react";
+import { Menu, X, Flag, MessageCircle, ChevronDown } from "lucide-react";
 import { Button } from "../ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isEnglish, setIsEnglish] = useState(false);
+  const [showServicesMenu, setShowServicesMenu] = useState(false);
   const location = useLocation();
 
   // Ajouter un écouteur de scroll
@@ -33,16 +34,29 @@ const Navbar = () => {
     alert(`Site web traduit en ${!isEnglish ? 'anglais' : 'français'}`);
   };
 
+  // Services dropdown items
+  const servicesItems = isEnglish 
+    ? [
+        { title: "IA Solutions", path: "/solutions" },
+        { title: "Audits & Consulting", path: "/audits" },
+        { title: "Training", path: "/formations" },
+      ]
+    : [
+        { title: "Solutions IA", path: "/solutions" },
+        { title: "Audit et conseil", path: "/audits" },
+        { title: "Formations", path: "/formations" },
+      ];
+
   // Menu items - with translations
   const menuItems = isEnglish 
     ? [
-        { title: "Services", path: "/#services" },
+        { title: "Services", path: "/#services", hasSubmenu: true },
         { title: "Blog", path: "/blog" },
         { title: "Booking", path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
         { title: "About", path: "/about" },
       ]
     : [
-        { title: "Services", path: "/#services" },
+        { title: "Services", path: "/#services", hasSubmenu: true },
         { title: "Blog", path: "/blog" },
         { title: "Réservation", path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
         { title: "À propos", path: "/about" },
@@ -70,8 +84,42 @@ const Navbar = () => {
           <nav className="hidden md:flex md:items-center">
             <ul className="flex space-x-8">
               {menuItems.map((item) => (
-                <li key={item.title}>
-                  {item.external ? (
+                <li key={item.title} className="relative">
+                  {item.hasSubmenu ? (
+                    <div 
+                      className="relative"
+                      onMouseEnter={() => setShowServicesMenu(true)}
+                      onMouseLeave={() => setShowServicesMenu(false)}
+                    >
+                      <Link 
+                        to={item.path} 
+                        className="nav-link inline-flex items-center"
+                      >
+                        {item.title}
+                        <ChevronDown className="h-4 w-4 ml-1 transition-transform duration-200" />
+                      </Link>
+                      
+                      {/* Services dropdown menu */}
+                      <div 
+                        className={`absolute top-full left-0 mt-2 w-48 bg-black/90 backdrop-blur-md border border-white/10 rounded-md shadow-lg z-50 transition-all duration-200 ${
+                          showServicesMenu ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+                        }`}
+                      >
+                        <div className="py-2">
+                          {servicesItems.map((service) => (
+                            <Link
+                              key={service.title}
+                              to={service.path}
+                              className="block px-4 py-2 text-white hover:bg-white/10 transition-colors"
+                              onClick={() => setShowServicesMenu(false)}
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : item.external ? (
                     <a
                       href={item.path}
                       target="_blank"
@@ -106,7 +154,7 @@ const Navbar = () => {
                 aria-label="Toggle language"
               >
                 <Flag className="h-4 w-4 mr-1" />
-                {isEnglish ? "FR" : "ENG"}
+                {isEnglish ? "FR" : "English"}
               </button>
             </div>
           </nav>
@@ -127,7 +175,7 @@ const Navbar = () => {
               aria-label="Toggle language"
             >
               <Flag className="h-3 w-3 mr-1" />
-              {isEnglish ? "FR" : "ENG"}
+              {isEnglish ? "FR" : "English"}
             </button>
             
             <button 
@@ -151,7 +199,30 @@ const Navbar = () => {
           <ul className="flex flex-col space-y-4">
             {menuItems.map((item) => (
               <li key={item.title}>
-                {item.external ? (
+                {item.hasSubmenu ? (
+                  <div>
+                    <button
+                      onClick={() => setShowServicesMenu(!showServicesMenu)}
+                      className="flex items-center justify-between w-full py-2 text-white hover:text-white/70 transition-colors"
+                    >
+                      <span>{item.title}</span>
+                      <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${showServicesMenu ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    <div className={`pl-4 space-y-2 overflow-hidden transition-all duration-300 ${showServicesMenu ? 'max-h-48 mt-2' : 'max-h-0'}`}>
+                      {servicesItems.map((service) => (
+                        <Link
+                          key={service.title}
+                          to={service.path}
+                          className="block py-2 text-white/80 hover:text-white transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : item.external ? (
                   <a
                     href={item.path}
                     target="_blank"
