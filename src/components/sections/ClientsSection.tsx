@@ -1,4 +1,3 @@
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
@@ -11,12 +10,11 @@ const ClientsSection = () => {
   const [canScrollLogosRight, setCanScrollLogosRight] = useState(true);
 
   const clientLogos = [
-    { name: "Client 1", logo: "https://via.placeholder.com/150x60?text=Client+1" },
-    { name: "Client 2", logo: "https://via.placeholder.com/150x60?text=Client+2" },
-    { name: "Client 3", logo: "https://via.placeholder.com/150x60?text=Client+3" },
-    { name: "Client 4", logo: "https://via.placeholder.com/150x60?text=Client+4" },
-    { name: "Client 5", logo: "https://via.placeholder.com/150x60?text=Client+5" },
-    { name: "Client 6", logo: "https://via.placeholder.com/150x60?text=Client+6" }
+    { name: "EY (Ernst & Young)", logo: "/lovable-uploads/ae437860-20ff-4187-bc05-040475c3bcf0.png" },
+    { name: "Nestlé", logo: "/lovable-uploads/3f9e828e-3a27-4d23-b41d-4a96faa22dfb.png" },
+    { name: "PwC", logo: "/lovable-uploads/62e91508-f988-47a7-9d11-77325bafd0aa.png" },
+    { name: "Adecco", logo: "/lovable-uploads/af2f81f0-2d67-4f31-8014-391948cba4be.png" },
+    { name: "Omega", logo: "/lovable-uploads/cd4fe293-8c5f-476e-85f0-ac96ec2e53d3.png" }
   ];
 
   const testimonials = [
@@ -114,9 +112,14 @@ const ClientsSection = () => {
             {clientLogos.map((client, index) => (
               <div 
                 key={index} 
-                className="flex-none w-[150px] flex items-center justify-center glass-effect p-4 rounded-lg snap-start"
+                className="flex-none w-[250px] h-[100px] flex items-center justify-center glass-effect p-6 rounded-lg snap-start"
               >
-                <img src={client.logo} alt={client.name} className="max-w-full h-auto" />
+                <img 
+                  src={client.logo} 
+                  alt={client.name} 
+                  className="max-h-full max-w-full object-contain" 
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
