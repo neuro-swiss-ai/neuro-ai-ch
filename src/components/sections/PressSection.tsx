@@ -13,7 +13,7 @@ const PressSection = () => {
     {
       title: "Analyse de l'impact de l'intelligence artificielle sur l'économie genevoise",
       link: "https://www.pwc.ch/en/insights/public-sector/impact-of-artificial-intelligence-on-the-geneva-economy.html",
-      logoUrl: "/lovable-uploads/1a17f98f-e020-42b2-ab7a-368014710077.png", // Using the same image for now
+      logoUrl: "/lovable-uploads/1a934215-598b-4a70-8cab-433c23719c1a.png",
       logoAlt: "PwC Logo"
     },
     {

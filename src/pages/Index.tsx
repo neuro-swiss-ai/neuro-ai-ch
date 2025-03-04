@@ -5,6 +5,11 @@ import Footer from "@/components/layout/Footer";
 import TeamSection from "@/components/sections/TeamSection";
 import ApproachSection from "@/components/sections/ApproachSection";
 import PressSection from "@/components/sections/PressSection";
+import ClientsSection from "@/components/sections/ClientsSection";
+import ExpertiseSection from "@/components/sections/ExpertiseSection";
+import PartnersSection from "@/components/sections/PartnersSection";
+import ValueSection from "@/components/sections/ValueSection";
+import CaseStudiesSection from "@/components/sections/CaseStudiesSection";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -171,7 +176,12 @@ const Index = () => {
         <HeroSection />
         <ServicesSection />
         <ApproachSection />
+        <ClientsSection />
+        <ExpertiseSection />
         <TeamSection />
+        <PartnersSection />
+        <ValueSection />
+        <CaseStudiesSection />
         <PressSection />
         <FinalCtaSection />
       </main>

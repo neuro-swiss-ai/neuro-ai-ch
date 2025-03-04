@@ -1,9 +1,13 @@
 
 import { useNavigate } from "react-router-dom";
-import { ArrowRight, Linkedin } from "lucide-react";
+import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 
 const TeamSection = () => {
   const navigate = useNavigate();
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   
   const team = [
     {
@@ -19,16 +23,63 @@ const TeamSection = () => {
       description: "Spécialiste en IA éthique et droits numériques, Yousra assure que nos solutions respectent les normes légales et éthiques les plus strictes."
     },
     {
-      name: "Jude Monkam",
+      name: "Jude",
       title: "Sales Director",
       image: "/lovable-uploads/1a17f98f-e020-42b2-ab7a-368014710077.png",
       linkedin: "https://www.linkedin.com/in/jude-monkam/",
       description: "Fort d'une expertise en développement commercial, Jude pilote notre croissance et développe des relations client durables."
+    },
+    {
+      name: "Sophie",
+      title: "CTO",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=250&auto=format&fit=crop",
+      description: "Experte en technologies d'IA avancées, Sophie supervise notre équipe technique et l'implémentation de solutions innovantes."
+    },
+    {
+      name: "Antoine",
+      title: "Lead Data Scientist",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&auto=format&fit=crop",
+      description: "Avec une solide formation en mathématiques et sciences des données, Antoine dirige nos projets d'analyse et d'apprentissage automatique."
+    },
+    {
+      name: "Marie",
+      title: "Head of Customer Success",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=250&auto=format&fit=crop",
+      description: "Marie accompagne nos clients tout au long de leur parcours, garantissant une adoption réussie de nos solutions d'IA."
     }
   ];
 
+  const checkScroll = () => {
+    if (!sliderRef.current) return;
+    
+    setCanScrollLeft(sliderRef.current.scrollLeft > 0);
+    setCanScrollRight(
+      sliderRef.current.scrollLeft <
+      sliderRef.current.scrollWidth - sliderRef.current.clientWidth - 5
+    );
+  };
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (slider) {
+      slider.addEventListener("scroll", checkScroll);
+      checkScroll(); // Initial check
+      return () => slider.removeEventListener("scroll", checkScroll);
+    }
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!sliderRef.current) return;
+    
+    const scrollAmount = sliderRef.current.clientWidth * 0.8;
+    sliderRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section id="team" className="py-20 bg-gradient-to-b from-[#0a0a10] to-background">
+    <section id="team" className="py-20 bg-gradient-to-b from-[#0a0a10] to-background relative">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-display font-bold text-gradient mb-6">Notre Équipe</h2>
@@ -37,36 +88,64 @@ const TeamSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member, index) => (
-            <div key={index} className="glass-effect rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105">
-              <div className="p-6">
-                <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-mauve/30">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-display font-medium text-white text-center mb-1">{member.name}</h3>
-                <p className="text-mauve text-center mb-2">{member.title}</p>
-                {member.linkedin && (
-                  <div className="flex justify-center mb-4">
-                    <a 
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-mauve transition-colors"
-                      aria-label={`${member.name}'s LinkedIn profile`}
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </a>
+        <div className="relative">
+          {canScrollLeft && (
+            <button 
+              onClick={() => scroll("left")}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+          )}
+          
+          <div 
+            ref={sliderRef}
+            className="flex gap-6 overflow-x-auto pb-8 hide-scrollbar snap-x snap-mandatory"
+          >
+            {team.map((member, index) => (
+              <div 
+                key={index} 
+                className="glass-effect rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 flex-none w-[300px] snap-start"
+              >
+                <div className="p-6">
+                  <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-mauve/30">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                )}
-                <p className="text-white/70 text-center">{member.description}</p>
+                  <h3 className="text-xl font-display font-medium text-white text-center mb-1">{member.name}</h3>
+                  <p className="text-mauve text-center mb-2">{member.title}</p>
+                  {member.linkedin && (
+                    <div className="flex justify-center mb-4">
+                      <a 
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-mauve transition-colors"
+                        aria-label={`${member.name}'s LinkedIn profile`}
+                      >
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                    </div>
+                  )}
+                  <p className="text-white/70 text-center">{member.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          {canScrollRight && (
+            <button 
+              onClick={() => scroll("right")}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          )}
         </div>
 
         <div className="text-center mt-12">
