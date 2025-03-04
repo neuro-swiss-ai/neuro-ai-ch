@@ -8,17 +8,11 @@ const PartnersSection = () => {
   const [canScrollRight, setCanScrollRight] = useState(true);
   
   const partners = [
-    { name: "OpenAI", logo: "https://via.placeholder.com/150x60?text=OpenAI" },
-    { name: "Anthropic", logo: "https://via.placeholder.com/150x60?text=Anthropic" },
-    { name: "GitHub Copilot", logo: "https://via.placeholder.com/150x60?text=GitHub+Copilot" },
-    { name: "Hugging Face", logo: "https://via.placeholder.com/150x60?text=Hugging+Face" },
-    { name: "Microsoft Azure", logo: "https://via.placeholder.com/150x60?text=Microsoft+Azure" },
-    { name: "AWS", logo: "https://via.placeholder.com/150x60?text=AWS" },
-    { name: "Google Cloud", logo: "https://via.placeholder.com/150x60?text=Google+Cloud" },
-    // Partenaires suisses ajoutés
-    { name: "Swiss AI", logo: "https://via.placeholder.com/150x60?text=Swiss+AI" },
-    { name: "Digital Switzerland", logo: "https://via.placeholder.com/150x60?text=Digital+CH" },
-    { name: "Swiss Data Science", logo: "https://via.placeholder.com/150x60?text=Swiss+DS" }
+    { name: "EY (Ernst & Young)", logo: "/lovable-uploads/c1c92cc0-74ff-4429-b862-8b57adcf8a0a.png" },
+    { name: "Nestlé", logo: "/lovable-uploads/cddda8ac-c5ec-463f-aac5-3aebae7f6f37.png" },
+    { name: "PwC", logo: "/lovable-uploads/2bb14601-7f40-46fd-bed4-9d721b0e710b.png" },
+    { name: "Adecco", logo: "/lovable-uploads/4224b09a-1013-42b2-aecb-7f9406435531.png" },
+    { name: "Omega", logo: "/lovable-uploads/3691d429-0849-446f-822b-089f2a37e3ce.png" }
   ];
 
   const checkScroll = () => {
@@ -78,12 +72,12 @@ const PartnersSection = () => {
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-                className="flex-none w-[200px] h-[80px] flex items-center justify-center bg-white p-4 rounded-lg shadow-sm"
+                className="flex-none w-[250px] h-[100px] flex items-center justify-center bg-white p-6 rounded-lg shadow-sm"
               >
                 <img 
                   src={partner.logo} 
                   alt={partner.name} 
-                  className="max-w-full h-auto" 
+                  className="max-h-full max-w-full object-contain" 
                   loading="lazy"
                 />
               </div>
