@@ -14,7 +14,11 @@ const PartnersSection = () => {
     { name: "Hugging Face", logo: "https://via.placeholder.com/150x60?text=Hugging+Face" },
     { name: "Microsoft Azure", logo: "https://via.placeholder.com/150x60?text=Microsoft+Azure" },
     { name: "AWS", logo: "https://via.placeholder.com/150x60?text=AWS" },
-    { name: "Google Cloud", logo: "https://via.placeholder.com/150x60?text=Google+Cloud" }
+    { name: "Google Cloud", logo: "https://via.placeholder.com/150x60?text=Google+Cloud" },
+    // Partenaires suisses ajoutés
+    { name: "Swiss AI", logo: "https://via.placeholder.com/150x60?text=Swiss+AI" },
+    { name: "Digital Switzerland", logo: "https://via.placeholder.com/150x60?text=Digital+CH" },
+    { name: "Swiss Data Science", logo: "https://via.placeholder.com/150x60?text=Swiss+DS" }
   ];
 
   const checkScroll = () => {
@@ -69,14 +73,19 @@ const PartnersSection = () => {
           
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto gap-8 py-6 hide-scrollbar snap-x snap-mandatory"
+            className="flex overflow-x-auto gap-8 py-6 px-2 hide-scrollbar snap-x"
           >
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-                className="flex-none w-[150px] flex items-center justify-center bg-white p-4 rounded-lg shadow-sm snap-start"
+                className="flex-none w-[200px] h-[80px] flex items-center justify-center bg-white p-4 rounded-lg shadow-sm"
               >
-                <img src={partner.logo} alt={partner.name} className="max-w-full h-auto" />
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="max-w-full h-auto" 
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
