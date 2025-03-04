@@ -1,8 +1,9 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Flag, MessageCircle, ChevronDown } from "lucide-react";
 import { Button } from "../ui/button";
+import ServicesDropdownMenu from "../sections/ServicesDropdownMenu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,6 +11,21 @@ const Navbar = () => {
   const [isEnglish, setIsEnglish] = useState(false);
   const [showServicesMenu, setShowServicesMenu] = useState(false);
   const location = useLocation();
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setShowServicesMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Ajouter un écouteur de scroll
   useEffect(() => {
@@ -37,13 +53,13 @@ const Navbar = () => {
   // Services dropdown items
   const servicesItems = isEnglish 
     ? [
-        { title: "IA Solutions", path: "/solutions" },
+        { title: "AI Solutions", path: "/solutions" },
         { title: "Audits & Consulting", path: "/audits" },
         { title: "Training", path: "/formations" },
       ]
     : [
         { title: "Solutions IA", path: "/solutions" },
-        { title: "Audit et conseil", path: "/audits" },
+        { title: "Audit et Conseils", path: "/audits" },
         { title: "Formations", path: "/formations" },
       ];
 
@@ -87,6 +103,7 @@ const Navbar = () => {
                 <li key={item.title} className="relative">
                   {item.hasSubmenu ? (
                     <div 
+                      ref={servicesRef}
                       className="relative"
                       onMouseEnter={() => setShowServicesMenu(true)}
                       onMouseLeave={() => setShowServicesMenu(false)}
@@ -96,28 +113,15 @@ const Navbar = () => {
                         className="nav-link inline-flex items-center"
                       >
                         {item.title}
-                        <ChevronDown className="h-4 w-4 ml-1 transition-transform duration-200" />
+                        <ChevronDown className={`h-4 w-4 ml-1 transition-transform duration-200 ${showServicesMenu ? 'rotate-180' : ''}`} />
                       </Link>
                       
                       {/* Services dropdown menu */}
-                      <div 
-                        className={`absolute top-full left-0 mt-2 w-48 bg-black/90 backdrop-blur-md border border-white/10 rounded-md shadow-lg z-50 transition-all duration-200 ${
-                          showServicesMenu ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
-                        }`}
-                      >
-                        <div className="py-2">
-                          {servicesItems.map((service) => (
-                            <Link
-                              key={service.title}
-                              to={service.path}
-                              className="block px-4 py-2 text-white hover:bg-white/10 transition-colors"
-                              onClick={() => setShowServicesMenu(false)}
-                            >
-                              {service.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
+                      <ServicesDropdownMenu 
+                        isOpen={showServicesMenu} 
+                        items={servicesItems} 
+                        onClose={() => setShowServicesMenu(false)} 
+                      />
                     </div>
                   ) : item.external ? (
                     <a

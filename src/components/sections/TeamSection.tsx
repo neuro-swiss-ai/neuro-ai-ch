@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Linkedin } from "lucide-react";
 
 const TeamSection = () => {
   const navigate = useNavigate();
@@ -19,9 +19,10 @@ const TeamSection = () => {
       description: "Spécialiste en IA éthique et droits numériques, Yousra assure que nos solutions respectent les normes légales et éthiques les plus strictes."
     },
     {
-      name: "Jude Moncam",
-      title: "CSO",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+      name: "Jude Monkam",
+      title: "Sales Director",
+      image: "/lovable-uploads/1a17f98f-e020-42b2-ab7a-368014710077.png",
+      linkedin: "https://www.linkedin.com/in/jude-monkam/",
       description: "Fort d'une expertise en développement commercial, Jude pilote notre croissance et développe des relations client durables."
     }
   ];
@@ -48,7 +49,20 @@ const TeamSection = () => {
                   />
                 </div>
                 <h3 className="text-xl font-display font-medium text-white text-center mb-1">{member.name}</h3>
-                <p className="text-mauve text-center mb-4">{member.title}</p>
+                <p className="text-mauve text-center mb-2">{member.title}</p>
+                {member.linkedin && (
+                  <div className="flex justify-center mb-4">
+                    <a 
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-mauve transition-colors"
+                      aria-label={`${member.name}'s LinkedIn profile`}
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  </div>
+                )}
                 <p className="text-white/70 text-center">{member.description}</p>
               </div>
             </div>
