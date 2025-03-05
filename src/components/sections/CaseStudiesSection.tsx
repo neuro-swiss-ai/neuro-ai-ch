@@ -12,19 +12,19 @@ const CaseStudiesSection = () => {
     {
       title: "Optimisation des processus RH avec l'IA",
       description: "Nous avons aidé une entreprise de 500+ employés à automatiser son processus de recrutement avec l'IA, réduisant le temps d'embauche de 70%.",
-      image: "/lovable-uploads/1665bc22-218f-4d16-b74a-9a4e0a81cdbc.png",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=400&auto=format&fit=crop",
       link: "/blog"
     },
     {
       title: "Analyse prédictive pour la supply chain",
       description: "Implémentation d'un système de prévision de la demande basé sur l'IA qui a permis à un distributeur de réduire ses stocks de 25% tout en améliorant la disponibilité des produits.",
-      image: "/lovable-uploads/4224b09a-1013-42b2-aecb-7f9406435531.png",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop",
       link: "/blog"
     },
     {
       title: "Chatbot d'assistance client intelligent",
       description: "Développement d'un chatbot alimenté par l'IA qui a permis à une entreprise de services financiers de traiter 85% des demandes client sans intervention humaine.",
-      image: "https://images.unsplash.com/photo-1559650656-5d1d361ad10e?q=80&w=400&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=400&auto=format&fit=crop",
       link: "/blog"
     }
   ];
