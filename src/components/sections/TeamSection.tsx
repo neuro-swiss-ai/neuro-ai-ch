@@ -141,19 +141,6 @@ const TeamSection = () => {
                   </div>
                   <h3 className="text-xl font-display font-medium text-white text-center mb-1">{member.name}</h3>
                   <p className="text-mauve text-center mb-2">{member.title}</p>
-                  {member.linkedin && (
-                    <div className="flex justify-center mb-4">
-                      <a 
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-mauve transition-colors"
-                        aria-label={`${member.name}'s LinkedIn profile`}
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                    </div>
-                  )}
                   <p className="text-white/70 text-center">{member.description}</p>
                 </div>
               </div>
