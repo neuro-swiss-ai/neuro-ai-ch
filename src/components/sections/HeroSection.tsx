@@ -2,9 +2,11 @@
 import { useEffect, useRef } from "react";
 import { Button } from "../ui/button";
 import { MessageCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Animation des lignes abstraites
@@ -55,29 +57,29 @@ const HeroSection = () => {
           <div className="flex justify-center mb-6">
             <div className="animate-fade-in inline-block px-5 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
               <span className="text-white/80 text-base font-medium" style={{ fontSize: "1.3em" }}>
-                IA • Innovation • Performance
+                {t("hero_subtitle")}
               </span>
             </div>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gradient leading-tight mb-6 animate-fade-in">
-            Découvrez le pouvoir de l'IA pour transformer votre entreprise avec Neuro Swiss AI
+            {t("hero_title")}
           </h1>
           
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto animate-fade-in">
-            Réservez votre RDV découverte d'une heure
+            {t("hero_cta")}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
             <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
               <Button variant="default" size="lg" className="w-full sm:w-auto">
-                <span>Réservez votre appel découverte</span>
+                <span>{t("reserve_call")}</span>
               </Button>
             </a>
             <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 bg-transparent hover:bg-white/10">
                 <MessageCircle className="mr-2 h-5 w-5 text-green-500" />
-                <span>Contactez-nous sur WhatsApp</span>
+                <span>{t("contact_whatsapp")}</span>
               </Button>
             </a>
           </div>
@@ -85,7 +87,7 @@ const HeroSection = () => {
         
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-          <span className="text-white/50 text-sm mb-2">Découvrir</span>
+          <span className="text-white/50 text-sm mb-2">{t("discover")}</span>
           <div className="w-0.5 h-6 bg-gradient-to-b from-white/60 to-white/0 scroll-indicator"></div>
         </div>
       </div>

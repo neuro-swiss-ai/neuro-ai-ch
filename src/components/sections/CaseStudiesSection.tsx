@@ -2,28 +2,30 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CaseStudiesSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const { t } = useLanguage();
   
   const caseStudies = [
     {
-      title: "Optimisation des processus RH avec l'IA",
-      description: "Nous avons aidé une entreprise de 500+ employés à automatiser son processus de recrutement avec l'IA, réduisant le temps d'embauche de 70%.",
+      title: t("hr_optimization"),
+      description: t("hr_description"),
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=400&auto=format&fit=crop",
       link: "/blog"
     },
     {
-      title: "Analyse prédictive pour la supply chain",
-      description: "Implémentation d'un système de prévision de la demande basé sur l'IA qui a permis à un distributeur de réduire ses stocks de 25% tout en améliorant la disponibilité des produits.",
+      title: t("predictive_analysis"),
+      description: t("predictive_description"),
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop",
       link: "/blog"
     },
     {
-      title: "Chatbot d'assistance client intelligent",
-      description: "Développement d'un chatbot alimenté par l'IA qui a permis à une entreprise de services financiers de traiter 85% des demandes client sans intervention humaine.",
+      title: t("chatbot"),
+      description: t("chatbot_description"),
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=400&auto=format&fit=crop",
       link: "/blog"
     }
@@ -62,9 +64,9 @@ const CaseStudiesSection = () => {
     <section id="case-studies" className="py-20 bg-gradient-to-b from-[#0a0a10] to-background">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">Nos Réalisations</h2>
+          <h2 className="text-4xl font-display font-bold text-gradient mb-6">{t("our_projects")}</h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Découvrez comment nos solutions d'IA ont transformé les entreprises
+            {t("projects_subtitle")}
           </p>
         </div>
 
@@ -100,7 +102,7 @@ const CaseStudiesSection = () => {
                   <p className="text-white/70 mb-6">{study.description}</p>
                   <Button asChild variant="outline" className="border-mauve text-mauve hover:text-white hover:bg-mauve/20">
                     <a href={study.link}>
-                      Lire l'étude de cas
+                      {t("read_case")}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>

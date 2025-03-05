@@ -4,15 +4,16 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Flag, MessageCircle, ChevronDown } from "lucide-react";
 import { Button } from "../ui/button";
 import ServicesDropdownMenu from "../sections/ServicesDropdownMenu";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isEnglish, setIsEnglish] = useState(false);
   const [showServicesMenu, setShowServicesMenu] = useState(false);
   const location = useLocation();
   const servicesRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const { language, setLanguage, t } = useLanguage();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -59,40 +60,23 @@ const Navbar = () => {
 
   // Toggle language
   const toggleLanguage = () => {
-    setIsEnglish(!isEnglish);
-    // In a real app, this would trigger a language change in the entire site
-    console.log(`Language changed to: ${!isEnglish ? 'English' : 'French'}`);
-    // Example of how to show a notification to the user in a real application
-    alert(`Site web traduit en ${!isEnglish ? 'anglais' : 'français'}`);
+    setLanguage(language === "fr" ? "en" : "fr");
   };
 
   // Services dropdown items
-  const servicesItems = isEnglish 
-    ? [
-        { title: "AI Solutions", path: "/solutions" },
-        { title: "Audits & Consulting", path: "/audits" },
-        { title: "Training", path: "/formations" },
-      ]
-    : [
-        { title: "Solutions IA", path: "/solutions" },
-        { title: "Audit et Conseils", path: "/audits" },
-        { title: "Formations", path: "/formations" },
-      ];
+  const servicesItems = [
+    { title: t("ai_solutions"), path: "/solutions" },
+    { title: t("audit_consulting"), path: "/audits" },
+    { title: t("training"), path: "/formations" },
+  ];
 
   // Menu items - with translations
-  const menuItems = isEnglish 
-    ? [
-        { title: "Services", path: "/#services", hasSubmenu: true },
-        { title: "Blog", path: "/blog" },
-        { title: "Booking", path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
-        { title: "About", path: "/about" },
-      ]
-    : [
-        { title: "Services", path: "/#services", hasSubmenu: true },
-        { title: "Blog", path: "/blog" },
-        { title: "Réservation", path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
-        { title: "À propos", path: "/about" },
-      ];
+  const menuItems = [
+    { title: t("services"), path: "/#services", hasSubmenu: true },
+    { title: t("blog"), path: "/blog" },
+    { title: t("reservation"), path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
+    { title: t("about"), path: "/about" },
+  ];
 
   return (
     <header
@@ -171,7 +155,7 @@ const Navbar = () => {
               <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="border-white/20 bg-transparent text-white hover:bg-white/10">
                   <MessageCircle className="h-4 w-4 mr-2 text-green-500" />
-                  {isEnglish ? "WhatsApp" : "WhatsApp"}
+                  {t("whatsapp")}
                 </Button>
               </a>
               <button 
@@ -180,7 +164,7 @@ const Navbar = () => {
                 aria-label="Toggle language"
               >
                 <Flag className="h-4 w-4 mr-1" />
-                {isEnglish ? "FR" : "English"}
+                {language === "fr" ? "English" : "FR"}
               </button>
             </div>
           </nav>
@@ -201,7 +185,7 @@ const Navbar = () => {
               aria-label="Toggle language"
             >
               <Flag className="h-3 w-3 mr-1" />
-              {isEnglish ? "FR" : "English"}
+              {language === "fr" ? "English" : "FR"}
             </button>
             
             <button 
@@ -280,7 +264,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <Button variant="default" size="sm">
-                  {isEnglish ? "Contact us" : "Nous contacter"}
+                  {t("contact_us")}
                 </Button>
               </a>
             </li>

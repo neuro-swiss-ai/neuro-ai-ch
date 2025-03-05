@@ -1,11 +1,13 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ClientsSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const { t } = useLanguage();
 
   const testimonials = [
     {
@@ -50,6 +52,49 @@ const ClientsSection = () => {
     }
   ];
 
+  const englishTestimonials = [
+    {
+      text: "Since we integrated Neuro AI's AI solutions, our productivity has increased by 40%. An essential partner for any company aiming for excellence.",
+      author: "Jean Dupont",
+      position: "General Director, Tech Innovations Geneva"
+    },
+    {
+      text: "The support of the Neuro AI team has allowed us to transform our customer approach. Their AI solutions are not only innovative but perfectly adapted to our specific needs.",
+      author: "Marie Laurent",
+      position: "VP Marketing, Finance Group Zurich"
+    },
+    {
+      text: "We were impressed by the speed and efficiency with which Neuro AI identified and solved our challenges. Their expertise in AI is unmatched in the market.",
+      author: "Philippe Moreau",
+      position: "CTO, InnoSoft Lausanne"
+    },
+    {
+      text: "The integration of Neuro AI's AI technologies has radically transformed our decision-making process. We are now able to analyze complex data in real-time.",
+      author: "Sophie Berger",
+      position: "Operations Director, SwissTech Solutions"
+    },
+    {
+      text: "Thanks to Neuro AI, we were able to automate 60% of our administrative tasks, allowing our team to focus on innovation and strategic development.",
+      author: "Thomas Müller",
+      position: "CEO, Alpine Innovations Bern"
+    },
+    {
+      text: "The collaboration with Neuro AI was a revelation for our team. Their personalized approach and deep understanding of our needs made all the difference.",
+      author: "Laura Schmidt",
+      position: "Marketing Director, Swiss Commerce Group"
+    },
+    {
+      text: "Neuro AI's AI solutions have revolutionized our customer service, with satisfaction increasing by 35% in just three months of implementation.",
+      author: "Michel Dubois",
+      position: "Customer Service Manager, RetailPro Lugano"
+    },
+    {
+      text: "Our partnership with Neuro AI has allowed us to stay at the forefront of technological innovation. Their expertise in AI is a major asset for our competitiveness.",
+      author: "Cécile Rochat",
+      position: "Innovation Director, MedTech Vaud"
+    }
+  ];
+
   const checkScroll = () => {
     if (sliderRef.current) {
       setCanScrollLeft(sliderRef.current.scrollLeft > 0);
@@ -84,13 +129,17 @@ const ClientsSection = () => {
     });
   };
 
+  // Determine which testimonials to display based on the current language
+  const { language } = useLanguage();
+  const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
+
   return (
     <section id="clients" className="py-20 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">Nos Clients</h2>
+          <h2 className="text-4xl font-display font-bold text-gradient mb-6">{t("our_clients")}</h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Ils nous font confiance pour transformer leur entreprise avec l'IA
+            {t("clients_subtitle")}
           </p>
         </div>
 
@@ -110,7 +159,7 @@ const ClientsSection = () => {
             ref={sliderRef}
             className="flex overflow-x-auto gap-8 pb-8 hide-scrollbar snap-x snap-mandatory"
           >
-            {testimonials.map((testimonial, index) => (
+            {displayTestimonials.map((testimonial, index) => (
               <div 
                 key={index} 
                 className="flex-none w-full md:w-[calc(100%-2rem)] lg:w-[600px] glass-effect p-8 rounded-2xl snap-start"
