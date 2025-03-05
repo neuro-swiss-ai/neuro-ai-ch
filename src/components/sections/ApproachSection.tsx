@@ -1,7 +1,9 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const cardVariant = {
   hidden: {
@@ -26,6 +28,7 @@ const ApproachSection = () => {
   const controlsCards = useAnimation();
   const inViewTitle = useInView(refTitle);
   const inViewCards = useInView(refCards);
+  const { language } = useLanguage();
 
   useEffect(() => {
     if (inViewTitle) {
@@ -59,9 +62,13 @@ const ApproachSection = () => {
           animate={controlsTitle}
           ref={refTitle}
         >
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">Notre Approche</h2>
+          <h2 className="text-4xl font-display font-bold text-gradient mb-6">
+            {language === "en" ? "Our Approach" : "Notre Approche"}
+          </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Une méthodologie éprouvée pour transformer votre entreprise avec l'IA
+            {language === "en" 
+              ? "A proven methodology to transform your business with AI"
+              : "Une méthodologie éprouvée pour transformer votre entreprise avec l'IA"}
           </p>
         </motion.div>
         
@@ -84,31 +91,55 @@ const ApproachSection = () => {
                 <path d="M16 10H14.5C14.09 10 13.75 9.66 13.75 9.25V7.75" stroke="#9B87F5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h3 className="text-xl font-display font-medium text-white mb-3">Analyse des Besoins</h3>
+            <h3 className="text-xl font-display font-medium text-white mb-3">
+              {language === "en" ? "Needs Analysis" : "Analyse des Besoins"}
+            </h3>
             <ul className="text-white/70 mb-6 space-y-2">
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Étude approfondie des objectifs et défis du client</span>
+                <span>
+                  {language === "en" 
+                    ? "In-depth study of client objectives and challenges"
+                    : "Étude approfondie des objectifs et défis du client"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Évaluation des processus actuels</span>
+                <span>
+                  {language === "en" 
+                    ? "Evaluation of current processes"
+                    : "Évaluation des processus actuels"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Identification des points de friction et inefficacités</span>
+                <span>
+                  {language === "en" 
+                    ? "Identification of friction points and inefficiencies"
+                    : "Identification des points de friction et inefficacités"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Analyse des opportunités d'automatisation</span>
+                <span>
+                  {language === "en" 
+                    ? "Analysis of automation opportunities"
+                    : "Analyse des opportunités d'automatisation"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Étude de faisabilité et ROI potentiel</span>
+                <span>
+                  {language === "en" 
+                    ? "Feasibility study and potential ROI"
+                    : "Étude de faisabilité et ROI potentiel"}
+                </span>
               </li>
             </ul>
             <Button variant="outline" className="group">
-              <span>En savoir +</span>
+              <span>
+                {language === "en" ? "Learn more" : "En savoir +"}
+              </span>
               <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </motion.div>
@@ -129,27 +160,47 @@ const ApproachSection = () => {
                 <path d="M18.34 20C19.06 19.85 19.74 19.56 20.3 19.13C21.86 17.96 21.86 16.03 20.3 14.86C19.75 14.44 19.08 14.16 18.37 14" stroke="#9B87F5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h3 className="text-xl font-display font-medium text-white mb-3">Collaboration</h3>
+            <h3 className="text-xl font-display font-medium text-white mb-3">
+              {language === "en" ? "Collaboration" : "Collaboration"}
+            </h3>
             <ul className="text-white/70 mb-6 space-y-2">
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Travail en co-création avec les équipes du client</span>
+                <span>
+                  {language === "en" 
+                    ? "Co-creation work with client teams"
+                    : "Travail en co-création avec les équipes du client"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Définition des objectifs et KPIs</span>
+                <span>
+                  {language === "en" 
+                    ? "Definition of objectives and KPIs"
+                    : "Définition des objectifs et KPIs"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Prototypage rapide et validation</span>
+                <span>
+                  {language === "en" 
+                    ? "Rapid prototyping and validation"
+                    : "Prototypage rapide et validation"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Formation continue et support</span>
+                <span>
+                  {language === "en" 
+                    ? "Continuous training and support"
+                    : "Formation continue et support"}
+                </span>
               </li>
             </ul>
             <Button variant="outline" className="group">
-              <span>En savoir +</span>
+              <span>
+                {language === "en" ? "Learn more" : "En savoir +"}
+              </span>
               <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </motion.div>
@@ -170,27 +221,47 @@ const ApproachSection = () => {
                 <path d="M9.5 7.01001L9.5 16.99" stroke="#9B87F5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h3 className="text-xl font-display font-medium text-white mb-3">Innovation</h3>
+            <h3 className="text-xl font-display font-medium text-white mb-3">
+              {language === "en" ? "Innovation" : "Innovation"}
+            </h3>
             <ul className="text-white/70 mb-6 space-y-2">
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Intégration des dernières technologies IA</span>
+                <span>
+                  {language === "en" 
+                    ? "Integration of the latest AI technologies"
+                    : "Intégration des dernières technologies IA"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Développement de solutions sur mesure</span>
+                <span>
+                  {language === "en" 
+                    ? "Development of customized solutions"
+                    : "Développement de solutions sur mesure"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Tests et optimisation continue</span>
+                <span>
+                  {language === "en" 
+                    ? "Testing and continuous optimization"
+                    : "Tests et optimisation continue"}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-mauve mr-2">•</span>
-                <span>Déploiement progressif et adaptatif</span>
+                <span>
+                  {language === "en" 
+                    ? "Progressive and adaptive deployment"
+                    : "Déploiement progressif et adaptatif"}
+                </span>
               </li>
             </ul>
             <Button variant="outline" className="group">
-              <span>En savoir +</span>
+              <span>
+                {language === "en" ? "Learn more" : "En savoir +"}
+              </span>
               <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </motion.div>

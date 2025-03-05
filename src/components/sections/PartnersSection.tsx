@@ -1,11 +1,13 @@
 
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PartnersSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const { language } = useLanguage();
   
   const partners = [
     { name: "EY (Ernst & Young)", logo: "/lovable-uploads/c1c92cc0-74ff-4429-b862-8b57adcf8a0a.png" },
@@ -48,9 +50,13 @@ const PartnersSection = () => {
     <section id="partners" className="py-20 bg-[#e6f7ff]">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-[#333] mb-6">Nos Partenaires Technologiques</h2>
+          <h2 className="text-4xl font-display font-bold text-[#333] mb-6">
+            {language === "en" ? "Our Technology Partners" : "Nos Partenaires Technologiques"}
+          </h2>
           <p className="text-[#555] max-w-2xl mx-auto">
-            Nous collaborons avec les leaders de l'industrie pour vous offrir les meilleures solutions
+            {language === "en" 
+              ? "We collaborate with industry leaders to offer you the best solutions"
+              : "Nous collaborons avec les leaders de l'industrie pour vous offrir les meilleures solutions"}
           </p>
         </div>
 
