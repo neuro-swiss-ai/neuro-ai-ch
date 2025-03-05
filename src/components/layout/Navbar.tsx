@@ -12,6 +12,7 @@ const Navbar = () => {
   const [showServicesMenu, setShowServicesMenu] = useState(false);
   const location = useLocation();
   const servicesRef = useRef<HTMLDivElement>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -26,6 +27,21 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  // Handle hover events with delay to prevent flickering
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    setShowServicesMenu(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setShowServicesMenu(false);
+    }, 300); // Small delay to allow moving to dropdown
+  };
 
   // Ajouter un écouteur de scroll
   useEffect(() => {
@@ -105,8 +121,8 @@ const Navbar = () => {
                     <div 
                       ref={servicesRef}
                       className="relative"
-                      onMouseEnter={() => setShowServicesMenu(true)}
-                      onMouseLeave={() => setShowServicesMenu(false)}
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
                     >
                       <Link 
                         to={item.path} 
@@ -117,11 +133,17 @@ const Navbar = () => {
                       </Link>
                       
                       {/* Services dropdown menu */}
-                      <ServicesDropdownMenu 
-                        isOpen={showServicesMenu} 
-                        items={servicesItems} 
-                        onClose={() => setShowServicesMenu(false)} 
-                      />
+                      <div 
+                        className="absolute top-full left-0"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <ServicesDropdownMenu 
+                          isOpen={showServicesMenu} 
+                          items={servicesItems} 
+                          onClose={() => setShowServicesMenu(false)} 
+                        />
+                      </div>
                     </div>
                   ) : item.external ? (
                     <a

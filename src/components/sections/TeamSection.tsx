@@ -23,29 +23,52 @@ const TeamSection = () => {
       description: "Spécialiste en IA éthique et droits numériques, Yousra assure que nos solutions respectent les normes légales et éthiques les plus strictes."
     },
     {
+      name: "Yohan",
+      title: "CTO & Co-Founder",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&auto=format&fit=crop",
+      description: "Avec une solide formation en mathématiques et sciences des données, Yohan dirige nos projets d'analyse et d'apprentissage automatique."
+    },
+    {
       name: "Jude",
       title: "Sales Director",
       image: "/lovable-uploads/1a17f98f-e020-42b2-ab7a-368014710077.png",
-      linkedin: "https://www.linkedin.com/in/jude-monkam/",
       description: "Fort d'une expertise en développement commercial, Jude pilote notre croissance et développe des relations client durables."
     },
     {
       name: "Sophie",
-      title: "CTO",
+      title: "Lead Data Scientist",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=250&auto=format&fit=crop",
       description: "Experte en technologies d'IA avancées, Sophie supervise notre équipe technique et l'implémentation de solutions innovantes."
-    },
-    {
-      name: "Antoine",
-      title: "Lead Data Scientist",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&auto=format&fit=crop",
-      description: "Avec une solide formation en mathématiques et sciences des données, Antoine dirige nos projets d'analyse et d'apprentissage automatique."
     },
     {
       name: "Marie",
       title: "Head of Customer Success",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=250&auto=format&fit=crop",
       description: "Marie accompagne nos clients tout au long de leur parcours, garantissant une adoption réussie de nos solutions d'IA."
+    },
+    {
+      name: "Nada",
+      title: "Head of Marketing",
+      image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=250&auto=format&fit=crop",
+      description: "Spécialiste du marketing stratégique, Nada développe notre présence sur le marché et assure la visibilité de nos solutions d'IA."
+    },
+    {
+      name: "Johns",
+      title: "Business Developer",
+      image: "https://images.unsplash.com/photo-1567515004624-219c11d31f2e?q=80&w=250&auto=format&fit=crop",
+      description: "Johns identifie de nouvelles opportunités de croissance et développe des partenariats stratégiques pour étendre notre portée sur le marché."
+    },
+    {
+      name: "Imane",
+      title: "Digital Marketing Consultant",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=250&auto=format&fit=crop",
+      description: "Experte en marketing digital, Imane élabore des stratégies innovantes pour optimiser notre présence en ligne et attirer de nouveaux clients."
+    },
+    {
+      name: "Bénédicte",
+      title: "Business Developer",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=250&auto=format&fit=crop",
+      description: "Bénédicte développe notre réseau professionnel et identifie de nouvelles opportunités commerciales pour renforcer notre position sur le marché."
     }
   ];
 
