@@ -14,13 +14,16 @@ import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, ArrowRight, MessageCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServicesSection = () => {
+  const { t, language } = useLanguage();
+  
   const services = [
     {
       id: "audit-conseil",
-      title: "Audit et conseil",
-      description: "Nous analysons votre entreprise pour identifier les opportunités d'intégration de l'IA et vous conseillons sur les meilleures solutions adaptées à vos besoins.",
+      title: t("audit_consulting"),
+      description: t("audit_description"),
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-mauve" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -30,8 +33,8 @@ const ServicesSection = () => {
     },
     {
       id: "formations",
-      title: "Formations",
-      description: "Des formations sur mesure pour vos équipes afin qu'elles puissent maîtriser les outils d'IA et les intégrer efficacement dans vos processus métier.",
+      title: t("training"),
+      description: t("training_description"),
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-mauve" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -43,8 +46,8 @@ const ServicesSection = () => {
     },
     {
       id: "solutions-ia",
-      title: "Solutions IA",
-      description: "Développement et implémentation de solutions d'IA personnalisées pour optimiser vos opérations, améliorer la prise de décision et accroître votre compétitivité.",
+      title: t("ai_solutions"),
+      description: t("solutions_description"),
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-mauve" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -58,9 +61,9 @@ const ServicesSection = () => {
     <section id="services" className="py-24 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">Nos Services</h2>
+          <h2 className="text-4xl font-display font-bold text-gradient mb-6">{t("our_services")}</h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Des solutions IA sur mesure pour répondre aux besoins spécifiques de votre entreprise
+            {t("services_subtitle")}
           </p>
         </div>
 
@@ -75,7 +78,7 @@ const ServicesSection = () => {
               <h3 className="text-xl font-display font-medium text-white mb-3">{service.title}</h3>
               <p className="text-white/70 mb-6">{service.description}</p>
               <Link to={service.link} className="inline-flex items-center text-mauve hover:text-mauve-light transition-colors group">
-                <span className="underline-animation">En savoir plus</span>
+                <span className="underline-animation">{t("learn_more")}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -89,6 +92,8 @@ const ServicesSection = () => {
 };
 
 const CtaSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-24 bg-[#0a0a10] relative overflow-hidden">
       {/* Background elements */}
@@ -100,22 +105,22 @@ const CtaSection = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-display font-bold text-gradient mb-6">
-            Prêt à transformer votre entreprise avec l'IA?
+            {t("ready_transform")}
           </h2>
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Réservez dès maintenant votre consultation gratuite d'une heure et découvrez comment l'IA peut révolutionner votre activité.
+            {t("contact_discover")}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
               <Button variant="default" size="lg">
-                Réservez votre consultation
+                {t("book_appointment")}
               </Button>
             </a>
             <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="border-white/20 bg-transparent hover:bg-white/10">
                 <MessageCircle className="mr-2 h-5 w-5 text-green-500" />
-                Contactez-nous sur WhatsApp
+                {t("contact_whatsapp")}
               </Button>
             </a>
           </div>
@@ -126,6 +131,8 @@ const CtaSection = () => {
 };
 
 const FinalCtaSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-24 bg-gradient-to-b from-[#0a0a10] to-background relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -136,25 +143,25 @@ const FinalCtaSection = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-display font-bold text-gradient mb-4">
-            Transformez votre entreprise
+            {t("transform_business")}
           </h2>
           <h3 className="text-2xl font-display text-white/90 mb-6">
-            Prêt à transformer votre entreprise avec l'IA ?
+            {t("ready_transform")}
           </h3>
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Contactez-nous pour découvrir comment nous pouvons vous aider à atteindre vos objectifs.
+            {t("contact_discover")}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
               <Button variant="default" size="lg">
-                Prendre rendez-vous
+                {t("book_appointment")}
               </Button>
             </a>
             <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="border-white/20 bg-transparent hover:bg-white/10">
                 <MessageCircle className="mr-2 h-5 w-5 text-green-500" />
-                Contactez-nous sur WhatsApp
+                {t("contact_whatsapp")}
               </Button>
             </a>
           </div>
@@ -165,6 +172,8 @@ const FinalCtaSection = () => {
 };
 
 const Index = () => {
+  const { language } = useLanguage();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

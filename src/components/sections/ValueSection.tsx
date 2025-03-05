@@ -1,31 +1,41 @@
 
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Target, Layers, Award, Clock } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ValueSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const { t, language } = useLanguage();
   
   const values = [
     {
-      title: "Approche sur mesure",
-      description: "Nous commençons par un diagnostic approfondi pour créer des solutions parfaitement adaptées à vos besoins spécifiques.",
+      title: language === "en" ? "Tailored Approach" : "Approche sur mesure",
+      description: language === "en" 
+        ? "We start with a comprehensive diagnosis to create solutions perfectly adapted to your specific needs."
+        : "Nous commençons par un diagnostic approfondi pour créer des solutions parfaitement adaptées à vos besoins spécifiques.",
       icon: <Target className="h-12 w-12 text-mauve" />
     },
     {
-      title: "Intégration transparente",
-      description: "Nos solutions s'intègrent parfaitement à vos systèmes existants, minimisant les perturbations et maximisant l'adoption.",
+      title: language === "en" ? "Seamless Integration" : "Intégration transparente",
+      description: language === "en"
+        ? "Our solutions integrate seamlessly with your existing systems, minimizing disruption and maximizing adoption."
+        : "Nos solutions s'intègrent parfaitement à vos systèmes existants, minimisant les perturbations et maximisant l'adoption.",
       icon: <Layers className="h-12 w-12 text-mauve" />
     },
     {
-      title: "Expertise étendue",
-      description: "Notre équipe spécialisée combine des compétences avancées en IA et en automatisation pour résoudre vos défis les plus complexes.",
+      title: language === "en" ? "Extensive Expertise" : "Expertise étendue",
+      description: language === "en"
+        ? "Our specialized team combines advanced skills in AI and automation to solve your most complex challenges."
+        : "Notre équipe spécialisée combine des compétences avancées en IA et en automatisation pour résoudre vos défis les plus complexes.",
       icon: <Award className="h-12 w-12 text-mauve" />
     },
     {
-      title: "Support 24/7",
-      description: "Nous vous accompagnons en continu avec une assistance disponible à tout moment pour garantir le succès de votre transformation digitale.",
+      title: language === "en" ? "24/7 Support" : "Support 24/7",
+      description: language === "en"
+        ? "We provide continuous support with assistance available at any time to ensure the success of your digital transformation."
+        : "Nous vous accompagnons en continu avec une assistance disponible à tout moment pour garantir le succès de votre transformation digitale.",
       icon: <Clock className="h-12 w-12 text-mauve" />
     }
   ];
@@ -63,9 +73,13 @@ const ValueSection = () => {
     <section id="value" className="py-20 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">Notre Valeur Ajoutée</h2>
+          <h2 className="text-4xl font-display font-bold text-gradient mb-6">
+            {language === "en" ? "Our Added Value" : "Notre Valeur Ajoutée"}
+          </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Découvrez comment nous nous distinguons pour vous offrir un service d'excellence
+            {language === "en" 
+              ? "Discover how we stand out to provide you with excellent service" 
+              : "Découvrez comment nous nous distinguons pour vous offrir un service d'excellence"}
           </p>
         </div>
 

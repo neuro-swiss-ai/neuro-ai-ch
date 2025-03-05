@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,10 +17,19 @@ import Solutions from "@/pages/Solutions";
 import Audits from "@/pages/Audits";
 import Formations from "@/pages/Formations";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
 function App() {
+  // Add an effect to properly initialize language from localStorage on app start
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language") || "fr";
+    if (savedLanguage !== "fr" && savedLanguage !== "en") {
+      localStorage.setItem("language", "fr");
+    }
+  }, []);
+
   const router = createBrowserRouter([
     {
       path: "/",
