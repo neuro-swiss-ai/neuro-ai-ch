@@ -66,7 +66,7 @@ const HeroSection = () => {
           <div className="flex justify-center mb-6">
             <div className="animate-fade-in inline-block px-5 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
               <span className="text-white/80 text-base font-medium" style={{ fontSize: "1.3em" }}>
-                Propulsez votre entreprise dans le futur de l'Intelligence Artificielle 🚀🇨🇭 avec Neuro Swiss AI
+                {/* Texte supprimé d'ici */}
               </span>
             </div>
           </div>
