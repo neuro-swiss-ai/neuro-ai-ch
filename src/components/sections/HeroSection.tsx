@@ -52,6 +52,15 @@ const HeroSection = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-background to-background -z-10"></div>
       
+      {/* Brain background image */}
+      <div className="absolute inset-0 -z-20 opacity-20">
+        <img 
+          src="/lovable-uploads/106a1aec-9006-433f-a05d-1c09afd89e74.png" 
+          alt="Brain background" 
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+      
       <div className="container-custom relative z-10 pt-16">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">

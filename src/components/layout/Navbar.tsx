@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Flag, MessageCircle, ChevronDown } from "lucide-react";
+import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import { Button } from "../ui/button";
 import ServicesDropdownMenu from "../sections/ServicesDropdownMenu";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -86,13 +86,19 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <div className="flex justify-between items-center">
-          {/* Company Name */}
+          {/* Company Logo and Name */}
           <Link to="/" className="flex items-center group">
-            <div className="relative font-display text-white font-semibold text-xl mr-10 flex items-center">
+            <div className="mr-3">
+              <img 
+                src="/lovable-uploads/106a1aec-9006-433f-a05d-1c09afd89e74.png" 
+                alt="Neuro Swiss AI Logo" 
+                className="h-10 w-auto"
+              />
+            </div>
+            <div className="relative font-display text-white font-semibold text-xl flex items-center">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
                 Neuro Swiss AI
               </span>
-              <Flag className="h-4 w-4 text-red-500 ml-1.5" />
             </div>
           </Link>
 
@@ -163,7 +169,6 @@ const Navbar = () => {
                 className="flex items-center justify-center px-3 py-1 bg-transparent border border-white/20 rounded-md text-white hover:bg-white/10 transition-all"
                 aria-label="Toggle language"
               >
-                <Flag className="h-4 w-4 mr-1" />
                 {language === "fr" ? "English" : "FR"}
               </button>
             </div>
@@ -184,7 +189,6 @@ const Navbar = () => {
               className="flex items-center justify-center px-2 py-1 bg-transparent border border-white/20 rounded-md text-white hover:bg-white/10 transition-all"
               aria-label="Toggle language"
             >
-              <Flag className="h-3 w-3 mr-1" />
               {language === "fr" ? "English" : "FR"}
             </button>
             
