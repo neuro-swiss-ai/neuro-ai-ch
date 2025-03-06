@@ -12,7 +12,17 @@ const PartnersSection = () => {
     { name: "Nestlé", logo: "/lovable-uploads/cddda8ac-c5ec-463f-aac5-3aebae7f6f37.png" },
     { name: "PwC", logo: "/lovable-uploads/2bb14601-7f40-46fd-bed4-9d721b0e710b.png" },
     { name: "Adecco", logo: "/lovable-uploads/4224b09a-1013-42b2-aecb-7f9406435531.png" },
-    { name: "Omega", logo: "/lovable-uploads/3691d429-0849-446f-822b-089f2a37e3ce.png" }
+    { name: "Omega", logo: "/lovable-uploads/3691d429-0849-446f-822b-089f2a37e3ce.png" },
+    { name: "DKSH Holding", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/DKSH_logo.svg/1200px-DKSH_logo.svg.png" },
+    { name: "Emmi AG", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Emmi_logo.svg/1200px-Emmi_logo.svg.png" },
+    { name: "Bachem", logo: "https://www.bachem.com/wp-content/uploads/2021/01/bachem_logo_web.svg" },
+    { name: "EFG International", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/EFG_International_logo.svg/1200px-EFG_International_logo.svg.png" },
+    { name: "Siegfried Holding", logo: "https://www.siegfried.ch/fileadmin/_processed_/1/5/csm_logo_siegfried_RGB_d8e0ebaad4.jpg" },
+    { name: "Galenica", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Galenica_Logo.svg/2560px-Galenica_Logo.svg.png" },
+    { name: "Accelleron Industries", logo: "https://www.accelleron-industries.com/site/assets/files/1070/accelleron_logo_blue_rgb.svg" },
+    { name: "Bucher Industries", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Bucher_Industries_logo.svg/2560px-Bucher_Industries_logo.svg.png" },
+    { name: "Vontobel", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Vontobel_logo.svg/2560px-Vontobel_logo.svg.png" },
+    { name: "Clariant", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Clariant_logo.svg/1280px-Clariant_logo.svg.png" }
   ];
 
   const checkScroll = () => {
@@ -45,11 +55,11 @@ const PartnersSection = () => {
   };
 
   return (
-    <section id="partners" className="py-20 bg-[#e6f7ff]">
+    <section id="partners" className="py-20 bg-[#0a0a10]">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-[#333] mb-6">Nos Partenaires Technologiques</h2>
-          <p className="text-[#555] max-w-2xl mx-auto">
+          <h2 className="text-4xl font-display font-bold text-[#fff] mb-6">Nos Partenaires Technologiques</h2>
+          <p className="text-[#ccc] max-w-2xl mx-auto">
             Nous collaborons avec les leaders de l'industrie pour vous offrir les meilleures solutions
           </p>
         </div>
@@ -58,7 +68,7 @@ const PartnersSection = () => {
           {canScrollLeft && (
             <button 
               onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-md"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 shadow-md"
               aria-label="Scroll left"
             >
               <ChevronLeft className="h-6 w-6" />
@@ -72,7 +82,7 @@ const PartnersSection = () => {
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-                className="flex-none w-[250px] h-[100px] flex items-center justify-center bg-white p-6 rounded-lg shadow-sm"
+                className="flex-none w-[250px] h-[100px] flex items-center justify-center bg-[#1a1a1a] p-6 rounded-lg shadow-sm border border-white/10"
               >
                 <img 
                   src={partner.logo} 
@@ -87,7 +97,7 @@ const PartnersSection = () => {
           {canScrollRight && (
             <button 
               onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-md"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 shadow-md"
               aria-label="Scroll right"
             >
               <ChevronRight className="h-6 w-6" />
