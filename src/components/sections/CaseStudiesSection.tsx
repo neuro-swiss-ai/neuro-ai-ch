@@ -8,25 +8,31 @@ const CaseStudiesSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const caseStudies = [
     {
-      title: t("hr_optimization"),
-      description: t("hr_description"),
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=400&auto=format&fit=crop",
+      title: language === "fr" ? "Assistant IA pour l'analyse financière" : "AI Assistant for Financial Analysis",
+      description: language === "fr" 
+        ? "Développement d'un assistant IA pour une banque genevoise permettant d'analyser les tendances du marché et de générer des rapports personnalisés pour les clients."
+        : "Development of an AI assistant for a Geneva-based bank to analyze market trends and generate personalized reports for clients.",
+      image: "/lovable-uploads/20ba7e54-a130-4bea-b949-2b5f678d889c.png",
       link: "/blog"
     },
     {
-      title: t("predictive_analysis"),
-      description: t("predictive_description"),
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop",
+      title: language === "fr" ? "Formation IA pour cadres dirigeants" : "AI Training for Executive Leaders",
+      description: language === "fr"
+        ? "Organisation de séminaires et workshops pour plus de 500 cadres dirigeants suisses sur l'intégration de l'IA dans leur stratégie d'entreprise."
+        : "Organization of seminars and workshops for over 500 Swiss executives on integrating AI into their business strategy.",
+      image: "/lovable-uploads/074b84be-ee3a-4000-8d3f-bcd2abd57825.png",
       link: "/blog"
     },
     {
-      title: t("chatbot"),
-      description: t("chatbot_description"),
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=400&auto=format&fit=crop",
+      title: language === "fr" ? "Système de prédiction pour la chaîne logistique" : "Predictive System for Supply Chain",
+      description: language === "fr"
+        ? "Implémentation d'un système prédictif basé sur l'IA pour optimiser la chaîne logistique d'un leader suisse de l'industrie horlogère."
+        : "Implementation of an AI-based predictive system to optimize the supply chain of a Swiss watchmaking industry leader.",
+      image: "/lovable-uploads/f507563e-aeda-41c6-95d8-b1e27e9343a2.png",
       link: "/blog"
     }
   ];
@@ -64,9 +70,11 @@ const CaseStudiesSection = () => {
     <section id="case-studies" className="py-20 bg-gradient-to-b from-[#0a0a10] to-background">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">{t("our_projects")}</h2>
+          <h2 className="text-4xl font-display font-bold text-gradient mb-6">{language === "fr" ? "Nos Projets" : "Our Projects"}</h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            {t("projects_subtitle")}
+            {language === "fr" 
+              ? "Découvrez comment nous avons transformé des entreprises suisses grâce à l'intelligence artificielle"
+              : "Discover how we've transformed Swiss businesses through artificial intelligence"}
           </p>
         </div>
 
@@ -102,7 +110,7 @@ const CaseStudiesSection = () => {
                   <p className="text-white/70 mb-6">{study.description}</p>
                   <Button asChild variant="outline" className="border-mauve text-mauve hover:text-white hover:bg-mauve/20">
                     <a href={study.link}>
-                      {t("read_case")}
+                      {language === "fr" ? "Lire l'étude de cas" : "Read case study"}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>

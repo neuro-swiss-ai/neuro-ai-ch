@@ -28,6 +28,14 @@ const PressSection = () => {
       link: "https://www.20min.ch/fr/story/geneve-plus-de-la-moitie-des-pme-se-sont-mis-a-l-intelligence-artificielle-103233684",
       logoUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/20_minutes_Suisse_2013_logo.svg",
       logoAlt: "20 minutes Logo"
+    },
+    {
+      title: language === "fr"
+        ? "Neuro Swiss AI présente ses solutions lors du forum d'innovation de Genève"
+        : "Neuro Swiss AI presents its solutions at the Geneva Innovation Forum",
+      link: "#",
+      logoUrl: "/lovable-uploads/801f3084-d9bc-4c44-92eb-e554215429a6.png",
+      logoAlt: "Geneva Innovation Logo"
     }
   ];
 
@@ -52,7 +60,7 @@ const PressSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {pressArticles.map((article, index) => (
             <a 
               key={index}
