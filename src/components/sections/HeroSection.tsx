@@ -72,7 +72,7 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gradient leading-tight mb-6 animate-fade-in">
-            {t("hero_title")}
+            Propulsez votre entreprise dans le futur de l'Intelligence Artificielle 🚀🇨🇭 avec Neuro Swiss AI
           </h1>
           
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto animate-fade-in">
