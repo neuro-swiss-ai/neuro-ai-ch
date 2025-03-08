@@ -26,7 +26,7 @@ const assistantsList = [
     id: "leo",
     name: "Léo",
     emoji: "🔍",
-    imagePath: "/lovable-uploads/1a17f98f-e020-42b2-ab7a-368014710077.png",
+    imagePath: "/lovable-uploads/6b835675-311c-4bce-b442-b9765a6494f3.png",
     shortDescription: "Votre stratège visionnaire !",
     description: "Il transforme les données en opportunités de croissance et crée des feuilles de route personnalisées pour votre succès.",
     callToAction: "Avec Léo, transformez vos idées en actions et boostez votre croissance !",
