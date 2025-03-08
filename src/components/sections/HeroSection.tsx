@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     // Animation des lignes abstraites
@@ -72,7 +72,9 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gradient leading-tight mb-6 animate-fade-in">
-            Propulsez Votre Organisation dans le futur avec l'IA
+            {language === "en" 
+              ? "Propel Your Organization into the Future with AI" 
+              : "Propulsez Votre Organisation dans le futur avec l'IA"}
           </h1>
           
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto animate-fade-in">
