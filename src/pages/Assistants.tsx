@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import AssistantCard from "@/components/sections/AssistantCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Helmet } from "react-helmet";
+import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
 
 // Components
 import Navbar from "@/components/layout/Navbar";
