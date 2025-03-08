@@ -10,6 +10,7 @@ import ExpertiseSection from "@/components/sections/ExpertiseSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import ValueSection from "@/components/sections/ValueSection";
 import CaseStudiesSection from "@/components/sections/CaseStudiesSection";
+import AssistantsSection from "@/components/sections/AssistantsSection";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -187,6 +188,7 @@ const Index = () => {
         <ApproachSection />
         <ClientsSection />
         <ExpertiseSection />
+        <AssistantsSection />
         <TeamSection />
         <PartnersSection />
         <ValueSection />

@@ -55,6 +55,15 @@
     @apply absolute w-0.5 bg-gradient-to-b from-white/20 to-white/0;
     animation: rise 3s ease-out forwards;
   }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+  }
 }
 
 @layer utilities {
