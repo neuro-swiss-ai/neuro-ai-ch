@@ -55,7 +55,7 @@ const TeamSection = () => {
     {
       name: "Johns",
       title: "Business Developer",
-      image: "https://images.unsplash.com/photo-1567515004624-219c11d31f2e?q=80&w=250&auto=format&fit=crop",
+      image: "/lovable-uploads/c2268e58-18b7-4e25-8564-023dda94fb89.png",
       description: "Johns identifie de nouvelles opportunités de croissance et développe des partenariats stratégiques pour étendre notre portée sur le marché."
     },
     {
