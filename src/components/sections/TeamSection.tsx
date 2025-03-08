@@ -11,10 +11,10 @@ const TeamSection = () => {
   
   const team = [
     {
-      name: "Amine",
+      name: "Nueve",
       title: "CEO & Co-Founder",
       image: "/lovable-uploads/bd754d92-0a3c-4db1-83f7-8091455e7fe3.png",
-      description: "Expert en IA et stratégie, Amine dirige notre vision d'entreprise avec plus de 10 ans d'expérience dans le domaine technologique."
+      description: "Expert en IA et stratégie, Nueve dirige notre vision d'entreprise avec plus de 10 ans d'expérience dans le domaine technologique."
     },
     {
       name: "Yousra",
