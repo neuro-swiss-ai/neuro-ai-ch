@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calendar } from "lucide-react";
+import { CalendarCheck2, MessageCircle } from "lucide-react";
 
 interface AssistantCardProps {
   name: string;
@@ -52,7 +52,7 @@ const AssistantCard = ({
           </div>
           <div className="p-4 bg-black/40 backdrop-blur-sm">
             <p className="text-white/80 text-sm">
-              Survolez pour découvrir
+              Hover to learn more
             </p>
           </div>
         </div>
@@ -63,7 +63,7 @@ const AssistantCard = ({
             {emoji} {name} – {shortDescription}
           </h3>
           
-          <div className="text-white/90 mb-4 whitespace-pre-line text-sm">
+          <div className="text-white/90 mb-4 text-sm">
             {description}
           </div>
           
@@ -77,8 +77,8 @@ const AssistantCard = ({
               className="w-full block mb-3"
             >
               <Button variant="default" className="w-full group">
-                <Calendar className="mr-2 h-4 w-4" />
-                Réserver une démo
+                <CalendarCheck2 className="mr-2 h-4 w-4" />
+                Book a Demo
               </Button>
             </a>
             
@@ -90,7 +90,7 @@ const AssistantCard = ({
             >
               <Button variant="outline" className="w-full group border-white/20 bg-transparent hover:bg-white/10">
                 <MessageCircle className="mr-2 h-4 w-4 text-green-500 group-hover:animate-pulse" />
-                Contacter par WhatsApp
+                {contactText}
               </Button>
             </a>
           </div>
