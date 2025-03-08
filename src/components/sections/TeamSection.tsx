@@ -17,10 +17,10 @@ const TeamSection = () => {
       description: "Expert en IA et stratégie, Nueve dirige notre vision d'entreprise avec plus de 10 ans d'expérience dans le domaine technologique."
     },
     {
-      name: "Yousra",
-      title: "CLO & Co-Founder",
+      name: "Léya",
+      title: "Avocate et Co-Founder",
       image: "/lovable-uploads/7277b1f7-9b0a-4000-8aa0-3b39772c463d.png",
-      description: "Spécialiste en IA éthique et droits numériques, Yousra assure que nos solutions respectent les normes légales et éthiques les plus strictes."
+      description: "Spécialiste en IA éthique et droits numériques, Léya assure que nos solutions respectent les normes légales et éthiques les plus strictes."
     },
     {
       name: "Yohan",
