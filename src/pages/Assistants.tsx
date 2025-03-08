@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import AssistantCard from "@/components/sections/AssistantCard";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -17,8 +18,8 @@ const assistantsList = [
     emoji: "🤖",
     imagePath: "/lovable-uploads/ccf47a6f-a543-4dc8-bdb2-9b9b7cd18cef.png",
     shortDescription: "L'expert en automatisation !",
-    description: "Il optimise vos processus en automatisant les tâches répétitives et en intégrant l'IA dans votre entreprise.",
-    callToAction: "Avec Néo, gagnez en efficacité et boostez votre productivité !",
+    description: "Découvrez Néo: Votre assistant IA téléphonique\nAutomatisez et optimisez votre gestion d'appels avec Néo. Néo est un assistant téléphonique IA intelligent qui gère vos appels entrants et sortants pour augmenter la productivité et réduire les coûts.\n\n🔹 Filtrage intelligent des appels – Plus d'interruptions inutiles, uniquement des appels qualifiés.\n🔹 Appels sortants automatisés – Suivis, rappels clients et campagnes d'appels alimentées par l'IA.\n🔹 Disponibilité 24/7 – Ne manquez plus jamais un appel important, Néo est toujours là.\n🔹 Optimisation des coûts – Un tarif compétitif pour un système téléphonique entièrement optimisé.",
+    callToAction: "📞 Boostez votre efficacité avec Néo !",
     contactText: "Prêt à automatiser votre business ? Contactez-nous !"
   },
   {
