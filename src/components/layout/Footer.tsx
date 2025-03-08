@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="bg-[#0d0d12] pt-16 pb-8 border-t border-white/10">
       <div className="container-custom">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Services Column */}
           <div className="flex flex-col">
             <h3 className="text-white font-display text-lg font-medium mb-6">{t("our_services_footer")}</h3>
@@ -34,12 +34,35 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Assistants IA Column */}
+          <div className="flex flex-col">
+            <h3 className="text-white font-display text-lg font-medium mb-6">Nos Assistants IA</h3>
+            <Link to="/assistants" className="text-white/70 hover:text-white transition-colors mb-3">
+              Découvrez nos assistants spécialisés
+            </Link>
+          </div>
+
           {/* Blog Column */}
           <div className="flex flex-col">
             <h3 className="text-white font-display text-lg font-medium mb-6">{t("blog_footer")}</h3>
             <Link to="/blog" className="text-white/70 hover:text-white transition-colors mb-3">
               {t("blog_description")}
             </Link>
+            <div className="mt-2">
+              <p className="text-white/90 text-sm mb-2">Catégories:</p>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/blog" className="text-white/70 hover:text-white transition-colors text-sm">
+                    Automatisation d'offres
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog" className="text-white/70 hover:text-white transition-colors text-sm">
+                    Chatbot pour documentation technique
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Contact Column */}

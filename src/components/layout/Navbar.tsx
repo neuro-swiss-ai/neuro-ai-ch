@@ -73,6 +73,7 @@ const Navbar = () => {
   // Menu items - with translations
   const menuItems = [
     { title: t("services"), path: "/#services", hasSubmenu: true },
+    { title: "Nos Assistants IA", path: "/assistants", isNew: true },
     { title: t("blog"), path: "/blog" },
     { title: t("reservation"), path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
     { title: t("about"), path: "/about" },
@@ -151,7 +152,14 @@ const Navbar = () => {
                         location.pathname === item.path ? "text-white" : ""
                       }`}
                     >
-                      {item.title}
+                      <div className="relative flex items-center">
+                        {item.title}
+                        {item.isNew && (
+                          <span className="ml-2 text-[10px] font-bold py-0.5 px-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                            NEW
+                          </span>
+                        )}
+                      </div>
                     </Link>
                   )}
                 </li>
@@ -254,7 +262,14 @@ const Navbar = () => {
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
-                    {item.title}
+                    <div className="flex items-center">
+                      {item.title}
+                      {item.isNew && (
+                        <span className="ml-2 text-[10px] font-bold py-0.5 px-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                          NEW
+                        </span>
+                      )}
+                    </div>
                   </Link>
                 )}
               </li>

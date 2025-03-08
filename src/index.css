@@ -7,165 +7,89 @@
   :root {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
-
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
- 
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
- 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
- 
-    --secondary: 0 0% 14.9%;
+    --primary: 272.9 68.8% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
- 
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
- 
-    --accent: 0 0% 14.9%;
+    --accent: 12 6.5% 15.1%;
     --accent-foreground: 0 0% 98%;
- 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 57.1 51% 42.2%;
-
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
     --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
- 
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
- 
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
- 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
- 
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
- 
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
- 
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
- 
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 57.1 51% 42.2%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
-    position: relative;
+    @apply bg-background text-foreground antialiased;
   }
+}
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/lovable-uploads/106a1aec-9006-433f-a05d-1c09afd89e74.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.07;
-    z-index: -100;
-    pointer-events: none;
-  }
-
+@layer components {
   .container-custom {
-    @apply container px-4 md:px-12 lg:px-20 xl:px-32 mx-auto;
+    @apply max-w-screen-xl mx-auto px-4;
   }
-
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-mauve to-mauve-light;
-  }
-
-  .text-gradient-mauve {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-mauve-light to-mauve;
-  }
-
-  .glass-effect {
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(7.7px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-  }
-
-  .underline-animation {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 2px; /* Adjust as needed */
-  }
-
-  .underline-animation::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px; /* Adjust thickness as needed */
-    background-color: theme('colors.mauve'); /* Use your theme color */
-    transition: width 0.3s ease;
-  }
-
-  .group:hover .underline-animation::before {
-    width: 100%;
-  }
-
+  
   .nav-link {
     @apply text-white/80 hover:text-white transition-colors;
   }
-
-  /* Add prose styling for blog content */
-  .prose h2 {
-    @apply text-2xl font-display font-semibold mt-8 mb-4 text-white;
-  }
-
-  .prose p {
-    @apply mb-4 text-white/80;
-  }
-
-  .prose ul {
-    @apply list-disc pl-5 mb-6 text-white/80;
-  }
-
-  .prose li {
-    @apply mb-2;
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#8F41E9] to-[#578AEF];
   }
   
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
+  .scroll-indicator {
+    animation: bounce 2s infinite;
   }
   
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .hide-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  .line-decoration {
+    @apply absolute w-0.5 bg-gradient-to-b from-white/20 to-white/0;
+    animation: rise 3s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

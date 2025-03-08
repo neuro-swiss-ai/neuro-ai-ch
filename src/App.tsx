@@ -16,6 +16,7 @@ import Reservation from "@/pages/Reservation";
 import Solutions from "@/pages/Solutions";
 import Audits from "@/pages/Audits";
 import Formations from "@/pages/Formations";
+import Assistants from "@/pages/Assistants";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { useEffect } from "react";
 
@@ -62,6 +63,10 @@ function App() {
     {
       path: "/formations",
       element: <Formations />,
+    },
+    {
+      path: "/assistants",
+      element: <Assistants />,
     },
     {
       path: "*",
