@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import AssistantCard from "@/components/sections/AssistantCard";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -31,6 +30,16 @@ const assistantsList = [
     description: "Il transforme les données en opportunités de croissance et crée des feuilles de route personnalisées pour votre succès.",
     callToAction: "Avec Léo, transformez vos idées en actions et boostez votre croissance !",
     contactText: "Prêt à passer à l'action ? Contactez-nous !"
+  },
+  {
+    id: "iris",
+    name: "Iris",
+    emoji: "⚖️",
+    imagePath: "/lovable-uploads/3f4aa1e2-58c5-4fd3-9ef5-c9be9e550c8b.png",
+    shortDescription: "Votre expert en e-Discovery IA !",
+    description: "🔍 Elle vous aide à :\n✅ Scanner et classer de grands volumes de documents juridiques. 📄\n✅ Identifier les informations clés pour vos dossiers. 🔑\n✅ Faciliter la préparation des contentieux. ⚖️\n✅ Réduire le temps de traitement des documents. ⏳",
+    callToAction: "Avec Iris, explorez vos données légales avec précision et efficacité !",
+    contactText: "Besoin d'un coup de main pour analyser des documents volumineux ? Parlons-en !"
   },
   {
     id: "cleo",
