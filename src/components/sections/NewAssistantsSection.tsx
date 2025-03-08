@@ -1,7 +1,7 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { CalendarCheck2, ExternalLink } from "lucide-react";
+import { CalendarCheck2, ExternalLink, Sparkle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const NewAssistantsSection = () => {
@@ -12,9 +12,17 @@ const NewAssistantsSection = () => {
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <Link to="/assistants" className="inline-block">
-            <h2 className="text-4xl font-display font-bold text-gradient mb-6 transition-transform hover:scale-105">
-              {language === "fr" ? "Nos Assistants IA" : "Our AI Assistants"}
-            </h2>
+            <div className="relative mb-2 px-8 py-3 rounded-xl bg-gradient-to-r from-[#8F41E9]/10 to-[#578AEF]/10 border border-white/10 transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(139,65,233,0.3)]">
+              <h2 className="text-4xl font-display font-bold text-gradient">
+                {language === "fr" ? "Nos Assistants IA" : "Our AI Assistants"}
+              </h2>
+            </div>
+            <div className="flex justify-center">
+              <div className="px-3 py-1 bg-[#8F41E9] rounded-full flex items-center text-xs font-medium text-white animate-pulse shadow-lg shadow-[#8F41E9]/20">
+                <Sparkle className="h-3 w-3 mr-1" />
+                NEW
+              </div>
+            </div>
           </Link>
         </div>
         
