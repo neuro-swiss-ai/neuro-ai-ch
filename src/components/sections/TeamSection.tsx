@@ -19,7 +19,7 @@ const TeamSection = () => {
     {
       name: "Léya",
       title: "Avocate et Co-Founder",
-      image: "/lovable-uploads/7277b1f7-9b0a-4000-8aa0-3b39772c463d.png",
+      image: "/lovable-uploads/e17fe94d-fa2c-4406-a6d4-a02b6831e288.png",
       description: "Spécialiste en IA éthique et droits numériques, Léya assure que nos solutions respectent les normes légales et éthiques les plus strictes."
     },
     {
