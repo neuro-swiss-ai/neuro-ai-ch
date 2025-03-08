@@ -1,6 +1,6 @@
 
 import { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight, PlusCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight, PlusCircle, CalendarCheck2, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -10,59 +10,39 @@ const AssistantsSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   
-  // Same assistants data as in the Assistants page
+  // Updated assistants data with new content and images
   const assistantsList = [
     {
       id: "neo",
       name: "Néo",
-      emoji: "🤖",
-      imagePath: "/lovable-uploads/ccf47a6f-a543-4dc8-bdb2-9b9b7cd18cef.png",
-      shortDescription: "L'expert en automatisation !",
-      description: "Il optimise vos processus en automatisant les tâches répétitives et en intégrant l'IA dans votre entreprise.",
-      callToAction: "Avec Néo, gagnez en efficacité et boostez votre productivité !",
-      contactText: "Prêt à automatiser votre business ? Contactez-nous !"
+      emoji: "🚀",
+      imagePath: "/lovable-uploads/13850001-0d91-4af3-a150-f60bfe624413.png",
+      shortDescription: "Votre assistant IA téléphonique",
+      description: "Libérez-vous du téléphone avec Néo, votre assistant IA conçu pour automatiser, optimiser et simplifier la gestion de vos appels.\n\n✅ Filtrage intelligent des appels entrants\n✅ Automatisation des appels sortants\n✅ Disponibilité 24/7\n✅ Optimisation des coûts",
+      callToAction: "📞 Optimisez votre gestion téléphonique et boostez votre productivité avec Néo !",
+      contactText: "🔹 Essayez gratuitement | 🔹 Réservez une démo"
     },
     {
-      id: "leo",
-      name: "Léo",
-      emoji: "🔍",
-      imagePath: "/lovable-uploads/6b835675-311c-4bce-b442-b9765a6494f3.png",
-      shortDescription: "Votre stratège visionnaire !",
-      description: "Il transforme les données en opportunités de croissance et crée des feuilles de route personnalisées pour votre succès.",
-      callToAction: "Avec Léo, transformez vos idées en actions et boostez votre croissance !",
-      contactText: "Prêt à passer à l'action ? Contactez-nous !"
-    },
-    {
-      id: "cleo",
-      name: "Cléo",
-      emoji: "🛠️",
-      imagePath: "/lovable-uploads/fc9ca202-ddd7-4f99-9339-8ea3e314032e.png",
-      shortDescription: "L'experte en audit IA !",
-      description: "Elle détecte les failles invisibles, identifie les risques cachés et optimise vos processus.",
-      callToAction: "Avec Cléo, prenez des décisions basées sur des analyses fiables et précises !",
-      contactText: "Envie d'un audit IA ? Contactez-nous !"
+      id: "lex",
+      name: "Lex",
+      emoji: "⚖️",
+      imagePath: "/lovable-uploads/874fc5b0-76d1-4c47-b548-a9b77cb54485.png",
+      shortDescription: "Assistante Juridique IA",
+      description: "Elle analyse les contrats, détecte les risques et automatise la gestion documentaire légale. Une expertise juridique IA à votre service.",
+      callToAction: "Avec Lex, gagnez du temps et sécurisez vos processus juridiques !",
+      contactText: "Besoin d'une analyse juridique ? Contactez-nous !"
     },
     {
       id: "sylla",
       name: "Sylla",
       emoji: "🔧",
       imagePath: "/lovable-uploads/fc11013c-f6ce-4a3f-94ab-422273efb778.png",
-      shortDescription: "L'optimisateur de workflow !",
-      description: "Il personnalise Microsoft Copilot pour vos besoins et améliore la collaboration interne.",
+      shortDescription: "L'optimisateur de workflow",
+      description: "Il personnalise Microsoft Copilot pour vos besoins spécifiques et améliore la collaboration interne de votre équipe.",
       callToAction: "Avec Sylla, optimisez votre productivité et collaborez en toute fluidité !",
-      contactText: "Prêt à optimiser vos processus avec Copilot ? Parlons-en !"
-    },
-    {
-      id: "lex",
-      name: "Lex",
-      emoji: "⚖️",
-      imagePath: "/lovable-uploads/b09618c8-3e22-41d7-bf18-94f22ac47bea.png",
-      shortDescription: "L'assistant juridique IA !",
-      description: "Il analyse les contrats, détecte les risques et automatise la gestion documentaire légale.",
-      callToAction: "Avec Lex, gagnez du temps et sécurisez vos processus juridiques !",
-      contactText: "Besoin d'un coup de pouce pour analyser un contrat ? Contactez-nous !"
+      contactText: "Prêt à optimiser avec Copilot ? Parlons-en !"
     }
   ];
 
