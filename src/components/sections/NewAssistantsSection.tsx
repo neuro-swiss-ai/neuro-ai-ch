@@ -11,9 +11,11 @@ const NewAssistantsSection = () => {
     <section id="ai-assistants" className="py-24 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">
-            {language === "fr" ? "Nos Assistants IA" : "Our AI Assistants"}
-          </h2>
+          <Link to="/assistants" className="inline-block">
+            <h2 className="text-4xl font-display font-bold text-gradient mb-6 transition-transform hover:scale-105">
+              {language === "fr" ? "Nos Assistants IA" : "Our AI Assistants"}
+            </h2>
+          </Link>
         </div>
         
         <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-xl">
