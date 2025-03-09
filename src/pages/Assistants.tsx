@@ -13,13 +13,13 @@ import Footer from "@/components/layout/Footer";
 // Define the assistants data
 const assistantsList = [
   {
-    id: "neo",
-    name: "Néo",
+    id: "tom",
+    name: "Tom",
     emoji: "🤖",
-    imagePath: "/lovable-uploads/ccf47a6f-a543-4dc8-bdb2-9b9b7cd18cef.png",
+    imagePath: "/lovable-uploads/3e03b48b-35ba-4326-8fad-064afd705f1c.png",
     shortDescription: "L'expert en automatisation !",
-    description: "Néo: Votre assistant IA téléphonique\nAutomatisez et optimisez votre gestion d'appels avec Néo. Néo est un assistant téléphonique IA intelligent qui gère vos appels entrants et sortants pour augmenter la productivité et réduire les coûts.\n\n🔹\nFiltrage intelligent des appels – Plus d'interruptions inutiles, uniquement des appels qualifiés.\n🔹\nAppels sortants automatisés – Suivis, rappels clients et campagnes d'appels alimentées par l'IA.\n🔹\nDisponibilité 24/7 – Ne manquez plus jamais un appel important, Néo est toujours là.\n🔹\nOptimisation des coûts – Un tarif compétitif pour un système téléphonique entièrement optimisé.\n📞Boostez votre efficacité avec Néo !",
-    callToAction: "📞 Boostez votre efficacité avec Néo !",
+    description: "Tom: Votre assistant IA téléphonique\nAutomatisez et optimisez votre gestion d'appels avec Tom. Tom est un assistant téléphonique IA intelligent qui gère vos appels entrants et sortants pour augmenter la productivité et réduire les coûts.\n\n🔹\nFiltrage intelligent des appels – Plus d'interruptions inutiles, uniquement des appels qualifiés.\n🔹\nAppels sortants automatisés – Suivis, rappels clients et campagnes d'appels alimentées par l'IA.\n🔹\nDisponibilité 24/7 – Ne manquez plus jamais un appel important, Tom est toujours là.\n🔹\nOptimisation des coûts – Un tarif compétitif pour un système téléphonique entièrement optimisé.\n📞Boostez votre efficacité avec Tom !",
+    callToAction: "📞 Boostez votre efficacité avec Tom !",
     contactText: "Prêt à automatiser votre business ? Contactez-nous !"
   },
   {
