@@ -93,9 +93,9 @@ const Assistants = () => {
       
       <main className="pt-24 bg-gradient-to-b from-black to-[#0d0d12]">
         {/* Hero section */}
-        <section className="py-16 px-4">
+        <section className="py-12 px-4">
           <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
                 Nos Assistants IA Spécialisés
               </h1>
@@ -105,8 +105,8 @@ const Assistants = () => {
               </p>
             </div>
 
-            {/* Assistants cards grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Assistants cards grid - avec affichage plus compact */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {assistantsList.map((assistant) => (
                 <div key={assistant.id}>
                   <AssistantCard {...assistant} />
@@ -116,14 +116,14 @@ const Assistants = () => {
           </div>
         </section>
 
-        {/* Contact section */}
-        <section className="py-16 bg-gradient-to-b from-[#0d0d12] to-black">
+        {/* Contact section - rendu plus compact */}
+        <section className="py-12 bg-gradient-to-b from-[#0d0d12] to-black">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-white mb-6">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-white mb-4">
                 Prêt à découvrir comment nos assistants IA peuvent transformer votre entreprise ?
               </h2>
-              <p className="text-white/80 mb-8">
+              <p className="text-white/80 mb-6">
                 Contactez-nous dès aujourd'hui pour une consultation personnalisée.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
