@@ -1,4 +1,5 @@
 
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, MessageCircle, MapPin, Phone, Mail } from "lucide-react";
@@ -17,19 +18,19 @@ const Footer = () => {
             <h3 className="text-white font-display text-lg font-medium mb-6">{t("our_services_footer")}</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/#audit-conseil" className="text-white/70 hover:text-white transition-colors">
+                <Link to="/audits" className="text-white/70 hover:text-white transition-colors">
                   {t("audit_counsel")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#formations" className="text-white/70 hover:text-white transition-colors">
+                <Link to="/formations" className="text-white/70 hover:text-white transition-colors">
                   {t("formations")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#solutions-ia" className="text-white/70 hover:text-white transition-colors">
+                <Link to="/solutions" className="text-white/70 hover:text-white transition-colors">
                   {t("ai_solutions_footer")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

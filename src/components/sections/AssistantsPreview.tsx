@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AssistantCard from "./AssistantCard";
@@ -18,7 +19,7 @@ const previewAssistants = [
   },
   {
     id: "lex",
-    name: "Lex",
+    name: "Lex 🇨🇭",
     emoji: "⚖️",
     imagePath: "/lovable-uploads/b09618c8-3e22-41d7-bf18-94f22ac47bea.png",
     shortDescription: "L'assistant juridique IA !",
@@ -28,7 +29,7 @@ const previewAssistants = [
   },
   {
     id: "sylla",
-    name: "Sylla",
+    name: "Sylla 🇨🇭",
     emoji: "🔧",
     imagePath: "/lovable-uploads/fc11013c-f6ce-4a3f-94ab-422273efb778.png",
     shortDescription: "L'optimisateur de Microsoft 365 !",

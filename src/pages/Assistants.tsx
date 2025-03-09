@@ -23,14 +23,24 @@ const assistantsList = [
     contactText: "Prêt à automatiser votre business ? Contactez-nous !"
   },
   {
-    id: "leo",
-    name: "Léo",
-    emoji: "🔍",
-    imagePath: "/lovable-uploads/6b835675-311c-4bce-b442-b9765a6494f3.png",
-    shortDescription: "Votre stratège visionnaire !",
-    description: "Il transforme les données en opportunités de croissance et crée des feuilles de route personnalisées pour votre succès.",
-    callToAction: "Avec Léo, transformez vos idées en actions et boostez votre croissance !",
-    contactText: "Prêt à passer à l'action ? Contactez-nous !"
+    id: "lex",
+    name: "Lex 🇨🇭",
+    emoji: "⚖️",
+    imagePath: "/lovable-uploads/b09618c8-3e22-41d7-bf18-94f22ac47bea.png",
+    shortDescription: "L'assistant juridique IA !",
+    description: "⚖️ Lex – L'assistant juridique IA !\n\n🔹 Analyse les contrats pour identifier les risques potentiels.\n🔹 Automatise la gestion documentaire légale.\n🔹 Assure la conformité aux réglementations en vigueur.\n🔹 Simplifie la rédaction de documents juridiques standardisés.",
+    callToAction: "Avec Lex, gagnez du temps et sécurisez vos processus juridiques !",
+    contactText: "Besoin d'un coup de pouce pour analyser un contrat ? Contactez-nous !"
+  },
+  {
+    id: "sylla",
+    name: "Sylla 🇨🇭",
+    emoji: "🔧",
+    imagePath: "/lovable-uploads/fc11013c-f6ce-4a3f-94ab-422273efb778.png",
+    shortDescription: "L'optimisateur de Microsoft 365 !",
+    description: "🔧 Sylla – L'optimisateur de Microsoft 365 !\n\n🔹 Personnalise Microsoft Copilot selon vos besoins spécifiques.\n🔹 Facilite l'utilisation de SharePoint pour une gestion documentaire efficace.\n🔹 Optimise Teams pour améliorer la collaboration interne.\n🔹 Simplifie l'utilisation d'Outlook pour une gestion des emails plus fluide.\n🔹 Améliore l'efficacité des autres applications Microsoft 365.",
+    callToAction: "Avec Sylla, optimisez votre productivité et collaborez en toute fluidité !",
+    contactText: "Prêt à optimiser vos processus avec Copilot ? Parlons-en !"
   },
   {
     id: "iris",
@@ -43,6 +53,16 @@ const assistantsList = [
     contactText: "Besoin d'un coup de main pour analyser des documents volumineux ? Parlons-en !"
   },
   {
+    id: "leo",
+    name: "Léo",
+    emoji: "🔍",
+    imagePath: "/lovable-uploads/6b835675-311c-4bce-b442-b9765a6494f3.png",
+    shortDescription: "Votre stratège visionnaire !",
+    description: "Il transforme les données en opportunités de croissance et crée des feuilles de route personnalisées pour votre succès.",
+    callToAction: "Avec Léo, transformez vos idées en actions et boostez votre croissance !",
+    contactText: "Prêt à passer à l'action ? Contactez-nous !"
+  },
+  {
     id: "cleo",
     name: "Cléo",
     emoji: "🛠️",
@@ -51,26 +71,6 @@ const assistantsList = [
     description: "Elle détecte les failles invisibles, identifie les risques cachés et optimise vos processus.",
     callToAction: "Avec Cléo, prenez des décisions basées sur des analyses fiables et précises !",
     contactText: "Envie d'un audit IA ? Contactez-nous !"
-  },
-  {
-    id: "sylla",
-    name: "Sylla",
-    emoji: "🔧",
-    imagePath: "/lovable-uploads/fc11013c-f6ce-4a3f-94ab-422273efb778.png",
-    shortDescription: "L'optimisateur de Microsoft 365 !",
-    description: "🔧 Sylla – L'optimisateur de Microsoft 365 !\n\n🔹 Personnalise Microsoft Copilot selon vos besoins spécifiques.\n🔹 Facilite l'utilisation de SharePoint pour une gestion documentaire efficace.\n🔹 Optimise Teams pour améliorer la collaboration interne.\n🔹 Simplifie l'utilisation d'Outlook pour une gestion des emails plus fluide.\n🔹 Améliore l'efficacité des autres applications Microsoft 365.",
-    callToAction: "Avec Sylla, optimisez votre productivité et collaborez en toute fluidité !",
-    contactText: "Prêt à optimiser vos processus avec Copilot ? Parlons-en !"
-  },
-  {
-    id: "lex",
-    name: "Lex",
-    emoji: "⚖️",
-    imagePath: "/lovable-uploads/b09618c8-3e22-41d7-bf18-94f22ac47bea.png",
-    shortDescription: "L'assistant juridique IA !",
-    description: "⚖️ Lex – L'assistant juridique IA !\n\n🔹 Analyse les contrats pour identifier les risques potentiels.\n🔹 Automatise la gestion documentaire légale.\n🔹 Assure la conformité aux réglementations en vigueur.\n🔹 Simplifie la rédaction de documents juridiques standardisés.",
-    callToAction: "Avec Lex, gagnez du temps et sécurisez vos processus juridiques !",
-    contactText: "Besoin d'un coup de pouce pour analyser un contrat ? Contactez-nous !"
   }
 ];
 
