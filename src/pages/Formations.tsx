@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -17,14 +16,14 @@ const Formations = () => {
       id: 1,
       title: "Découverte de l'IA",
       duration: "1 heure",
-      imageSrc: "/lovable-uploads/1665bc22-218f-4d16-b74a-9a4e0a81cdbc.png",
+      imageSrc: "/lovable-uploads/9f0b28c5-af8f-48ce-ad9b-9c5663d3df69.png",
       description: "Une introduction aux concepts fondamentaux de l'intelligence artificielle, ses applications actuelles et son potentiel pour votre entreprise."
     },
     {
       id: 2,
       title: "Approfondissement IA",
       duration: "4 heures",
-      imageSrc: "/lovable-uploads/1a934215-598b-4a70-8cab-433c23719c1a.png",
+      imageSrc: "/lovable-uploads/dcbe01cf-6926-45a8-85f6-ee9cb8498bf7.png",
       description: "Formation complète couvrant les techniques avancées d'IA, l'intégration dans les processus métier et les stratégies d'implémentation efficaces."
     }
   ];
@@ -255,3 +254,4 @@ const Formations = () => {
 };
 
 export default Formations;
+
