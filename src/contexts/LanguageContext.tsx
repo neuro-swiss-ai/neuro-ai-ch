@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 type Language = "fr" | "en";
@@ -24,7 +23,7 @@ const enTranslations: Record<string, string> = {
   // Hero Section
   "hero_subtitle": "AI • Innovation • Performance",
   "hero_title": "Discover the power of AI to transform your business with Neuro Swiss AI",
-  "hero_cta": "Book your one-hour discovery call",
+  "hero_cta": "Book your discovery call",
   "reserve_call": "Book your discovery call",
   "contact_whatsapp": "Contact us on WhatsApp",
   "discover": "Discover",
@@ -190,7 +189,7 @@ const frTranslations: Record<string, string> = {
   // Hero Section
   "hero_subtitle": "IA • Innovation • Performance",
   "hero_title": "Découvrez le pouvoir de l'IA pour transformer votre entreprise avec Neuro Swiss AI",
-  "hero_cta": "Réservez votre RDV découverte d'une heure",
+  "hero_cta": "Réservez votre RDV découverte",
   "reserve_call": "Réservez votre appel découverte",
   "contact_whatsapp": "Contactez-nous sur WhatsApp",
   "discover": "Découvrir",

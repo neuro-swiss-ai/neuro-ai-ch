@@ -4,11 +4,30 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import FormationCard from "@/components/formation/FormationCard";
 
 const Formations = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Données des nouvelles formations avec les images
+  const formationCards = [
+    {
+      id: 1,
+      title: "Découverte de l'IA",
+      duration: "1 heure",
+      imageSrc: "/lovable-uploads/1665bc22-218f-4d16-b74a-9a4e0a81cdbc.png",
+      description: "Une introduction aux concepts fondamentaux de l'intelligence artificielle, ses applications actuelles et son potentiel pour votre entreprise."
+    },
+    {
+      id: 2,
+      title: "Approfondissement IA",
+      duration: "4 heures",
+      imageSrc: "/lovable-uploads/1a934215-598b-4a70-8cab-433c23719c1a.png",
+      description: "Formation complète couvrant les techniques avancées d'IA, l'intégration dans les processus métier et les stratégies d'implémentation efficaces."
+    }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -37,8 +56,22 @@ const Formations = () => {
               </p>
             </div>
             
-            {/* Nos formations */}
-            <h2 className="text-3xl font-display font-bold text-white mb-6">Nos formations</h2>
+            {/* Nouvelles formations avec effet de retournement */}
+            <h2 className="text-3xl font-display font-bold text-white mb-6">Formations à la demande</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {formationCards.map((card) => (
+                <FormationCard 
+                  key={card.id}
+                  title={card.title}
+                  duration={card.duration}
+                  imageSrc={card.imageSrc}
+                  description={card.description}
+                />
+              ))}
+            </div>
+            
+            {/* Nos formations existantes */}
+            <h2 className="text-3xl font-display font-bold text-white mb-6">Nos formations détaillées</h2>
             <div className="space-y-10 mb-16">
               {/* Formation 1 */}
               <div className="glass-effect rounded-2xl overflow-hidden card-hover">
@@ -205,11 +238,11 @@ const Formations = () => {
               </div>
             </div>
             
-            {/* CTA */}
+            {/* CTA - Modifié */}
             <div className="text-center mb-8">
               <Link to="/reservation" className="inline-block">
                 <button className="px-8 py-3 bg-mauve hover:bg-mauve-light text-white font-medium rounded-md transition-colors duration-300">
-                  Demander un programme de formation
+                  Réservez votre RDV découverte
                 </button>
               </Link>
             </div>
