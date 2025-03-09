@@ -79,9 +79,11 @@ const AssistantsPreview = () => {
     <section className="py-16 px-4 bg-gradient-to-b from-black to-[#0d0d12]">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-            Nos assistants IA phares
-          </h2>
+          <div className="inline-block">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 px-8 py-2 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#9b87f5] shadow-[0_0_15px_rgba(155,135,245,0.5)]">
+              Nos assistants IA
+            </h2>
+          </div>
           <p className="text-lg text-white/80 mb-6">
             Découvrez nos assistants spécialisés conçus pour révolutionner votre entreprise
           </p>
