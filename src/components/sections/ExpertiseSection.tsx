@@ -75,7 +75,30 @@ const ExpertiseSection = () => {
     if (slider) {
       slider.addEventListener("scroll", checkScroll);
       checkScroll(); // Initial check
-      return () => slider.removeEventListener("scroll", checkScroll);
+      
+      // Auto-scroll functionality
+      const autoScrollInterval = setInterval(() => {
+        if (!slider) return;
+        
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 5) {
+          // Reset to beginning when reached the end
+          slider.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          // Scroll to next item
+          slider.scrollBy({
+            left: 310, // Card width + gap
+            behavior: 'smooth'
+          });
+        }
+      }, 5500); // Scroll every 5.5 seconds
+      
+      return () => {
+        slider.removeEventListener("scroll", checkScroll);
+        clearInterval(autoScrollInterval);
+      };
     }
   }, []);
 
@@ -90,11 +113,11 @@ const ExpertiseSection = () => {
   };
 
   return (
-    <section id="expertise" className="py-20 bg-gradient-to-b from-[#0a0a10] to-background">
+    <section id="expertise" className="py-12 bg-gradient-to-b from-[#0a0a10] to-background">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">{t("our_expertise")}</h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-display font-bold text-gradient mb-3">{t("our_expertise")}</h2>
+          <p className="text-white/70 max-w-2xl mx-auto text-sm">
             {t("expertise_subtitle")}
           </p>
         </div>
@@ -103,29 +126,29 @@ const ExpertiseSection = () => {
           {canScrollLeft && (
             <button 
               onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-7 w-7" />
             </button>
           )}
           
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto gap-6 pb-8 hide-scrollbar snap-x snap-mandatory"
+            className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x snap-mandatory"
           >
             {expertiseAreas.map((area, index) => (
               <div 
                 key={index} 
-                className="flex-none w-[300px] glass-effect p-6 rounded-2xl snap-start transition-all duration-300 hover:transform hover:scale-105"
+                className="flex-none w-[280px] glass-effect p-5 rounded-2xl snap-start transition-all duration-300"
               >
                 <div className="flex flex-col h-full">
-                  <div className="mb-4 flex justify-center">{area.icon}</div>
-                  <h3 className="text-xl font-display font-medium text-white text-center mb-3">{area.title}</h3>
-                  <p className="text-white/70 mb-6 text-center flex-grow">{area.description}</p>
-                  <div className="border-t border-white/10 pt-4">
-                    <p className="text-mauve text-sm mb-2 font-medium">{t("technologies")}</p>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-3 flex justify-center">{area.icon}</div>
+                  <h3 className="text-lg font-display font-medium text-white text-center mb-2">{area.title}</h3>
+                  <p className="text-white/70 mb-4 text-center text-sm flex-grow">{area.description}</p>
+                  <div className="border-t border-white/10 pt-3">
+                    <p className="text-mauve text-xs mb-2 font-medium">{t("technologies")}</p>
+                    <div className="flex flex-wrap gap-1">
                       {area.technologies.map((tech, techIndex) => (
                         <span 
                           key={techIndex}
@@ -144,10 +167,10 @@ const ExpertiseSection = () => {
           {canScrollRight && (
             <button 
               onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
               aria-label="Scroll right"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-7 w-7" />
             </button>
           )}
         </div>

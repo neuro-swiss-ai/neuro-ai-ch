@@ -110,13 +110,32 @@ const ClientsSection = () => {
     
     if (slider) {
       slider.addEventListener("scroll", checkScroll);
+      checkScroll(); // Initial check
+      
+      // Auto-scroll functionality
+      const autoScrollInterval = setInterval(() => {
+        if (!slider) return;
+        
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 5) {
+          // Reset to beginning when reached the end
+          slider.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          // Scroll to next item
+          slider.scrollBy({
+            left: 500, // Card width plus gap
+            behavior: 'smooth'
+          });
+        }
+      }, 6000); // Scroll every 6 seconds
+      
+      return () => {
+        if (slider) slider.removeEventListener("scroll", checkScroll);
+        clearInterval(autoScrollInterval);
+      };
     }
-    
-    checkScroll(); // Initial check
-    
-    return () => {
-      if (slider) slider.removeEventListener("scroll", checkScroll);
-    };
   }, []);
 
   const scroll = (direction: "left" | "right") => {
@@ -134,11 +153,11 @@ const ClientsSection = () => {
   const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
 
   return (
-    <section id="clients" className="py-20 bg-gradient-to-b from-background to-[#0a0a10]">
+    <section id="clients" className="py-12 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">{t("our_clients")}</h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-display font-bold text-gradient mb-3">{t("our_clients")}</h2>
+          <p className="text-white/70 max-w-2xl mx-auto text-sm">
             {t("clients_subtitle")}
           </p>
         </div>
@@ -148,33 +167,33 @@ const ClientsSection = () => {
           {canScrollLeft && (
             <button 
               onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-7 w-7" />
             </button>
           )}
           
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto gap-8 pb-8 hide-scrollbar snap-x snap-mandatory"
+            className="flex overflow-x-auto gap-8 pb-6 hide-scrollbar snap-x snap-mandatory"
           >
             {displayTestimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className="flex-none w-full md:w-[calc(100%-2rem)] lg:w-[600px] glass-effect p-8 rounded-2xl snap-start"
+                className="flex-none w-full md:w-[calc(100%-2rem)] lg:w-[400px] glass-effect p-5 rounded-2xl snap-start"
               >
                 <div className="flex flex-col h-full">
-                  <div className="mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-mauve/40">
+                  <div className="mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-mauve/40">
                       <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
                       <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
                     </svg>
                   </div>
-                  <p className="text-white/80 text-lg mb-6 flex-grow">{testimonial.text}</p>
+                  <p className="text-white/80 text-sm mb-4 flex-grow line-clamp-4">{testimonial.text}</p>
                   <div>
-                    <h4 className="font-display font-medium text-white">{testimonial.author}</h4>
-                    <p className="text-mauve">{testimonial.position}</p>
+                    <h4 className="font-display font-medium text-white text-sm">{testimonial.author}</h4>
+                    <p className="text-mauve text-xs">{testimonial.position}</p>
                   </div>
                 </div>
               </div>
@@ -184,10 +203,10 @@ const ClientsSection = () => {
           {canScrollRight && (
             <button 
               onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
               aria-label="Scroll right"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-7 w-7" />
             </button>
           )}
         </div>

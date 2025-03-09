@@ -55,7 +55,30 @@ const ValueSection = () => {
     if (slider) {
       slider.addEventListener("scroll", checkScroll);
       checkScroll(); // Initial check
-      return () => slider.removeEventListener("scroll", checkScroll);
+      
+      // Auto-scroll functionality
+      const autoScrollInterval = setInterval(() => {
+        if (!slider) return;
+        
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 5) {
+          // Reset to beginning when reached the end
+          slider.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          // Scroll to next item
+          slider.scrollBy({
+            left: 310, // Card width + gap
+            behavior: 'smooth'
+          });
+        }
+      }, 5000); // Scroll every 5 seconds
+      
+      return () => {
+        slider.removeEventListener("scroll", checkScroll);
+        clearInterval(autoScrollInterval);
+      };
     }
   }, []);
 
@@ -70,13 +93,13 @@ const ValueSection = () => {
   };
 
   return (
-    <section id="value" className="py-20 bg-gradient-to-b from-background to-[#0a0a10]">
+    <section id="value" className="py-12 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-gradient mb-6">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-display font-bold text-gradient mb-3">
             {language === "en" ? "Our Added Value" : "Notre Valeur Ajoutée"}
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
+          <p className="text-white/70 max-w-2xl mx-auto text-sm">
             {language === "en" 
               ? "Discover how we stand out to provide you with excellent service" 
               : "Découvrez comment nous nous distinguons pour vous offrir un service d'excellence"}
@@ -87,26 +110,26 @@ const ValueSection = () => {
           {canScrollLeft && (
             <button 
               onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-7 w-7" />
             </button>
           )}
           
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto gap-6 pb-8 hide-scrollbar snap-x snap-mandatory"
+            className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x snap-mandatory"
           >
             {values.map((value, index) => (
               <div 
                 key={index} 
-                className="flex-none w-[300px] glass-effect p-6 rounded-2xl snap-start transition-all duration-300 hover:transform hover:scale-105"
+                className="flex-none w-[280px] glass-effect p-5 rounded-2xl snap-start transition-all duration-300"
               >
                 <div className="flex flex-col h-full items-center text-center">
-                  <div className="mb-4 glass-effect p-4 rounded-full bg-black/20">{value.icon}</div>
-                  <h3 className="text-xl font-display font-medium text-white mb-3">{value.title}</h3>
-                  <p className="text-white/70">{value.description}</p>
+                  <div className="mb-3 glass-effect p-3 rounded-full bg-black/20">{value.icon}</div>
+                  <h3 className="text-lg font-display font-medium text-white mb-2">{value.title}</h3>
+                  <p className="text-white/70 text-sm">{value.description}</p>
                 </div>
               </div>
             ))}
@@ -115,10 +138,10 @@ const ValueSection = () => {
           {canScrollRight && (
             <button 
               onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
               aria-label="Scroll right"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-7 w-7" />
             </button>
           )}
         </div>

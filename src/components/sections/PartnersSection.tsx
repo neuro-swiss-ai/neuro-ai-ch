@@ -42,7 +42,30 @@ const PartnersSection = () => {
     if (slider) {
       slider.addEventListener("scroll", checkScroll);
       checkScroll(); // Initial check
-      return () => slider.removeEventListener("scroll", checkScroll);
+      
+      // Auto-scroll functionality
+      const autoScrollInterval = setInterval(() => {
+        if (!slider) return;
+        
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 5) {
+          // Reset to beginning when reached the end
+          slider.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          // Scroll to next item
+          slider.scrollBy({
+            left: 260, // Card width + gap
+            behavior: 'smooth'
+          });
+        }
+      }, 4000); // Scroll every 4 seconds
+      
+      return () => {
+        slider.removeEventListener("scroll", checkScroll);
+        clearInterval(autoScrollInterval);
+      };
     }
   }, []);
 
@@ -61,12 +84,12 @@ const PartnersSection = () => {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-display font-bold text-[#fff] mb-6">
-            {language === "en" ? "Our Technology Partners" : "Nos Partenaires Technologiques"}
+            {language === "en" ? "Our Clients" : "Nos Clients"}
           </h2>
           <p className="text-[#ccc] max-w-2xl mx-auto">
             {language === "en" 
-              ? "We collaborate with industry leaders to offer you the best solutions"
-              : "Nous collaborons avec les leaders de l'industrie pour vous offrir les meilleures solutions"
+              ? "We have helped industry leaders in Switzerland 🇨🇭 by offering them the best solutions"
+              : "Nous avons aidé les leaders des secteurs en Suisse 🇨🇭 en leur offrant les meilleures solutions"
             }
           </p>
         </div>
@@ -75,10 +98,10 @@ const PartnersSection = () => {
           {canScrollLeft && (
             <button 
               onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 shadow-md"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 shadow-md"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-7 w-7" />
             </button>
           )}
           
@@ -104,10 +127,10 @@ const PartnersSection = () => {
           {canScrollRight && (
             <button 
               onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 shadow-md"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 shadow-md"
               aria-label="Scroll right"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-7 w-7" />
             </button>
           )}
         </div>

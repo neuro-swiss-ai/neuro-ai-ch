@@ -54,17 +54,17 @@ const Index = () => {
         {/* Three sections side by side */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-4 md:mx-8 my-6">
           <SectionWithBorder>
-            <div className="h-[600px] overflow-y-auto">
+            <div className="h-[390px] overflow-hidden">
               <ValueSection />
             </div>
           </SectionWithBorder>
           <SectionWithBorder>
-            <div className="h-[600px] overflow-y-auto">
+            <div className="h-[390px] overflow-hidden">
               <ClientsSection />
             </div>
           </SectionWithBorder>
           <SectionWithBorder>
-            <div className="h-[600px] overflow-y-auto">
+            <div className="h-[390px] overflow-hidden">
               <ExpertiseSection />
             </div>
           </SectionWithBorder>
