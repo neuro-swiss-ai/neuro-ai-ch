@@ -16,6 +16,7 @@ import PressSection from "@/components/sections/PressSection";
 import CtaSection from "@/components/sections/CtaSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import NewAssistantsSection from "@/components/sections/NewAssistantsSection";
+import AssistantsPreview from "@/components/sections/AssistantsPreview";
 
 const Index = () => {
   const { language } = useLanguage();
@@ -29,6 +30,7 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        <AssistantsPreview />
         <NewAssistantsSection />
         <ServicesSection />
         <ApproachSection />

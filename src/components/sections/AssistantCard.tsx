@@ -11,6 +11,7 @@ interface AssistantCardProps {
   description: string;
   callToAction: string;
   contactText: string;
+  preview?: boolean;
 }
 
 const AssistantCard = ({
@@ -21,12 +22,16 @@ const AssistantCard = ({
   description,
   callToAction,
   contactText,
+  preview = false,
 }: AssistantCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
+  // Taille ajustée selon qu'il s'agit d'une prévisualisation ou de l'affichage complet
+  const cardHeight = preview ? "h-[430px]" : "h-[500px]";
+  
   return (
     <div 
-      className="group h-[480px] w-full max-w-xs mx-auto"
+      className={`group ${cardHeight} w-full max-w-xs mx-auto`}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
@@ -47,6 +52,7 @@ const AssistantCard = ({
               src={imagePath} 
               alt={name} 
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              style={{ objectPosition: "center 20%" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
           </div>
@@ -63,7 +69,7 @@ const AssistantCard = ({
             {emoji} {name} – {shortDescription}
           </h3>
           
-          <div className="text-white/90 mb-4 whitespace-pre-line text-sm">
+          <div className="text-white/90 mb-4 whitespace-pre-line text-sm md:text-base overflow-y-auto max-h-[210px] hide-scrollbar">
             {description}
           </div>
           
