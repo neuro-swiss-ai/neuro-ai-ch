@@ -80,11 +80,14 @@ const AssistantsPreview = () => {
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-8">
           <div className="inline-block">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 px-8 py-2 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#9b87f5] shadow-[0_0_15px_rgba(155,135,245,0.5)]">
+            <Button 
+              onClick={() => navigate('/assistants')}
+              className="text-3xl md:text-4xl font-display font-bold text-white px-8 py-2 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#9b87f5] shadow-[0_0_15px_rgba(155,135,245,0.5)] hover:shadow-[0_0_20px_rgba(155,135,245,0.7)] transition-all"
+            >
               Nos assistants IA
-            </h2>
+            </Button>
           </div>
-          <p className="text-lg text-white/80 mb-6">
+          <p className="text-lg text-white/80 mb-6 mt-4">
             Découvrez nos assistants spécialisés conçus pour révolutionner votre entreprise
           </p>
         </div>

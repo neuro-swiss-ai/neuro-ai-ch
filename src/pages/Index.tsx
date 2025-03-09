@@ -16,6 +16,7 @@ import PressSection from "@/components/sections/PressSection";
 import CtaSection from "@/components/sections/CtaSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import AssistantsPreview from "@/components/sections/AssistantsPreview";
+import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
   const { language } = useLanguage();
@@ -70,6 +71,7 @@ const Index = () => {
           </SectionWithBorder>
         </div>
         
+        <ContactSection />
         <FinalCtaSection />
       </main>
       <Footer />
