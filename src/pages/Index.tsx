@@ -37,9 +37,9 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <AssistantsPreview />
-        <SectionWithBorder id="services">
+        <div id="services" className="mx-4 md:mx-8 my-6">
           <ServicesSection />
-        </SectionWithBorder>
+        </div>
         <SectionWithBorder>
           <ApproachSection />
         </SectionWithBorder>
