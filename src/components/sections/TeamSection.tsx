@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -37,7 +38,7 @@ const TeamSection = () => {
     },
     {
       name: "Jude",
-      title: language === "en" ? "Sales Director" : "Sales Director",
+      title: language === "en" ? "Chief Sales Officer" : "Chief Sales Officer",
       image: "/lovable-uploads/1a17f98f-e020-42b2-ab7a-368014710077.png",
       description: language === "en"
         ? "With expertise in business development, Jude drives our growth and develops lasting customer relationships."

@@ -44,19 +44,32 @@ const Index = () => {
           <ApproachSection />
         </SectionWithBorder>
         <SectionWithBorder>
-          <ClientsSection />
-        </SectionWithBorder>
-        <SectionWithBorder>
-          <ExpertiseSection />
-        </SectionWithBorder>
-        <SectionWithBorder>
           <TeamSection />
         </SectionWithBorder>
         <PartnersSection />
-        <ValueSection />
         <CaseStudiesSection />
         <PressSection />
         <CtaSection />
+        
+        {/* Three sections side by side */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-4 md:mx-8 my-6">
+          <SectionWithBorder>
+            <div className="h-[600px] overflow-y-auto">
+              <ValueSection />
+            </div>
+          </SectionWithBorder>
+          <SectionWithBorder>
+            <div className="h-[600px] overflow-y-auto">
+              <ClientsSection />
+            </div>
+          </SectionWithBorder>
+          <SectionWithBorder>
+            <div className="h-[600px] overflow-y-auto">
+              <ExpertiseSection />
+            </div>
+          </SectionWithBorder>
+        </div>
+        
         <FinalCtaSection />
       </main>
       <Footer />
