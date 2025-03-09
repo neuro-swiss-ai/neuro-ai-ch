@@ -91,7 +91,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center group">
             <div className="mr-3">
               <img 
-                src="/lovable-uploads/106a1aec-9006-433f-a05d-1c09afd89e74.png" 
+                src="/lovable-uploads/060aa247-724d-42e6-9ffa-74e7759daa18.png" 
                 alt="Neuro Swiss AI Logo" 
                 className="h-10 w-auto"
               />

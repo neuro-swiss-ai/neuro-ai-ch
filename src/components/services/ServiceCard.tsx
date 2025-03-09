@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ShoppingCart } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ServiceCardProps {
@@ -17,7 +17,7 @@ interface ServiceCardProps {
     description: string;
   }[];
   isFormation?: boolean;
-  id?: string; // Add ID to identify specific service cards
+  id?: string;
 }
 
 const ServiceCard = ({ 
@@ -57,12 +57,20 @@ const ServiceCard = ({
           <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-6 text-center">
             <h3 className="text-3xl font-display font-medium text-white mb-4">{title}</h3>
             <p className="text-white/80 mb-6 max-w-2xl">{description}</p>
-            <Link to={link}>
-              <Button className="bg-mauve hover:bg-mauve-light">
-                {t("learn_more")}
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link to={link}>
+                <Button className="bg-mauve hover:bg-mauve-light">
+                  {t("learn_more")}
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/formations">
+                <Button variant="default" className="bg-gradient-to-r from-indigo-500 to-purple-600">
+                  <ShoppingCart className="mr-2 h-4 w-4" />
+                  Offrez-vous une formation d'intelligence artificielle maintenant
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

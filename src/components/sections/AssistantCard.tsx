@@ -66,6 +66,8 @@ const AssistantCard = ({
               <a 
                 href={purchaseLink} 
                 className="w-full block"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Button variant="default" className="w-full group bg-gradient-to-r from-indigo-500 to-purple-600">
                   <ShoppingCart className="mr-2 h-4 w-4" />
@@ -97,6 +99,8 @@ const AssistantCard = ({
               <a 
                 href={purchaseLink} 
                 className="w-full block mb-3"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Button variant="default" className="w-full group bg-gradient-to-r from-indigo-500 to-purple-600">
                   <ShoppingCart className="mr-2 h-4 w-4" />

@@ -1,14 +1,61 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FormationCard from "@/components/formation/FormationCard";
+import { Button } from "@/components/ui/button";
 
 const Formations = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // État pour gérer le slider de témoignages
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  
+  // Données des témoignages
+  const testimonials = [
+    {
+      id: 1,
+      text: "Les formations dispensées par Neuro Swiss AI ont transformé la façon dont notre équipe perçoit et utilise l'IA. La clarté des explications et l'approche pratique ont permis une adoption rapide des outils proposés.",
+      author: "Sophie Laurent",
+      position: "Directrice RH, Entreprise de services",
+      initials: "SL"
+    },
+    {
+      id: 2,
+      text: "Grâce à leur approche pédagogique et adaptée à notre secteur, nos équipes ont pu rapidement intégrer l'IA dans leurs processus quotidiens. Un vrai gain de productivité !",
+      author: "Marc Dupont",
+      position: "Directeur des Opérations, Secteur Bancaire",
+      initials: "MD"
+    },
+    {
+      id: 3,
+      text: "La formation sur l'automatisation des flux administratifs a révolutionné notre façon de travailler. Ce qui prenait auparavant des heures se fait maintenant en quelques minutes.",
+      author: "Julie Moreau",
+      position: "Responsable Administrative, PME Industrielle",
+      initials: "JM"
+    }
+  ];
+  
+  // Fonction pour le défilement automatique
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  // Fonction pour passer au témoignage suivant
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  // Fonction pour revenir au témoignage précédent
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   // Données des nouvelles formations avec les images
   const formationCards = [
@@ -17,14 +64,16 @@ const Formations = () => {
       title: "Découverte de l'IA",
       duration: "1 heure",
       imageSrc: "/lovable-uploads/9f0b28c5-af8f-48ce-ad9b-9c5663d3df69.png",
-      description: "Une introduction aux concepts fondamentaux de l'intelligence artificielle, ses applications actuelles et son potentiel pour votre entreprise."
+      description: "Une introduction aux concepts fondamentaux de l'intelligence artificielle, ses applications actuelles et son potentiel pour votre entreprise.",
+      purchaseLink: "https://buy.stripe.com/dR603G3kf1NVgRG7sv"
     },
     {
       id: 2,
       title: "Approfondissement IA",
       duration: "4 heures",
       imageSrc: "/lovable-uploads/dcbe01cf-6926-45a8-85f6-ee9cb8498bf7.png",
-      description: "Formation complète couvrant les techniques avancées d'IA, l'intégration dans les processus métier et les stratégies d'implémentation efficaces."
+      description: "Formation complète couvrant les techniques avancées d'IA, l'intégration dans les processus métier et les stratégies d'implémentation efficaces.",
+      purchaseLink: "https://buy.stripe.com/dR67w8bQL78f0SI5ko"
     }
   ];
 
@@ -59,13 +108,27 @@ const Formations = () => {
             <h2 className="text-3xl font-display font-bold text-white mb-6">Formations à la demande</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {formationCards.map((card) => (
-                <FormationCard 
-                  key={card.id}
-                  title={card.title}
-                  duration={card.duration}
-                  imageSrc={card.imageSrc}
-                  description={card.description}
-                />
+                <div key={card.id} className="relative">
+                  <FormationCard 
+                    title={card.title}
+                    duration={card.duration}
+                    imageSrc={card.imageSrc}
+                    description={card.description}
+                  />
+                  <div className="mt-4 text-center">
+                    <a 
+                      href={card.purchaseLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full block"
+                    >
+                      <Button variant="default" className="w-full group bg-gradient-to-r from-indigo-500 to-purple-600">
+                        <ShoppingCart className="mr-2 h-4 w-4" />
+                        Offrez-vous cette formation maintenant
+                      </Button>
+                    </a>
+                  </div>
+                </div>
               ))}
             </div>
             
@@ -111,12 +174,25 @@ const Formations = () => {
                       <li>Acquérir un vocabulaire commun pour faciliter la communication sur les projets IA</li>
                     </ul>
                     <h4 className="text-lg font-medium text-white mb-2">Bénéfices :</h4>
-                    <ul className="list-disc list-inside text-white/70 space-y-1">
+                    <ul className="list-disc list-inside text-white/70 space-y-1 mb-4">
                       <li>Démystification des technologies IA</li>
                       <li>Réduction de la résistance au changement</li>
                       <li>Meilleure compréhension des possibilités offertes par l'IA</li>
                       <li>Participation active aux initiatives IA de l'entreprise</li>
                     </ul>
+                    <div className="mt-4">
+                      <a 
+                        href="https://buy.stripe.com/eVa3fS7Avakr30QfZ3" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-full block md:w-auto md:inline-block"
+                      >
+                        <Button variant="default" className="w-full md:w-auto group bg-gradient-to-r from-indigo-500 to-purple-600">
+                          <ShoppingCart className="mr-2 h-4 w-4" />
+                          Offrez-vous cette formation maintenant
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -220,24 +296,64 @@ const Formations = () => {
               </div>
             </div>
             
-            {/* Témoignage */}
-            <div className="glass-effect rounded-2xl p-8 mb-16">
-              <blockquote className="text-xl text-white/90 italic mb-6">
-                "Les formations dispensées par Neuro Swiss AI ont transformé la façon dont notre équipe perçoit et utilise l'IA. 
-                La clarté des explications et l'approche pratique ont permis une adoption rapide des outils proposés."
-              </blockquote>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-mauve/20 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-medium">SL</span>
-                </div>
-                <div>
-                  <p className="font-medium text-white">Sophie Laurent</p>
-                  <p className="text-white/70">Directrice RH, Entreprise de services</p>
-                </div>
+            {/* Témoignage avec slider automatique */}
+            <div className="glass-effect rounded-2xl p-8 mb-16 relative">
+              <div className="relative overflow-hidden min-h-[180px]">
+                {testimonials.map((testimonial, index) => (
+                  <div 
+                    key={testimonial.id}
+                    className={`absolute w-full transition-opacity duration-1000 ${
+                      index === currentTestimonial ? "opacity-100" : "opacity-0 pointer-events-none"
+                    }`}
+                  >
+                    <blockquote className="text-xl text-white/90 italic mb-6">
+                      "{testimonial.text}"
+                    </blockquote>
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-mauve/20 rounded-full flex items-center justify-center mr-4">
+                        <span className="text-white font-medium">{testimonial.initials}</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">{testimonial.author}</p>
+                        <p className="text-white/70">{testimonial.position}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
+              
+              {/* Navigation dots */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTestimonial(index)}
+                    className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                      index === currentTestimonial ? "bg-mauve" : "bg-white/30"
+                    }`}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              {/* Navigation arrows */}
+              <button 
+                onClick={prevTestimonial} 
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full p-1.5 transition-colors"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button 
+                onClick={nextTestimonial} 
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full p-1.5 transition-colors"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
             
-            {/* CTA - Modifié */}
+            {/* CTA */}
             <div className="text-center mb-8">
               <Link to="/reservation" className="inline-block">
                 <button className="px-8 py-3 bg-mauve hover:bg-mauve-light text-white font-medium rounded-md transition-colors duration-300">
@@ -254,4 +370,3 @@ const Formations = () => {
 };
 
 export default Formations;
-
