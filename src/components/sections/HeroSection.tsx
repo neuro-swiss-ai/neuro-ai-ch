@@ -65,12 +65,12 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Le petit bouton est supprimé ici */}
           
-          <h1 className="text-8xl md:text-9xl lg:text-9xl font-display font-bold text-gradient leading-tight mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gradient leading-tight mb-6 animate-fade-in">
             {language === "en" 
               ? "Propel Your Organization into the Future with AI" 
               : (
                 <>
-                  <div>Propulsez Votre Organisation</div>
+                  <div>Révolutionnez Votre Organisation</div>
                   <div>avec l'intelligence Artificielle</div>
                 </>
               )
