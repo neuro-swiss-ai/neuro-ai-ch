@@ -45,9 +45,9 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-background to-[#0a0a10]">
+    <section className="py-16 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl font-display font-bold text-gradient mb-6">{t("our_services")}</h2>
           <p className="text-white/70 max-w-2xl mx-auto">
             {t("services_subtitle")}
@@ -59,7 +59,7 @@ const ServicesSection = () => {
             <div 
               key={service.id}
               id={service.id}
-              className="glass-effect rounded-2xl p-8 transition-all duration-300 card-hover"
+              className="glass-effect rounded-2xl p-8 transition-all duration-300 card-hover border border-white/20 hover:border-white/30"
             >
               <div className="mb-6">{service.icon}</div>
               <h3 className="text-xl font-display font-medium text-white mb-3">{service.title}</h3>

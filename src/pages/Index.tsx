@@ -24,17 +24,34 @@ const Index = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Custom section wrapper with border
+  const SectionWithBorder = ({ children, id }: { children: React.ReactNode, id?: string }) => (
+    <div id={id} className="mx-4 md:mx-8 my-6 border border-white/20 rounded-xl overflow-hidden">
+      {children}
+    </div>
+  );
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
         <AssistantsPreview />
-        <ServicesSection />
-        <ApproachSection />
-        <ClientsSection />
-        <ExpertiseSection />
-        <TeamSection />
+        <SectionWithBorder id="services">
+          <ServicesSection />
+        </SectionWithBorder>
+        <SectionWithBorder>
+          <ApproachSection />
+        </SectionWithBorder>
+        <SectionWithBorder>
+          <ClientsSection />
+        </SectionWithBorder>
+        <SectionWithBorder>
+          <ExpertiseSection />
+        </SectionWithBorder>
+        <SectionWithBorder>
+          <TeamSection />
+        </SectionWithBorder>
         <PartnersSection />
         <ValueSection />
         <CaseStudiesSection />
