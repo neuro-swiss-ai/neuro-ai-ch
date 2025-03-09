@@ -68,7 +68,13 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gradient leading-tight mb-6 animate-fade-in">
             {language === "en" 
               ? "Propel Your Organization into the Future with AI" 
-              : "Propulsez Votre Organisation avec l'intelligence Artificielle"}
+              : (
+                <>
+                  <div>Propulsez Votre Organisation</div>
+                  <div>avec l'intelligence Artificielle</div>
+                </>
+              )
+            }
           </h1>
           
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto animate-fade-in">
