@@ -132,7 +132,7 @@ const ServiceCard = ({
         </div>
         <Link to={link}>
           <Button variant="outline" className="border-white bg-white/10 hover:bg-white/20 text-white w-full">
-            {t("see_more")}
+            {"En savoir plus"}
             <ChevronRight className="ml-1 h-4 w-4" />
           </Button>
         </Link>
