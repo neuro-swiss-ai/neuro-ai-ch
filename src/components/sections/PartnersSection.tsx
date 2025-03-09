@@ -10,21 +10,19 @@ const PartnersSection = () => {
   const { language } = useLanguage();
   
   const partners = [
-    { name: "EY (Ernst & Young)", logo: "/lovable-uploads/c1c92cc0-74ff-4429-b862-8b57adcf8a0a.png" },
-    { name: "Nestlé", logo: "/lovable-uploads/cddda8ac-c5ec-463f-aac5-3aebae7f6f37.png" },
-    { name: "PwC", logo: "/lovable-uploads/2bb14601-7f40-46fd-bed4-9d721b0e710b.png" },
-    { name: "Adecco", logo: "/lovable-uploads/4224b09a-1013-42b2-aecb-7f9406435531.png" },
-    { name: "Omega", logo: "/lovable-uploads/3691d429-0849-446f-822b-089f2a37e3ce.png" },
-    { name: "DKSH Holding", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/DKSH_logo.svg/1200px-DKSH_logo.svg.png" },
-    { name: "Emmi AG", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Emmi_logo.svg/1200px-Emmi_logo.svg.png" },
-    { name: "Bachem", logo: "https://www.bachem.com/wp-content/uploads/2021/01/bachem_logo_web.svg" },
-    { name: "EFG International", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/EFG_International_logo.svg/1200px-EFG_International_logo.svg.png" },
-    { name: "Siegfried Holding", logo: "https://www.siegfried.ch/fileadmin/_processed_/1/5/csm_logo_siegfried_RGB_d8e0ebaad4.jpg" },
-    { name: "Galenica", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Galenica_Logo.svg/2560px-Galenica_Logo.svg.png" },
-    { name: "Accelleron Industries", logo: "https://www.accelleron-industries.com/site/assets/files/1070/accelleron_logo_blue_rgb.svg" },
-    { name: "Bucher Industries", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Bucher_Industries_logo.svg/2560px-Bucher_Industries_logo.svg.png" },
-    { name: "Vontobel", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Vontobel_logo.svg/2560px-Vontobel_logo.svg.png" },
-    { name: "Clariant", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Clariant_logo.svg/1280px-Clariant_logo.svg.png" }
+    { name: "Vatican Bank", logo: "/lovable-uploads/dc2b63bb-d9fb-4edb-864b-022baa2aa843.png", alt: "Vatican Bank logo" },
+    { name: "Banque de France", logo: "/lovable-uploads/70ccbb21-2d72-4319-a6dc-20cd1f7bb8da.png", alt: "Banque de France logo" },
+    { name: "Hermès", logo: "/lovable-uploads/db44cc0c-7280-4441-9c29-364532b1ba07.png", alt: "Hermès logo" },
+    { name: "Julius Bär", logo: "/lovable-uploads/5855f278-3076-415e-9fc0-df11a57ade23.png", alt: "Julius Bär logo" },
+    { name: "EFG", logo: "/lovable-uploads/e4e627a5-1daa-468f-936e-c37a908b5bc4.png", alt: "EFG logo" },
+    { name: "Kaspersky", logo: "/lovable-uploads/51ec2b59-c4dc-4ff8-89ae-93917e7a09a6.png", alt: "Kaspersky logo" },
+    { name: "Bobst", logo: "/lovable-uploads/aae37a5b-461d-4182-8d4a-876596e51dc4.png", alt: "Bobst logo" },
+    { name: "Swiss Humanitarian Aid", logo: "/lovable-uploads/6b0f5cf1-3490-48f2-bb67-4decb8111ccb.png", alt: "Swiss Humanitarian Aid logo" },
+    { name: "Mövenpick", logo: "/lovable-uploads/a4ae6298-2f8e-47eb-8f17-423fc7e2c1a2.png", alt: "Mövenpick logo" },
+    { name: "Zurich Insurance", logo: "/lovable-uploads/ef8e00f2-ed93-4754-bbe7-12bddc2eb998.png", alt: "Zurich Insurance logo" },
+    { name: "Swiss Cross", logo: "/lovable-uploads/179c1d47-f53c-4a14-a739-f079d4272f05.png", alt: "Swiss Cross logo" },
+    { name: "SFS", logo: "/lovable-uploads/a7cf659c-cc65-45c5-983d-f17e146095a1.png", alt: "SFS logo" },
+    { name: "Acceleron", logo: "/lovable-uploads/45fb5b1d-a8c9-4a5b-823d-edbfa24d2974.png", alt: "Acceleron logo" }
   ];
 
   const checkScroll = () => {
@@ -116,7 +114,7 @@ const PartnersSection = () => {
               >
                 <img 
                   src={partner.logo} 
-                  alt={partner.name} 
+                  alt={partner.alt} 
                   className="max-h-full max-w-full object-contain" 
                   loading="lazy"
                 />
