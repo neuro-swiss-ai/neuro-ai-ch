@@ -31,6 +31,7 @@ const ServicesSection = () => {
         </svg>
       ),
       link: "/audits",
+      imageSrc: "/lovable-uploads/06b96a14-979d-41eb-b519-0d4bd846ad28.png",
       formations: [
         {
           title: "Découverte de l'IA",
@@ -54,6 +55,7 @@ const ServicesSection = () => {
         </svg>
       ),
       link: "/solutions",
+      imageSrc: "/lovable-uploads/61646934-2788-4d3d-9ed5-1a9d22493c75.png",
       formations: [
         {
           title: "Découverte de l'IA",
@@ -94,7 +96,7 @@ const ServicesSection = () => {
           />
         </div>
 
-        {/* Autres services avec effet de retournement */}
+        {/* Autres services avec effet de retournement et images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.slice(1).map((service) => (
             <div 
@@ -107,6 +109,7 @@ const ServicesSection = () => {
                 description={service.description}
                 icon={service.icon}
                 link={service.link}
+                imageSrc={service.imageSrc}
                 formations={service.formations}
               />
             </div>
