@@ -93,6 +93,7 @@ const ServicesSection = () => {
             link={services[0].link}
             imageSrc={services[0].imageSrc}
             isFormation={true}
+            id={services[0].id}
           />
         </div>
 
@@ -111,6 +112,7 @@ const ServicesSection = () => {
                 link={service.link}
                 imageSrc={service.imageSrc}
                 formations={service.formations}
+                id={service.id}
               />
             </div>
           ))}

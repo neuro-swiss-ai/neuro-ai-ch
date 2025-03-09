@@ -17,6 +17,7 @@ interface ServiceCardProps {
     description: string;
   }[];
   isFormation?: boolean;
+  id?: string; // Add ID to identify specific service cards
 }
 
 const ServiceCard = ({ 
@@ -26,16 +27,15 @@ const ServiceCard = ({
   link, 
   imageSrc, 
   formations, 
-  isFormation = false 
+  isFormation = false,
+  id 
 }: ServiceCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useLanguage();
   
   const handleMouseEnter = () => {
-    if (formations?.length) {
-      setIsFlipped(true);
-    }
+    setIsFlipped(true);
     setIsHovered(true);
   };
   
@@ -113,24 +113,55 @@ const ServiceCard = ({
         </div>
       )}
 
-      {/* Back side */}
-      <div className="absolute w-full h-full backface-hidden rotate-y-180 glass-effect rounded-2xl p-8 border border-white/20 hover:border-white/30 bg-gradient-to-br from-mauve/30 to-purple-800/20">
-        <h3 className="text-xl font-display font-medium text-white mb-4">{t("available_trainings")}</h3>
-        <div className="space-y-4 mb-6">
-          {formations?.map((formation, index) => (
-            <div key={index} className="border-b border-white/10 pb-3 last:border-0">
-              <h4 className="font-medium text-white">{formation.title}</h4>
-              <div className="flex items-center text-white/70 text-sm mb-1">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-mauve" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{formation.duration}</span>
+      {/* Back side - Custom content based on service type */}
+      <div className="absolute w-full h-full backface-hidden rotate-y-180 glass-effect rounded-2xl p-8 border border-white/20 hover:border-white/30 bg-gradient-to-br from-mauve/30 to-purple-800/20 overflow-y-auto">
+        {id === "audit-conseil" ? (
+          <div className="space-y-4">
+            <h3 className="text-xl font-display font-medium text-white mb-4">Notre audit IA évalue systématiquement vos processus, systèmes et flux de travail actuels pour identifier précisément où l'IA peut apporter les améliorations les plus significatives. Nous analysons :</h3>
+            <ul className="space-y-2 text-white/90 list-disc pl-5">
+              <li>Vos processus métier et points de friction</li>
+              <li>Vos sources de données et leur qualité</li>
+              <li>Votre infrastructure technologique</li>
+              <li>Les opportunités d'optimisation</li>
+              <li>Les indicateurs de performance clés</li>
+            </ul>
+          </div>
+        ) : id === "solutions-ia" ? (
+          <div className="space-y-4">
+            <h3 className="text-xl font-display font-medium text-white mb-4">Notre méthodologie d'intégration de l'IA</h3>
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-lg font-medium text-white mb-1">1. Analyse des besoins</h4>
+                <p className="text-white/90">Nous commençons par une compréhension approfondie de vos processus, défis et objectifs. Cette phase est cruciale pour identifier les domaines où l'IA peut créer le plus de valeur pour votre entreprise.</p>
               </div>
-              <p className="text-white/70 text-sm">{formation.description}</p>
+              <div>
+                <h4 className="text-lg font-medium text-white mb-1">2. Développement personnalisé</h4>
+                <p className="text-white/90">Nous concevons et développons des solutions IA sur mesure, parfaitement adaptées à vos besoins et à votre infrastructure existante. Nous privilégions des approches pragmatiques et modulaires.</p>
+              </div>
             </div>
-          ))}
-        </div>
-        <Link to={link}>
+          </div>
+        ) : (
+          // Fallback to formations if it's not audit-conseil or solutions-ia
+          <div>
+            <h3 className="text-xl font-display font-medium text-white mb-4">{t("available_trainings")}</h3>
+            <div className="space-y-4 mb-6">
+              {formations?.map((formation, index) => (
+                <div key={index} className="border-b border-white/10 pb-3 last:border-0">
+                  <h4 className="font-medium text-white">{formation.title}</h4>
+                  <div className="flex items-center text-white/70 text-sm mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-mauve" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>{formation.duration}</span>
+                  </div>
+                  <p className="text-white/70 text-sm">{formation.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        <Link to={link} className="block mt-4">
           <Button variant="outline" className="border-white bg-white/10 hover:bg-white/20 text-white w-full">
             {"En savoir plus"}
             <ChevronRight className="ml-1 h-4 w-4" />
