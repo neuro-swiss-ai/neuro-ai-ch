@@ -15,7 +15,8 @@ const previewAssistants = [
     shortDescription: "Votre agent téléphonique 24/7 !",
     description: "Tom: Votre assistant IA téléphonique\nAutomatisez et optimisez votre gestion d'appels avec Tom. Tom est un assistant téléphonique IA intelligent qui gère vos appels entrants et sortants pour augmenter la productivité et réduire les coûts.\n\n🔹\nFiltrage intelligent des appels – Plus d'interruptions inutiles, uniquement des appels qualifiés.\n🔹\nAppels sortants automatisés – Suivis, rappels clients et campagnes d'appels alimentées par l'IA.\n🔹\nDisponibilité 24/7 – Ne manquez plus jamais un appel important, Tom est toujours là.\n🔹\nOptimisation des coûts – Un tarif compétitif pour un système téléphonique entièrement optimisé.\n📞Boostez votre efficacité avec Tom !",
     callToAction: "📞 Boostez votre efficacité avec Tom !",
-    contactText: "Prêt à automatiser votre business ? Contactez-nous !"
+    contactText: "Prêt à automatiser votre business ? Contactez-nous !",
+    purchaseLink: "https://buy.stripe.com/14k9Egf2XeAH9pe000"
   },
   {
     id: "lex",
@@ -25,7 +26,8 @@ const previewAssistants = [
     shortDescription: "L'assistant juridique IA !",
     description: "⚖️ Lex – L'assistant juridique IA !\n\n🔹 Analyse les contrats pour identifier les risques potentiels.\n🔹 Automatise la gestion documentaire légale.\n🔹 Assure la conformité aux réglementations en vigueur.\n🔹 Simplifie la rédaction de documents juridiques standardisés.",
     callToAction: "Avec Lex, gagnez du temps et sécurisez vos processus juridiques !",
-    contactText: "Besoin d'un coup de pouce pour analyser un contrat ? Contactez-nous !"
+    contactText: "Besoin d'un coup de pouce pour analyser un contrat ? Contactez-nous !",
+    purchaseLink: "https://buy.stripe.com/7sIcQscUP507eJy145"
   },
   {
     id: "sylla",
@@ -35,7 +37,8 @@ const previewAssistants = [
     shortDescription: "L'optimisateur de Microsoft 365 !",
     description: "🔧 Sylla – L'optimisateur de Microsoft 365 !\n\n🔹 Personnalise Microsoft Copilot selon vos besoins spécifiques.\n🔹 Facilite l'utilisation de SharePoint pour une gestion documentaire efficace.\n🔹 Optimise Teams pour améliorer la collaboration interne.\n🔹 Simplifie l'utilisation d'Outlook pour une gestion des emails plus fluide.\n🔹 Améliore l'efficacité des autres applications Microsoft 365.",
     callToAction: "Avec Sylla, optimisez votre productivité et collaborez en toute fluidité !",
-    contactText: "Prêt à optimiser vos processus avec Copilot ? Parlons-en !"
+    contactText: "Prêt à optimiser vos processus avec Copilot ? Parlons-en !",
+    purchaseLink: "https://buy.stripe.com/14k8Ac4oj0JRgRGaEG"
   }
 ];
 

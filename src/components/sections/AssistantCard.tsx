@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calendar } from "lucide-react";
+import { MessageCircle, Calendar, ShoppingCart } from "lucide-react";
 
 interface AssistantCardProps {
   name: string;
@@ -12,6 +12,7 @@ interface AssistantCardProps {
   callToAction: string;
   contactText: string;
   preview?: boolean;
+  purchaseLink?: string;
 }
 
 const AssistantCard = ({
@@ -23,11 +24,15 @@ const AssistantCard = ({
   callToAction,
   contactText,
   preview = false,
+  purchaseLink,
 }: AssistantCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   // Taille ajustée selon qu'il s'agit d'une prévisualisation ou de l'affichage complet
   const cardHeight = preview ? "h-[430px]" : "h-[500px]";
+  
+  // Extract the assistant's first name for the purchase button
+  const firstName = name.split(' ')[0];
   
   return (
     <div 
@@ -57,9 +62,21 @@ const AssistantCard = ({
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
           </div>
           <div className="p-4 bg-black/40 backdrop-blur-sm">
-            <p className="text-white/80 text-sm">
-              Survolez pour découvrir
-            </p>
+            {purchaseLink ? (
+              <a 
+                href={purchaseLink} 
+                className="w-full block"
+              >
+                <Button variant="default" className="w-full group bg-gradient-to-r from-indigo-500 to-purple-600">
+                  <ShoppingCart className="mr-2 h-4 w-4" />
+                  Offrez-vous {firstName} maintenant
+                </Button>
+              </a>
+            ) : (
+              <p className="text-white/80 text-sm">
+                Survolez pour découvrir
+              </p>
+            )}
           </div>
         </div>
 
@@ -76,6 +93,18 @@ const AssistantCard = ({
           <p className="text-mauve font-medium mb-6">{callToAction}</p>
           
           <div className="mt-auto">
+            {purchaseLink && (
+              <a 
+                href={purchaseLink} 
+                className="w-full block mb-3"
+              >
+                <Button variant="default" className="w-full group bg-gradient-to-r from-indigo-500 to-purple-600">
+                  <ShoppingCart className="mr-2 h-4 w-4" />
+                  Offrez-vous {firstName} maintenant
+                </Button>
+              </a>
+            )}
+            
             <a 
               href="https://calendly.com/neuroai-ch/neuro-ai-interview" 
               target="_blank"
