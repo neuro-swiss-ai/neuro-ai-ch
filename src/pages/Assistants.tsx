@@ -82,6 +82,11 @@ const Assistants = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Filter assistants to show only Néo, Lex, and Sylla
+  const filteredAssistants = assistantsList.filter(
+    assistant => assistant.id === "neo" || assistant.id === "lex" || assistant.id === "sylla"
+  );
+
   return (
     <>
       <Helmet>
@@ -105,10 +110,10 @@ const Assistants = () => {
               </p>
             </div>
 
-            {/* Assistants cards grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {assistantsList.map((assistant) => (
-                <div key={assistant.id}>
+            {/* Assistants cards grid - modified layout with reduced gap */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+              {filteredAssistants.map((assistant) => (
+                <div key={assistant.id} className="flex justify-center">
                   <AssistantCard {...assistant} />
                 </div>
               ))}

@@ -26,7 +26,7 @@ const AssistantCard = ({
 
   return (
     <div 
-      className="group h-[480px] w-full max-w-xs mx-auto"
+      className="group h-[520px] w-full max-w-sm mx-auto"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
@@ -46,7 +46,7 @@ const AssistantCard = ({
             <img 
               src={imagePath} 
               alt={name} 
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
           </div>
@@ -63,7 +63,7 @@ const AssistantCard = ({
             {emoji} {name} – {shortDescription}
           </h3>
           
-          <div className="text-white/90 mb-4 whitespace-pre-line text-sm">
+          <div className="text-white/90 mb-4 overflow-y-auto hide-scrollbar max-h-[320px] whitespace-pre-line text-base">
             {description}
           </div>
           
