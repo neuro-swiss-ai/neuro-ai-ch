@@ -2,10 +2,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Calendar } from "lucide-react";
-import { Link } from "react-router-dom";
 
 interface AssistantCardProps {
-  id: string;
   name: string;
   emoji: string;
   imagePath: string;
@@ -17,7 +15,6 @@ interface AssistantCardProps {
 }
 
 const AssistantCard = ({
-  id,
   name,
   emoji,
   imagePath,
@@ -79,26 +76,17 @@ const AssistantCard = ({
           <p className="text-mauve font-medium mb-6">{callToAction}</p>
           
           <div className="mt-auto">
-            {id === "tom" ? (
-              <Link to="/tom" className="w-full block mb-3">
-                <Button variant="default" className="w-full group">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  En savoir plus
-                </Button>
-              </Link>
-            ) : (
-              <a 
-                href="https://calendly.com/neuroai-ch/neuro-ai-interview" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full block mb-3"
-              >
-                <Button variant="default" className="w-full group">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Réserver une démo
-                </Button>
-              </a>
-            )}
+            <a 
+              href="https://calendly.com/neuroai-ch/neuro-ai-interview" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full block mb-3"
+            >
+              <Button variant="default" className="w-full group">
+                <Calendar className="mr-2 h-4 w-4" />
+                Réserver une démo
+              </Button>
+            </a>
             
             <a 
               href="https://wa.me/message/OFHBXHWDIADHA1" 
