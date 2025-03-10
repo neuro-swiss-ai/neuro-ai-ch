@@ -112,12 +112,22 @@ const ServiceCard = ({
           <div className="mb-6">{icon}</div>
           <h3 className="text-xl font-display font-medium text-white mb-3">{title}</h3>
           <p className="text-white/70 mb-6">{description}</p>
-          <Link to={link} className="inline-flex items-center text-mauve hover:text-mauve-light transition-colors group">
-            <span className="underline-animation">{t("learn_more")}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
+          
+          <div className="flex justify-between items-center">
+            <Link to={link} className="inline-flex items-center text-mauve hover:text-mauve-light transition-colors group">
+              <span className="underline-animation">{t("learn_more")}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+            
+            <Link to={link}>
+              <Button className="bg-mauve hover:bg-mauve-light">
+                En savoir plus
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
         </div>
       )}
 
