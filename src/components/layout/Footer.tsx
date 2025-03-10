@@ -1,8 +1,7 @@
 
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Instagram, Linkedin, MessageCircle, MapPin, Phone, Mail } from "lucide-react";
+import { Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
@@ -94,7 +93,12 @@ const Footer = () => {
                 className="inline-flex items-center mt-2 text-white/70 hover:text-white transition-colors"
               >
                 <Button variant="outline" className="border-white/10 hover:border-white/20 bg-transparent text-white">
-                  <MessageCircle className="h-4 w-4 mr-2 text-green-500" /> {t("contact_whatsapp")}
+                  <img 
+                    src="/lovable-uploads/1171e234-27f1-418f-853d-19dcdb1e4338.png" 
+                    alt="WhatsApp" 
+                    className="h-4 w-4 mr-2" 
+                  />
+                  {t("contact_whatsapp")}
                 </Button>
               </a>
             </div>

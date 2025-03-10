@@ -1,7 +1,6 @@
 
 import { useEffect, useRef } from "react";
 import { Button } from "../ui/button";
-import { MessageCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
@@ -89,7 +88,11 @@ const HeroSection = () => {
             </a>
             <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 bg-transparent hover:bg-white/10">
-                <MessageCircle className="mr-2 h-5 w-5 text-green-500" />
+                <img 
+                  src="/lovable-uploads/1171e234-27f1-418f-853d-19dcdb1e4338.png" 
+                  alt="WhatsApp" 
+                  className="mr-2 h-5 w-5" 
+                />
                 <span>{t("contact_whatsapp")}</span>
               </Button>
             </a>

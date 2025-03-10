@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "../ui/button";
 import ServicesDropdownMenu from "../sections/ServicesDropdownMenu";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -168,7 +168,11 @@ const Navbar = () => {
             <div className="ml-8 flex items-center space-x-4">
               <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="border-white/20 bg-transparent text-white hover:bg-white/10">
-                  <MessageCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <img 
+                    src="/lovable-uploads/1171e234-27f1-418f-853d-19dcdb1e4338.png" 
+                    alt="WhatsApp" 
+                    className="h-4 w-4 mr-2" 
+                  />
                   {t("whatsapp")}
                 </Button>
               </a>
@@ -190,7 +194,11 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="mr-1"
             >
-              <MessageCircle className="h-5 w-5 text-green-500" />
+              <img 
+                src="/lovable-uploads/1171e234-27f1-418f-853d-19dcdb1e4338.png" 
+                alt="WhatsApp" 
+                className="h-5 w-5" 
+              />
             </a>
             <button 
               onClick={toggleLanguage}

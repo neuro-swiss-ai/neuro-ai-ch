@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calendar, ShoppingCart } from "lucide-react";
+import { Calendar, ShoppingCart } from "lucide-react";
 
 interface AssistantCardProps {
   name: string;
@@ -128,7 +128,11 @@ const AssistantCard = ({
               className="w-full"
             >
               <Button variant="outline" className="w-full group border-white/20 bg-transparent hover:bg-white/10">
-                <MessageCircle className="mr-2 h-4 w-4 text-green-500 group-hover:animate-pulse" />
+                <img 
+                  src="/lovable-uploads/1171e234-27f1-418f-853d-19dcdb1e4338.png" 
+                  alt="WhatsApp" 
+                  className="mr-2 h-4 w-4 group-hover:animate-pulse" 
+                />
                 Contacter par WhatsApp
               </Button>
             </a>

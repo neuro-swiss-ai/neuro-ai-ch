@@ -2,7 +2,6 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -37,7 +36,11 @@ const ContactSection = () => {
               className="w-full sm:w-auto"
             >
               <Button variant="outline" size="lg" className="w-full border-white/20 bg-transparent hover:bg-white/10">
-                <MessageCircle className="mr-2 h-5 w-5 text-green-500" />
+                <img 
+                  src="/lovable-uploads/1171e234-27f1-418f-853d-19dcdb1e4338.png" 
+                  alt="WhatsApp" 
+                  className="mr-2 h-5 w-5" 
+                />
                 <span>{t("contact_whatsapp")}</span>
               </Button>
             </a>
