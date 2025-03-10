@@ -44,11 +44,11 @@ const Index = () => {
         <SectionWithBorder>
           <ApproachSection />
         </SectionWithBorder>
+        <CaseStudiesSection />
         <SectionWithBorder>
           <TeamSection />
         </SectionWithBorder>
         <PartnersSection />
-        <CaseStudiesSection />
         <PressSection />
         <CtaSection />
         
