@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -61,12 +60,12 @@ const TeamSection = () => {
         : "Marie accompagne nos clients tout au long de leur parcours, garantissant une adoption réussie de nos solutions d'IA."
     },
     {
-      name: "Nada",
+      name: "Meryem R.",
       title: language === "en" ? "Head of Marketing" : "Head of Marketing",
       image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=250&auto=format&fit=crop",
       description: language === "en"
-        ? "Strategic marketing specialist, Nada develops our market presence and ensures the visibility of our AI solutions."
-        : "Spécialiste du marketing stratégique, Nada développe notre présence sur le marché et assure la visibilité de nos solutions d'IA."
+        ? "Strategic marketing specialist, Meryem R. develops our market presence and ensures the visibility of our AI solutions."
+        : "Spécialiste du marketing stratégique, Meryem R. développe notre présence sur le marché et assure la visibilité de nos solutions d'IA."
     },
     {
       name: "Johns",
