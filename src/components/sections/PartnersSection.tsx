@@ -111,7 +111,7 @@ const PartnersSection = () => {
           <h2 className="text-4xl font-display font-bold text-[#fff] mb-6">
             {language === "en" ? "Our Clients" : "Nos Clients"}
           </h2>
-          <p className="text-[#ccc] max-w-2xl mx-auto">
+          <p className="text-[#ccc] max-w-2xl mx-auto text-2xl text-center">
             {language === "en" ? "We have helped industry leaders in Switzerland 🇨🇭 by offering them the best solutions" : "Nous avons aidé les leaders des secteurs en Suisse 🇨🇭 en leur offrant les meilleures solutions"}
           </p>
         </div>
