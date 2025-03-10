@@ -91,24 +91,20 @@ const ClientsSection = () => {
       slider.addEventListener("scroll", checkScroll);
       checkScroll(); // Initial check
 
-      // Auto-scroll functionality
       const autoScrollInterval = setInterval(() => {
         if (!slider) return;
         if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 5) {
-          // Reset to beginning when reached the end
           slider.scrollTo({
             left: 0,
             behavior: 'smooth'
           });
         } else {
-          // Scroll to next item
           slider.scrollBy({
             left: 500,
-            // Card width plus gap
             behavior: 'smooth'
           });
         }
-      }, 6000); // Scroll every 6 seconds
+      }, 6000);
 
       return () => {
         if (slider) slider.removeEventListener("scroll", checkScroll);
@@ -134,13 +130,12 @@ const ClientsSection = () => {
   return <section id="clients" className="py-12 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
         <div className="text-center mb-6">
-          <h2 className="text-3xl font-display font-bold text-gradient mb-3">{t("our_clients")}</h2>
+          <h2 className="text-3xl font-display font-bold text-gradient mb-3">{t("client_testimonials")}</h2>
           <p className="text-white/70 max-w-2xl mx-auto text-sm">
-            {t("clients_subtitle")}
+            {t("testimonials_subtitle")}
           </p>
         </div>
 
-        {/* Testimonials */}
         <div className="relative">
           {canScrollLeft && <button onClick={() => scroll("left")} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur" aria-label="Scroll left">
               <ChevronLeft className="h-7 w-7" />

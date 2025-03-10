@@ -61,7 +61,9 @@ const enTranslations: Record<string, string> = {
   
   // Clients Section
   "our_clients": "Our Clients",
+  "client_testimonials": "Client Testimonials",
   "clients_subtitle": "They trust us to transform their business with AI",
+  "testimonials_subtitle": "They trusted us to transform their business with Artificial Intelligence",
   
   // Expertise Section
   "our_expertise": "Our Expertise",
@@ -227,7 +229,9 @@ const frTranslations: Record<string, string> = {
   
   // Clients Section
   "our_clients": "Nos Clients",
+  "client_testimonials": "Témoignages clients",
   "clients_subtitle": "Ils nous font confiance pour transformer leur entreprise avec l'IA",
+  "testimonials_subtitle": "Ils nous ont fait confiance pour transformer leur entreprise avec l'Intelligence Artificielle",
   
   // Expertise Section
   "our_expertise": "Notre Expertise",
