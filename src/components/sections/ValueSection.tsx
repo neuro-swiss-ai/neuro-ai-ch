@@ -63,7 +63,7 @@ const ValueSection = () => {
   const currentValue = values[currentValueIndex];
 
   return (
-    <section id="value" className="py-12 bg-gradient-to-b from-background to-[#0a0a10]">
+    <section id="value" className="py-12 bg-gradient-to-b from-background to-[#0a0a10] flex items-center justify-center">
       <div className="container-custom">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-display font-bold text-gradient mb-3">
@@ -85,7 +85,7 @@ const ValueSection = () => {
             <ChevronLeft className="h-5 w-5 md:h-7 md:w-7" />
           </button>
           
-          <div className="overflow-hidden py-8">
+          <div className="overflow-hidden py-8 flex justify-center">
             <div className="w-full max-w-md mx-auto glass-effect p-6 rounded-2xl animate-fade-in">
               <div className="flex flex-col h-full items-center text-center">
                 <div className="mb-5 glass-effect p-3 rounded-full bg-black/20">{currentValue.icon}</div>

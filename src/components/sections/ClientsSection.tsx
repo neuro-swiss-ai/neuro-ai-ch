@@ -1,4 +1,3 @@
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -6,9 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const ClientsSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
-  const {
-    t
-  } = useLanguage();
+  const { t, language } = useLanguage();
 
   const testimonials = [{
     text: "Depuis que nous avons intégré les solutions IA de Neuro AI, notre productivité a augmenté de 40%. Un partenaire incontournable pour toute entreprise visant l'excellence.",
@@ -79,20 +76,18 @@ const ClientsSection = () => {
   }];
 
   useEffect(() => {
+    const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
+    
     const interval = setInterval(() => {
-      const { language } = useLanguage();
-      const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
-      
       setCurrentTestimonialIndex((prevIndex) => 
         prevIndex === displayTestimonials.length - 1 ? 0 : prevIndex + 1
       );
     }, 6000); // Change testimonial every 6 seconds
-
+    
     return () => clearInterval(interval);
-  }, []);
+  }, [language, testimonials.length, englishTestimonials.length]);
 
   const handlePrevious = () => {
-    const { language } = useLanguage();
     const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
     
     setCurrentTestimonialIndex((prevIndex) => 
@@ -101,7 +96,6 @@ const ClientsSection = () => {
   };
 
   const handleNext = () => {
-    const { language } = useLanguage();
     const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
     
     setCurrentTestimonialIndex((prevIndex) => 
@@ -109,7 +103,6 @@ const ClientsSection = () => {
     );
   };
 
-  const { language } = useLanguage();
   const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
   const currentTestimonial = displayTestimonials[currentTestimonialIndex];
   
