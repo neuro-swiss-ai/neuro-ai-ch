@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+
 const ClientsSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -8,78 +9,82 @@ const ClientsSection = () => {
   const {
     t
   } = useLanguage();
+
   const testimonials = [{
     text: "Depuis que nous avons intégré les solutions IA de Neuro AI, notre productivité a augmenté de 40%. Un partenaire incontournable pour toute entreprise visant l'excellence.",
     author: "Jean Dupont",
-    position: "Directeur Général, Tech Innovations Genève"
+    position: "Directeur Marketing"
   }, {
     text: "L'accompagnement de l'équipe Neuro AI nous a permis de transformer notre approche client. Leurs solutions d'IA sont non seulement innovantes mais parfaitement adaptées à nos besoins spécifiques.",
     author: "Marie Laurent",
-    position: "VP Marketing, Finance Group Zurich"
+    position: "Responsable des Ressources Humaines"
   }, {
     text: "Nous avons été impressionnés par la rapidité et l'efficacité avec laquelle Neuro AI a identifié et résolu nos défis. Leur expertise en matière d'IA est inégalée sur le marché.",
     author: "Philippe Moreau",
-    position: "CTO, InnoSoft Lausanne"
+    position: "Chef de Projet IT"
   }, {
     text: "L'intégration des technologies d'IA de Neuro AI a radicalement transformé notre processus décisionnel. Nous sommes désormais capables d'analyser des données complexes en temps réel.",
     author: "Sophie Berger",
-    position: "Directrice des Opérations, SwissTech Solutions"
+    position: "Consultante en Stratégie"
   }, {
     text: "Grâce à Neuro AI, nous avons pu automatiser 60% de nos tâches administratives, permettant à notre équipe de se concentrer sur l'innovation et le développement stratégique.",
     author: "Thomas Müller",
-    position: "CEO, Alpine Innovations Bern"
+    position: "Responsable Logistique"
   }, {
     text: "La collaboration avec Neuro AI a été une révélation pour notre équipe. Leur approche personnalisée et leur compréhension approfondie de nos besoins ont fait toute la différence.",
     author: "Laura Schmidt",
-    position: "Directrice Marketing, Swiss Commerce Group"
+    position: "Analyste Financier"
   }, {
     text: "Les solutions d'IA de Neuro AI ont révolutionné notre service client, avec une satisfaction qui a augmenté de 35% en seulement trois mois d'implémentation.",
     author: "Michel Dubois",
-    position: "Responsable Service Client, RetailPro Lugano"
+    position: "Directeur Commercial"
   }, {
     text: "Notre partenariat avec Neuro AI nous a permis de rester à la pointe de l'innovation technologique. Leur expertise en IA est un atout majeur pour notre compétitivité.",
     author: "Cécile Rochat",
-    position: "Directrice de l'Innovation, MedTech Vaud"
+    position: "Ingénieure en Développement"
   }];
+
   const englishTestimonials = [{
     text: "Since we integrated Neuro AI's AI solutions, our productivity has increased by 40%. An essential partner for any company aiming for excellence.",
     author: "Jean Dupont",
-    position: "General Director, Tech Innovations Geneva"
+    position: "Marketing Director"
   }, {
     text: "The support of the Neuro AI team has allowed us to transform our customer approach. Their AI solutions are not only innovative but perfectly adapted to our specific needs.",
     author: "Marie Laurent",
-    position: "VP Marketing, Finance Group Zurich"
+    position: "HR Manager"
   }, {
     text: "We were impressed by the speed and efficiency with which Neuro AI identified and solved our challenges. Their expertise in AI is unmatched in the market.",
     author: "Philippe Moreau",
-    position: "CTO, InnoSoft Lausanne"
+    position: "IT Project Manager"
   }, {
     text: "The integration of Neuro AI's AI technologies has radically transformed our decision-making process. We are now able to analyze complex data in real-time.",
     author: "Sophie Berger",
-    position: "Operations Director, SwissTech Solutions"
+    position: "Strategy Consultant"
   }, {
     text: "Thanks to Neuro AI, we were able to automate 60% of our administrative tasks, allowing our team to focus on innovation and strategic development.",
     author: "Thomas Müller",
-    position: "CEO, Alpine Innovations Bern"
+    position: "Logistics Manager"
   }, {
     text: "The collaboration with Neuro AI was a revelation for our team. Their personalized approach and deep understanding of our needs made all the difference.",
     author: "Laura Schmidt",
-    position: "Marketing Director, Swiss Commerce Group"
+    position: "Financial Analyst"
   }, {
     text: "Neuro AI's AI solutions have revolutionized our customer service, with satisfaction increasing by 35% in just three months of implementation.",
     author: "Michel Dubois",
-    position: "Customer Service Manager, RetailPro Lugano"
+    position: "Sales Director"
   }, {
     text: "Our partnership with Neuro AI has allowed us to stay at the forefront of technological innovation. Their expertise in AI is a major asset for our competitiveness.",
     author: "Cécile Rochat",
-    position: "Innovation Director, MedTech Vaud"
+    position: "Software Engineer"
   }];
+
   const checkScroll = () => {
     if (sliderRef.current) {
       setCanScrollLeft(sliderRef.current.scrollLeft > 0);
       setCanScrollRight(sliderRef.current.scrollLeft < sliderRef.current.scrollWidth - sliderRef.current.clientWidth - 5);
     }
   };
+
   useEffect(() => {
     const slider = sliderRef.current;
     if (slider) {
@@ -111,6 +116,7 @@ const ClientsSection = () => {
       };
     }
   }, []);
+
   const scroll = (direction: "left" | "right") => {
     if (!sliderRef.current) return;
     const scrollAmount = sliderRef.current.clientWidth * 0.8;
@@ -120,11 +126,11 @@ const ClientsSection = () => {
     });
   };
 
-  // Determine which testimonials to display based on the current language
   const {
     language
   } = useLanguage();
   const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
+  
   return <section id="clients" className="py-12 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
         <div className="text-center mb-6">
@@ -152,7 +158,7 @@ const ClientsSection = () => {
                   <p className="text-white/80 text-sm mb-4 flex-grow line-clamp-4">{testimonial.text}</p>
                   <div>
                     <h4 className="font-display font-medium text-white text-sm">{testimonial.author}</h4>
-                    
+                    <p className="text-white/60 text-xs">{testimonial.position}</p>
                   </div>
                 </div>
               </div>)}
@@ -165,4 +171,5 @@ const ClientsSection = () => {
       </div>
     </section>;
 };
+
 export default ClientsSection;
