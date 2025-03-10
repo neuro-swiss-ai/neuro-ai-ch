@@ -4,9 +4,7 @@ import { ChevronLeft, ChevronRight, Brain, MessageCircle, Globe, Database, Searc
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const ExpertiseSection = () => {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [currentExpertiseIndex, setCurrentExpertiseIndex] = useState(0);
   const { t, language } = useLanguage();
   
   const expertiseAreas = [
@@ -60,57 +58,29 @@ const ExpertiseSection = () => {
     }
   ];
 
-  const checkScroll = () => {
-    if (!sliderRef.current) return;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentExpertiseIndex((prevIndex) => 
+        prevIndex === expertiseAreas.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5500); // Change expertise every 5.5 seconds
     
-    setCanScrollLeft(sliderRef.current.scrollLeft > 0);
-    setCanScrollRight(
-      sliderRef.current.scrollLeft <
-      sliderRef.current.scrollWidth - sliderRef.current.clientWidth - 5
+    return () => clearInterval(interval);
+  }, [expertiseAreas.length]);
+
+  const handlePrevious = () => {
+    setCurrentExpertiseIndex((prevIndex) => 
+      prevIndex === 0 ? expertiseAreas.length - 1 : prevIndex - 1
     );
   };
 
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (slider) {
-      slider.addEventListener("scroll", checkScroll);
-      checkScroll(); // Initial check
-      
-      // Auto-scroll functionality
-      const autoScrollInterval = setInterval(() => {
-        if (!slider) return;
-        
-        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 5) {
-          // Reset to beginning when reached the end
-          slider.scrollTo({
-            left: 0,
-            behavior: 'smooth'
-          });
-        } else {
-          // Scroll to next item
-          slider.scrollBy({
-            left: 310, // Card width + gap
-            behavior: 'smooth'
-          });
-        }
-      }, 5500); // Scroll every 5.5 seconds
-      
-      return () => {
-        slider.removeEventListener("scroll", checkScroll);
-        clearInterval(autoScrollInterval);
-      };
-    }
-  }, []);
-
-  const scroll = (direction: "left" | "right") => {
-    if (!sliderRef.current) return;
-    
-    const scrollAmount = sliderRef.current.clientWidth * 0.8;
-    sliderRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth",
-    });
+  const handleNext = () => {
+    setCurrentExpertiseIndex((prevIndex) => 
+      prevIndex === expertiseAreas.length - 1 ? 0 : prevIndex + 1
+    );
   };
+
+  const currentExpertise = expertiseAreas[currentExpertiseIndex];
 
   return (
     <section id="expertise" className="py-12 bg-gradient-to-b from-[#0a0a10] to-background">
@@ -123,56 +93,55 @@ const ExpertiseSection = () => {
         </div>
 
         <div className="relative">
-          {canScrollLeft && (
-            <button 
-              onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="h-7 w-7" />
-            </button>
-          )}
-          
-          <div 
-            ref={sliderRef}
-            className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x snap-mandatory"
+          <button 
+            onClick={handlePrevious}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 md:-translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
+            aria-label="Previous expertise"
           >
-            {expertiseAreas.map((area, index) => (
-              <div 
-                key={index} 
-                className="flex-none w-[280px] glass-effect p-5 rounded-2xl snap-start transition-all duration-300"
-              >
-                <div className="flex flex-col h-full">
-                  <div className="mb-3 flex justify-center">{area.icon}</div>
-                  <h3 className="text-lg font-display font-medium text-white text-center mb-2">{area.title}</h3>
-                  <p className="text-white/70 mb-4 text-center text-sm flex-grow">{area.description}</p>
-                  <div className="border-t border-white/10 pt-3">
-                    <p className="text-mauve text-xs mb-2 font-medium">{t("technologies")}</p>
-                    <div className="flex flex-wrap gap-1">
-                      {area.technologies.map((tech, techIndex) => (
-                        <span 
-                          key={techIndex}
-                          className="text-xs bg-white/5 text-white/80 px-2 py-1 rounded"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+            <ChevronLeft className="h-5 w-5 md:h-7 md:w-7" />
+          </button>
+          
+          <div className="overflow-hidden py-8">
+            <div className="w-full max-w-md mx-auto glass-effect p-6 rounded-2xl animate-fade-in">
+              <div className="flex flex-col h-full items-center text-center">
+                <div className="mb-5 flex justify-center">{currentExpertise.icon}</div>
+                <h3 className="text-xl font-display font-medium text-white text-center mb-3">{currentExpertise.title}</h3>
+                <p className="text-white/70 mb-6 text-center text-sm md:text-base">{currentExpertise.description}</p>
+                <div className="border-t border-white/10 pt-4 w-full">
+                  <p className="text-mauve text-xs mb-3 font-medium">{t("technologies")}</p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {currentExpertise.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex}
+                        className="text-xs bg-white/5 text-white/80 px-2 py-1 rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
           
-          {canScrollRight && (
-            <button 
-              onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="h-7 w-7" />
-            </button>
-          )}
+          <button 
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 md:translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur"
+            aria-label="Next expertise"
+          >
+            <ChevronRight className="h-5 w-5 md:h-7 md:w-7" />
+          </button>
+        </div>
+
+        <div className="flex justify-center mt-4">
+          {expertiseAreas.map((_, idx) => (
+            <button
+              key={idx}
+              className={`h-2 w-2 rounded-full mx-1 ${idx === currentExpertiseIndex ? 'bg-mauve' : 'bg-white/20'}`}
+              onClick={() => setCurrentExpertiseIndex(idx)}
+              aria-label={`Go to expertise ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

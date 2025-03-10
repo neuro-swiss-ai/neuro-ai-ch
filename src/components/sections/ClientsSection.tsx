@@ -1,11 +1,11 @@
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const ClientsSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const {
     t
   } = useLanguage();
@@ -78,56 +78,43 @@ const ClientsSection = () => {
     position: "Software Engineer"
   }];
 
-  const checkScroll = () => {
-    if (sliderRef.current) {
-      setCanScrollLeft(sliderRef.current.scrollLeft > 0);
-      setCanScrollRight(sliderRef.current.scrollLeft < sliderRef.current.scrollWidth - sliderRef.current.clientWidth - 5);
-    }
-  };
-
   useEffect(() => {
-    const slider = sliderRef.current;
-    if (slider) {
-      slider.addEventListener("scroll", checkScroll);
-      checkScroll(); // Initial check
+    const interval = setInterval(() => {
+      const { language } = useLanguage();
+      const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
+      
+      setCurrentTestimonialIndex((prevIndex) => 
+        prevIndex === displayTestimonials.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 6000); // Change testimonial every 6 seconds
 
-      const autoScrollInterval = setInterval(() => {
-        if (!slider) return;
-        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 5) {
-          slider.scrollTo({
-            left: 0,
-            behavior: 'smooth'
-          });
-        } else {
-          slider.scrollBy({
-            left: 500,
-            behavior: 'smooth'
-          });
-        }
-      }, 6000);
-
-      return () => {
-        if (slider) slider.removeEventListener("scroll", checkScroll);
-        clearInterval(autoScrollInterval);
-      };
-    }
+    return () => clearInterval(interval);
   }, []);
 
-  const scroll = (direction: "left" | "right") => {
-    if (!sliderRef.current) return;
-    const scrollAmount = sliderRef.current.clientWidth * 0.8;
-    sliderRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth"
-    });
+  const handlePrevious = () => {
+    const { language } = useLanguage();
+    const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
+    
+    setCurrentTestimonialIndex((prevIndex) => 
+      prevIndex === 0 ? displayTestimonials.length - 1 : prevIndex - 1
+    );
   };
 
-  const {
-    language
-  } = useLanguage();
+  const handleNext = () => {
+    const { language } = useLanguage();
+    const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
+    
+    setCurrentTestimonialIndex((prevIndex) => 
+      prevIndex === displayTestimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const { language } = useLanguage();
   const displayTestimonials = language === "en" ? englishTestimonials : testimonials;
+  const currentTestimonial = displayTestimonials[currentTestimonialIndex];
   
-  return <section id="clients" className="py-12 bg-gradient-to-b from-background to-[#0a0a10]">
+  return (
+    <section id="clients" className="py-12 bg-gradient-to-b from-background to-[#0a0a10]">
       <div className="container-custom">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-display font-bold text-gradient mb-3">{t("client_testimonials")}</h2>
@@ -137,34 +124,61 @@ const ClientsSection = () => {
         </div>
 
         <div className="relative">
-          {canScrollLeft && <button onClick={() => scroll("left")} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur" aria-label="Scroll left">
-              <ChevronLeft className="h-7 w-7" />
-            </button>}
+          <button 
+            onClick={handlePrevious} 
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 md:-translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur" 
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="h-5 w-5 md:h-7 md:w-7" />
+          </button>
           
-          <div ref={sliderRef} className="flex overflow-x-auto gap-8 pb-6 hide-scrollbar snap-x snap-mandatory">
-            {displayTestimonials.map((testimonial, index) => <div key={index} className="flex-none w-full md:w-[calc(100%-2rem)] lg:w-[400px] glass-effect p-5 rounded-2xl snap-start">
+          <div className="overflow-hidden py-8">
+            <div 
+              className="transition-all duration-500 ease-in-out"
+              style={{ transform: `translateX(0)` }}
+            >
+              <div className="w-full max-w-2xl mx-auto glass-effect p-6 rounded-2xl">
                 <div className="flex flex-col h-full">
-                  <div className="mb-3">
+                  <div className="mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-mauve/40">
                       <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
                       <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
                     </svg>
                   </div>
-                  <p className="text-white/80 text-sm mb-4 flex-grow line-clamp-4">{testimonial.text}</p>
-                  <div>
-                    <h4 className="font-display font-medium text-white text-sm">{testimonial.author}</h4>
-                    <p className="text-white/60 text-xs">{testimonial.position}</p>
+                  <p className="text-white/80 text-sm md:text-base mb-6 flex-grow animate-fade-in">
+                    {currentTestimonial.text}
+                  </p>
+                  <div className="border-t border-white/10 pt-4">
+                    <h4 className="font-display font-medium text-white text-sm md:text-base">{currentTestimonial.author}</h4>
+                    <p className="text-white/60 text-xs md:text-sm">{currentTestimonial.position}</p>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            </div>
           </div>
           
-          {canScrollRight && <button onClick={() => scroll("right")} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur" aria-label="Scroll right">
-              <ChevronRight className="h-7 w-7" />
-            </button>}
+          <button 
+            onClick={handleNext} 
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 md:translate-x-5 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 backdrop-blur" 
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="h-5 w-5 md:h-7 md:w-7" />
+          </button>
+        </div>
+
+        <div className="flex justify-center mt-4">
+          {displayTestimonials.map((_, idx) => (
+            <button
+              key={idx}
+              className={`h-2 w-2 rounded-full mx-1 ${idx === currentTestimonialIndex ? 'bg-mauve' : 'bg-white/20'}`}
+              onClick={() => setCurrentTestimonialIndex(idx)}
+              aria-label={`Go to testimonial ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default ClientsSection;
