@@ -69,9 +69,9 @@ const Footer = () => {
           <div className="flex flex-col">
             <h3 className="text-white font-display text-lg font-medium mb-6">{t("contact")}</h3>
             <div className="space-y-3">
-              <a href="mailto:Sales@neuroswissai.com" className="text-white/70 hover:text-white transition-colors flex items-center">
+              <a href="mailto:contact@neuro-ai.ch" className="text-white/70 hover:text-white transition-colors flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                Sales@neuroswissai.com
+                contact@neuro-ai.ch
               </a>
               <a href="tel:+41795488967" className="text-white/70 hover:text-white transition-colors flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
