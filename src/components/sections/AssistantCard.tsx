@@ -110,7 +110,7 @@ const AssistantCard = ({
             )}
             
             <a 
-              href="https://calendly.com/neuroai-ch/neuro-ai-interview" 
+              href="https://meetings.hubspot.com/jmonkam" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-full block mb-3"

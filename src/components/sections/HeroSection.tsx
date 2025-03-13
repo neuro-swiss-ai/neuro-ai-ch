@@ -71,7 +71,7 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
-            <a href="https://calendly.com/neuroai-ch/neuro-ai-interview" target="_blank" rel="noopener noreferrer">
+            <a href="https://meetings.hubspot.com/jmonkam" target="_blank" rel="noopener noreferrer">
               <Button variant="default" size="lg" className="w-full sm:w-auto">
                 <span>{t("reserve_call")}</span>
               </Button>

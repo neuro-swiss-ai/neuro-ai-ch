@@ -19,7 +19,7 @@ const ContactSection = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
-              href="https://calendly.com/neuroai-ch/neuro-ai-interview" 
+              href="https://meetings.hubspot.com/jmonkam" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
