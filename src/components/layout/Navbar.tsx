@@ -166,7 +166,7 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="ml-8 flex items-center space-x-4">
-              <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/41795488967?text=Bonjour%20%2C%20j'aimerais%20en%20savoir%20plus%20sur%20vos%20services%20et%20solutions%20IA%20" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="border-white/20 bg-transparent text-white hover:bg-white/10">
                   <img 
                     src="/lovable-uploads/1171e234-27f1-418f-853d-19dcdb1e4338.png" 
@@ -189,7 +189,7 @@ const Navbar = () => {
           {/* Mobile view: Language toggle and menu button */}
           <div className="md:hidden flex items-center space-x-4">
             <a 
-              href="https://wa.me/message/OFHBXHWDIADHA1" 
+              href="https://wa.me/41795488967?text=Bonjour%20%2C%20j'aimerais%20en%20savoir%20plus%20sur%20vos%20services%20et%20solutions%20IA%20" 
               target="_blank" 
               rel="noopener noreferrer"
               className="mr-1"

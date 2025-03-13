@@ -1,12 +1,15 @@
+
 import { useEffect, useRef } from "react";
 import { Button } from "../ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const {
     t,
     language
   } = useLanguage();
+  
   useEffect(() => {
     // Animation des lignes abstraites
     const createLine = () => {
@@ -39,7 +42,9 @@ const HeroSection = () => {
     const interval = setInterval(createLine, 500);
     return () => clearInterval(interval);
   }, []);
-  return <section ref={heroRef} className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden px-[19px]">
+  
+  return (
+    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden px-[19px]">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-background to-background -z-10"></div>
       
@@ -53,10 +58,12 @@ const HeroSection = () => {
           {/* Le petit bouton est supprimé ici */}
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gradient leading-tight mb-6 animate-fade-in">
-            {language === "en" ? "Propel Your Organization into the Future with AI" : <>
-                  <div>Révolutionnez Votre Organisation</div>
-                  <div>avec l'intelligence Artificielle</div>
-                </>}
+            {language === "en" ? "Propel Your Organization into the Future with AI" : (
+              <>
+                <div>Révolutionnez Votre Organisation</div>
+                <div>avec l'intelligence Artificielle</div>
+              </>
+            )}
           </h1>
           
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto animate-fade-in">
@@ -64,12 +71,12 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
-            <a href="https://calendly.com/neuroai-ch/neuro-ai-interview">
+            <a href="https://calendly.com/neuroai-ch/neuro-ai-interview" target="_blank" rel="noopener noreferrer">
               <Button variant="default" size="lg" className="w-full sm:w-auto">
                 <span>{t("reserve_call")}</span>
               </Button>
             </a>
-            <a href="https://wa.me/message/OFHBXHWDIADHA1" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/41795488967?text=Bonjour%20%2C%20j'aimerais%20en%20savoir%20plus%20sur%20vos%20services%20et%20solutions%20IA%20" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 bg-transparent hover:bg-white/10">
                 <img src="/lovable-uploads/1171e234-27f1-418f-853d-19dcdb1e4338.png" alt="WhatsApp" className="mr-2 h-5 w-5" />
                 <span>{t("contact_whatsapp")}</span>
@@ -84,6 +91,8 @@ const HeroSection = () => {
           <div className="w-0.5 h-6 bg-gradient-to-b from-white/60 to-white/0 scroll-indicator"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;

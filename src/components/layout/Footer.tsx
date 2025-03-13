@@ -87,7 +87,7 @@ const Footer = () => {
                 <span>Rue du Prince 9, 1206 Genève, Switzerland</span>
               </a>
               <a 
-                href="https://wa.me/message/OFHBXHWDIADHA1"
+                href="https://wa.me/41795488967?text=Bonjour%20%2C%20j'aimerais%20en%20savoir%20plus%20sur%20vos%20services%20et%20solutions%20IA%20"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center mt-2 text-white/70 hover:text-white transition-colors"
