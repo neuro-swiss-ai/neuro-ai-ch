@@ -34,7 +34,7 @@ const Reservation = () => {
                 
                 <div className="mt-8">
                   <iframe 
-                    src="https://calendly.com/neuroai-ch/neuro-ai-interview" 
+                    src="https://meetings.hubspot.com/jmonkam" 
                     width="100%" 
                     height="950" 
                     frameBorder="0" 
@@ -53,3 +53,4 @@ const Reservation = () => {
 };
 
 export default Reservation;
+

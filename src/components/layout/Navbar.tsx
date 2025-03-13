@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -15,7 +14,6 @@ const Navbar = () => {
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { language, setLanguage, t } = useLanguage();
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
@@ -29,7 +27,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Handle hover events with delay to prevent flickering
   const handleMouseEnter = () => {
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
@@ -41,10 +38,9 @@ const Navbar = () => {
   const handleMouseLeave = () => {
     hoverTimeoutRef.current = setTimeout(() => {
       setShowServicesMenu(false);
-    }, 300); // Small delay to allow moving to dropdown
+    }, 300);
   };
 
-  // Ajouter un écouteur de scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -58,24 +54,21 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Toggle language
   const toggleLanguage = () => {
     setLanguage(language === "fr" ? "en" : "fr");
   };
 
-  // Services dropdown items
   const servicesItems = [
     { title: t("ai_solutions"), path: "/solutions" },
     { title: t("audit_consulting"), path: "/audits" },
     { title: t("training"), path: "/formations" },
   ];
 
-  // Menu items - with translations
   const menuItems = [
     { title: t("services"), path: "/#services", hasSubmenu: true },
     { title: "Nos Assistants IA", path: "/assistants", isNew: true },
     { title: t("blog"), path: "/blog" },
-    { title: t("reservation"), path: "https://calendly.com/neuroai-ch/neuro-ai-interview", external: true },
+    { title: t("reservation"), path: "https://meetings.hubspot.com/jmonkam", external: true },
     { title: t("about"), path: "/about" },
   ];
 
@@ -87,7 +80,6 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <div className="flex justify-between items-center">
-          {/* Company Logo and Name */}
           <Link to="/" className="flex items-center group">
             <div className="mr-3">
               <img 
@@ -103,7 +95,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center">
             <ul className="flex space-x-8">
               {menuItems.map((item) => (
@@ -123,7 +114,6 @@ const Navbar = () => {
                         <ChevronDown className={`h-4 w-4 ml-1 transition-transform duration-200 ${showServicesMenu ? 'rotate-180' : ''}`} />
                       </Link>
                       
-                      {/* Services dropdown menu */}
                       <div 
                         className="absolute top-full left-0"
                         onMouseEnter={handleMouseEnter}
@@ -186,7 +176,6 @@ const Navbar = () => {
             </div>
           </nav>
 
-          {/* Mobile view: Language toggle and menu button */}
           <div className="md:hidden flex items-center space-x-4">
             <a 
               href="https://wa.me/41795488967?text=Bonjour%20%2C%20j'aimerais%20en%20savoir%20plus%20sur%20vos%20services%20et%20solutions%20IA%20" 
@@ -219,7 +208,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <div 
         className={`md:hidden absolute w-full bg-black/90 backdrop-blur-md transition-all duration-300 overflow-hidden ${
           isOpen ? "max-h-[500px] border-t border-white/10" : "max-h-0"
@@ -284,7 +272,7 @@ const Navbar = () => {
             ))}
             <li>
               <a 
-                href="https://calendly.com/neuroai-ch/neuro-ai-interview" 
+                href="https://meetings.hubspot.com/jmonkam" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block mt-2"
