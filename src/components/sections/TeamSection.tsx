@@ -60,14 +60,6 @@ const TeamSection = () => {
         : "Marie accompagne nos clients tout au long de leur parcours, garantissant une adoption réussie de nos solutions d'IA."
     },
     {
-      name: "Meryem R.",
-      title: language === "en" ? "Head of Marketing" : "Head of Marketing",
-      image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=250&auto=format&fit=crop",
-      description: language === "en"
-        ? "Strategic marketing specialist, Meryem R. develops our market presence and ensures the visibility of our AI solutions."
-        : "Spécialiste du marketing stratégique, Meryem R. développe notre présence sur le marché et assure la visibilité de nos solutions d'IA."
-    },
-    {
       name: "Johns",
       title: language === "en" ? "Business Developer" : "Business Developer",
       image: "/lovable-uploads/c2268e58-18b7-4e25-8564-023dda94fb89.png",
@@ -76,17 +68,9 @@ const TeamSection = () => {
         : "Johns identifie de nouvelles opportunités de croissance et développe des partenariats stratégiques pour étendre notre portée sur le marché."
     },
     {
-      name: "Imane",
-      title: language === "en" ? "Digital Marketing Consultant" : "Digital Marketing Consultant",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=250&auto=format&fit=crop",
-      description: language === "en"
-        ? "Digital marketing expert, Imane develops innovative strategies to optimize our online presence and attract new customers."
-        : "Experte en marketing digital, Imane élabore des stratégies innovantes pour optimiser notre présence en ligne et attirer de nouveaux clients."
-    },
-    {
       name: "Bénédicte",
       title: language === "en" ? "Business Developer" : "Business Developer",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=250&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=250&auto=format&fit=crop",
       description: language === "en"
         ? "Bénédicte develops our professional network and identifies new business opportunities to strengthen our market position."
         : "Bénédicte développe notre réseau professionnel et identifie de nouvelles opportunités commerciales pour renforcer notre position sur le marché."
