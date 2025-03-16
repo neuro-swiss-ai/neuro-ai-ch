@@ -154,6 +154,16 @@ const ServiceCard = ({
               <li>Les opportunités d'optimisation</li>
               <li>Les indicateurs de performance clés</li>
             </ul>
+            
+            {/* Added visible button for Audit & Conseil on back side */}
+            <div className="mt-6">
+              <Link to={link}>
+                <Button variant="default" className="bg-mauve hover:bg-mauve-light w-full">
+                  En savoir plus
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
         ) : id === "solutions-ia" ? (
           <div className="space-y-4">
@@ -167,6 +177,16 @@ const ServiceCard = ({
                 <h4 className="text-lg font-medium text-white mb-1">2. Développement personnalisé</h4>
                 <p className="text-white/90">Nous concevons et développons des solutions IA sur mesure, parfaitement adaptées à vos besoins et à votre infrastructure existante. Nous privilégions des approches pragmatiques et modulaires.</p>
               </div>
+            </div>
+            
+            {/* Added visible button for Solutions IA on back side */}
+            <div className="mt-6">
+              <Link to={link}>
+                <Button variant="default" className="bg-mauve hover:bg-mauve-light w-full">
+                  En savoir plus
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         ) : (
@@ -187,15 +207,15 @@ const ServiceCard = ({
                 </div>
               ))}
             </div>
+            
+            <Link to={link} className="block mt-4">
+              <Button variant="outline" className="border-white bg-white/10 hover:bg-white/20 text-white w-full">
+                {"En savoir plus"}
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         )}
-        
-        <Link to={link} className="block mt-4">
-          <Button variant="outline" className="border-white bg-white/10 hover:bg-white/20 text-white w-full">
-            {"En savoir plus"}
-            <ChevronRight className="ml-1 h-4 w-4" />
-          </Button>
-        </Link>
       </div>
     </div>
   );
