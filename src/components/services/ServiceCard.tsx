@@ -97,13 +97,24 @@ const ServiceCard = ({
           <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-6 text-center">
             <h3 className="text-2xl font-display font-medium text-white mb-3">{title}</h3>
             <p className="text-white/80 mb-6">{description}</p>
-            {isHovered && !isFlipped && (
-              <Link to={link} className="transition-opacity duration-300 opacity-100">
+            
+            {/* Always show button for Audit & Conseil and Solutions IA */}
+            {(id === "audit-conseil" || id === "solutions-ia") ? (
+              <Link to={link}>
                 <Button className="bg-mauve hover:bg-mauve-light">
-                  {t("learn_more")}
+                  En savoir plus
                   <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
+            ) : (
+              isHovered && !isFlipped && (
+                <Link to={link} className="transition-opacity duration-300 opacity-100">
+                  <Button className="bg-mauve hover:bg-mauve-light">
+                    {t("learn_more")}
+                    <ChevronRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </Link>
+              )
             )}
           </div>
         </div>
