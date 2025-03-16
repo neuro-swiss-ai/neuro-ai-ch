@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -44,7 +43,6 @@ const ServiceCard = ({
     setIsHovered(false);
   };
 
-  // Si c'est la carte de formation avec une image d'en-tête
   if (isFormation && imageSrc) {
     return (
       <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden group">
@@ -77,7 +75,6 @@ const ServiceCard = ({
     );
   }
 
-  // Pour les cartes de service avec images interactives et effet de retournement
   return (
     <div 
       className="w-full h-full min-h-[320px] preserve-3d transition-all duration-500 cursor-pointer"
@@ -85,7 +82,6 @@ const ServiceCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Front side */}
       {imageSrc ? (
         <div className="absolute w-full h-full backface-hidden rounded-2xl overflow-hidden">
           <img 
@@ -98,7 +94,6 @@ const ServiceCard = ({
             <h3 className="text-2xl font-display font-medium text-white mb-3">{title}</h3>
             <p className="text-white/80 mb-6">{description}</p>
             
-            {/* Always show button for Audit & Conseil and Solutions IA */}
             {(id === "audit-conseil" || id === "solutions-ia") ? (
               <Link to={link}>
                 <Button className="bg-mauve hover:bg-mauve-light">
@@ -142,20 +137,11 @@ const ServiceCard = ({
         </div>
       )}
 
-      {/* Back side - Custom content based on service type */}
       <div className="absolute w-full h-full backface-hidden rotate-y-180 glass-effect rounded-2xl p-8 border border-white/20 hover:border-white/30 bg-gradient-to-br from-mauve/30 to-purple-800/20 overflow-y-auto">
         {id === "audit-conseil" ? (
           <div className="space-y-4">
             <h3 className="text-xl font-display font-medium text-white mb-4">Notre audit IA évalue systématiquement vos processus, systèmes et flux de travail actuels pour identifier précisément où l'IA peut apporter les améliorations les plus significatives. Nous analysons :</h3>
-            <ul className="space-y-2 text-white/90 list-disc pl-5">
-              <li>Vos processus métier et points de friction</li>
-              <li>Vos sources de données et leur qualité</li>
-              <li>Votre infrastructure technologique</li>
-              <li>Les opportunités d'optimisation</li>
-              <li>Les indicateurs de performance clés</li>
-            </ul>
             
-            {/* Added visible button for Audit & Conseil on back side */}
             <div className="mt-6">
               <Link to={link}>
                 <Button variant="default" className="bg-mauve hover:bg-mauve-light w-full">
@@ -173,13 +159,8 @@ const ServiceCard = ({
                 <h4 className="text-lg font-medium text-white mb-1">1. Analyse des besoins</h4>
                 <p className="text-white/90">Nous commençons par une compréhension approfondie de vos processus, défis et objectifs. Cette phase est cruciale pour identifier les domaines où l'IA peut créer le plus de valeur pour votre entreprise.</p>
               </div>
-              <div>
-                <h4 className="text-lg font-medium text-white mb-1">2. Développement personnalisé</h4>
-                <p className="text-white/90">Nous concevons et développons des solutions IA sur mesure, parfaitement adaptées à vos besoins et à votre infrastructure existante. Nous privilégions des approches pragmatiques et modulaires.</p>
-              </div>
             </div>
             
-            {/* Added visible button for Solutions IA on back side */}
             <div className="mt-6">
               <Link to={link}>
                 <Button variant="default" className="bg-mauve hover:bg-mauve-light w-full">
@@ -190,7 +171,6 @@ const ServiceCard = ({
             </div>
           </div>
         ) : (
-          // Fallback to formations if it's not audit-conseil or solutions-ia
           <div>
             <h3 className="text-xl font-display font-medium text-white mb-4">{t("available_trainings")}</h3>
             <div className="space-y-4 mb-6">
