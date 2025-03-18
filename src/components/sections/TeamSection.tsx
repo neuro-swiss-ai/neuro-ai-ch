@@ -12,12 +12,12 @@ const TeamSection = () => {
   
   const team = [
     {
-      name: "Ayman",
+      name: "Nueve",
       title: language === "en" ? "CEO & Co-Founder" : "CEO & Co-Founder",
       image: "/lovable-uploads/bd754d92-0a3c-4db1-83f7-8091455e7fe3.png",
       description: language === "en" 
-        ? "AI and strategy expert, Ayman leads our company vision with over 10 years of experience in the technology field."
-        : "Expert en IA et stratégie, Ayman dirige notre vision d'entreprise avec plus de 10 ans d'expérience dans le domaine technologique."
+        ? "AI and strategy expert, Nueve leads our company vision with over 10 years of experience in the technology field."
+        : "Expert en IA et stratégie, Nueve dirige notre vision d'entreprise avec plus de 10 ans d'expérience dans le domaine technologique."
     },
     {
       name: "Léya",
@@ -46,7 +46,7 @@ const TeamSection = () => {
     {
       name: "Sophie",
       title: language === "en" ? "Lead Data Scientist" : "Lead Data Scientist",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=250&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b26a56?q=80&w=250&auto=format&fit=crop",
       description: language === "en"
         ? "Expert in advanced AI technologies, Sophie oversees our technical team and the implementation of innovative solutions."
         : "Experte en technologies d'IA avancées, Sophie supervise notre équipe technique et l'implémentation de solutions innovantes."
