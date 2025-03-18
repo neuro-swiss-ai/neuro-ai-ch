@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
@@ -74,7 +73,7 @@ const Formations = () => {
       duration: "4 heures",
       imageSrc: "/lovable-uploads/dcbe01cf-6926-45a8-85f6-ee9cb8498bf7.png",
       description: "Formation complète couvrant les techniques avancées d'IA, l'intégration dans les processus métier et les stratégies d'implémentation efficaces.",
-      purchaseLink: "https://buy.stripe.com/7sIdSdgeb3mTfAc8wD"
+      purchaseLink: "https://buy.stripe.com/dR67w8bQL78f0SI5ko"
     }
   ];
 
