@@ -1,7 +1,9 @@
+
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
 
 const TeamSection = () => {
   const navigate = useNavigate();
@@ -20,12 +22,13 @@ const TeamSection = () => {
         : "Expert en IA et stratégie, Nueve dirige notre vision d'entreprise avec plus de 10 ans d'expérience dans le domaine technologique."
     },
     {
-      name: "Léya",
+      name: "Ornella",
       title: language === "en" ? "Lawyer & Co-Founder" : "Avocate et Co-Founder",
-      image: "/lovable-uploads/e17fe94d-fa2c-4406-a6d4-a02b6831e288.png",
+      image: "/lovable-uploads/bc1faeff-ea11-42b6-b5c7-81ab6def7816.png",
       description: language === "en"
-        ? "Specialist in ethical AI and digital rights, Léya ensures that our solutions comply with the strictest legal and ethical standards."
-        : "Spécialiste en IA éthique et droits numériques, Léya assure que nos solutions respectent les normes légales et éthiques les plus strictes."
+        ? "Specialist in ethical AI and digital rights, Ornella ensures that our solutions comply with the strictest legal and ethical standards."
+        : "Spécialiste en IA éthique et droits numériques, Ornella assure que nos solutions respectent les normes légales et éthiques les plus strictes.",
+      linkedin: "https://www.linkedin.com/in/ornella-l%C3%A9vy-b425b9357/"
     },
     {
       name: "Yohan",
@@ -149,7 +152,22 @@ const TeamSection = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-display font-medium text-white text-center mb-1">{member.name}</h3>
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <h3 className="text-xl font-display font-medium text-white text-center">
+                      {member.name}
+                    </h3>
+                    {member.linkedin && (
+                      <a 
+                        href={member.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-mauve hover:text-white transition-colors"
+                        aria-label={`${member.name}'s LinkedIn profile`}
+                      >
+                        <Linkedin className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
                   <p className="text-mauve text-center mb-2">{member.title}</p>
                   <p className="text-white/70 text-center">{member.description}</p>
                 </div>
