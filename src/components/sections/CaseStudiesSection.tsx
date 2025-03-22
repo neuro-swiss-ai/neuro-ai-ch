@@ -17,7 +17,7 @@ const CaseStudiesSection = () => {
         ? "Développement d'un assistant IA pour une banque genevoise permettant d'analyser les tendances du marché et de générer des rapports personnalisés pour les clients."
         : "Development of an AI assistant for a Geneva-based bank to analyze market trends and generate personalized reports for clients.",
       image: "/lovable-uploads/20ba7e54-a130-4bea-b949-2b5f678d889c.png",
-      link: "/solutions"
+      link: "/solutions/ai-financial-assistant"
     },
     {
       title: language === "fr" ? "Optimisation des portefeuilles d'investissement" : "Investment Portfolio Optimization",
@@ -25,7 +25,7 @@ const CaseStudiesSection = () => {
         ? "Utilisation d'algorithmes d'intelligence artificielle pour analyser les tendances du marché et recommander des ajustements de portefeuilles, améliorant ainsi le rendement des investissements."
         : "Use of artificial intelligence algorithms to analyze market trends and recommend portfolio adjustments, improving investment returns.",
       image: "/lovable-uploads/d7cd6f4a-523b-42b9-9d7f-703bb1475df2.png",
-      link: "/solutions"
+      link: "/solutions/portfolio-optimization"
     },
     {
       title: language === "fr" ? "Formation IA pour cadres dirigeants" : "AI Training for Executive Leaders",
@@ -33,7 +33,7 @@ const CaseStudiesSection = () => {
         ? "Organisation de séminaires et workshops pour plus de 500 cadres dirigeants suisses sur l'intégration de l'IA dans leur stratégie d'entreprise."
         : "Organization of seminars and workshops for over 500 Swiss executives on integrating AI into their business strategy.",
       image: "/lovable-uploads/074b84be-ee3a-4000-8d3f-bcd2abd57825.png",
-      link: "/solutions"
+      link: "/solutions/executive-ai-training"
     },
     {
       title: language === "fr" ? "Découverte de nouveaux médicaments" : "New Drug Discovery",
@@ -41,7 +41,7 @@ const CaseStudiesSection = () => {
         ? "Application de l'IA pour analyser des bases de données massives de composés chimiques, accélérant ainsi l'identification de candidats-médicaments prometteurs."
         : "Application of AI to analyze massive databases of chemical compounds, accelerating the identification of promising drug candidates.",
       image: "/lovable-uploads/90f2a5fc-3e3e-4649-ad29-7a33ffc8367b.png",
-      link: "/solutions"
+      link: "/solutions/drug-discovery-ai"
     },
     {
       title: language === "fr" ? "Système de prédiction pour la chaîne logistique" : "Predictive System for Supply Chain",
@@ -49,7 +49,7 @@ const CaseStudiesSection = () => {
         ? "Implémentation d'un système prédictif basé sur l'IA pour optimiser la chaîne logistique d'un leader suisse de l'industrie horlogère."
         : "Implementation of an AI-based predictive system to optimize the supply chain of a Swiss watchmaking industry leader.",
       image: "/lovable-uploads/f507563e-aeda-41c6-95d8-b1e27e9343a2.png",
-      link: "/solutions"
+      link: "/solutions/supply-chain-prediction"
     },
     {
       title: language === "fr" ? "Maintenance prédictive dans l'industrie manufacturière" : "Predictive Maintenance in Manufacturing",
@@ -57,7 +57,7 @@ const CaseStudiesSection = () => {
         ? "Implémentation de modèles d'IA pour prédire les défaillances d'équipement, réduisant les temps d'arrêt et les coûts de maintenance."
         : "Implementation of AI models to predict equipment failures, reducing downtime and maintenance costs.",
       image: "/lovable-uploads/b3e91583-a4ff-4d39-985e-eb70aaa9be0e.png",
-      link: "/solutions"
+      link: "/solutions/predictive-maintenance"
     },
     {
       title: language === "fr" ? "Analyse prédictive des tendances de consommation" : "Predictive Analysis of Consumer Trends",
@@ -65,7 +65,7 @@ const CaseStudiesSection = () => {
         ? "Exploitation de l'IA pour anticiper les comportements d'achat, optimisant ainsi les stratégies de stock et de marketing."
         : "Leveraging AI to anticipate purchasing behaviors, optimizing inventory and marketing strategies.",
       image: "/lovable-uploads/86a7fb1c-afb1-4ca9-9a90-1c64ccb5d430.png",
-      link: "/solutions"
+      link: "/solutions/consumer-trends-analysis"
     }
   ];
 
@@ -154,7 +154,7 @@ const CaseStudiesSection = () => {
                 key={index} 
                 className="flex-none w-[350px] glass-effect rounded-2xl overflow-hidden snap-start"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 overflow-hidden cursor-pointer" onClick={() => window.open(study.link, '_blank')}>
                   <img 
                     src={study.image} 
                     alt={study.title} 
@@ -162,13 +162,17 @@ const CaseStudiesSection = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-display font-medium text-white mb-3">{study.title}</h3>
+                  <h3 className="text-xl font-display font-medium text-white mb-3 cursor-pointer hover:text-mauve transition-colors" onClick={() => window.open(study.link, '_blank')}>
+                    {study.title}
+                  </h3>
                   <p className="text-white/70 mb-6 line-clamp-3 h-[4.5rem]">{study.description}</p>
-                  <Button asChild variant="outline" className="border-mauve text-mauve hover:text-white hover:bg-mauve/20">
-                    <a href={study.link}>
-                      {language === "fr" ? "Lire l'étude de cas" : "Read case study"}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
+                  <Button 
+                    variant="outline" 
+                    className="border-mauve text-mauve hover:text-white hover:bg-mauve/20 w-full justify-between"
+                    onClick={() => window.open(study.link, '_blank')}
+                  >
+                    {language === "fr" ? "Lire l'étude de cas" : "Read case study"}
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
               </div>

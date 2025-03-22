@@ -7,6 +7,7 @@ interface Client {
   name: string;
   category: string;
   description: string;
+  link?: string;
 }
 
 const TrustSection = () => {
@@ -21,32 +22,38 @@ const TrustSection = () => {
     {
       name: "LexPro Suisse",
       category: "Étude d'avocat",
-      description: "Optimisation des processus juridiques et automatisation de l'analyse documentaire."
+      description: "Optimisation des processus juridiques et automatisation de l'analyse documentaire.",
+      link: "/solutions/legal-ai"
     },
     {
       name: "Juridis Consulting",
       category: "Étude de notaire",
-      description: "Digitalisation des archives notariales et automatisation des processus administratifs."
+      description: "Digitalisation des archives notariales et automatisation des processus administratifs.",
+      link: "/solutions/notary-digitalization"
     },
     {
       name: "Alpine Machines",
       category: "Secteur industriel",
-      description: "Automatisation des chaînes de production et maintenance prédictive."
+      description: "Automatisation des chaînes de production et maintenance prédictive.",
+      link: "/solutions/industrial-automation"
     },
     {
       name: "Helvetic Steel",
       category: "Secteur industriel",
-      description: "Optimisation de la production et contrôle qualité par IA."
+      description: "Optimisation de la production et contrôle qualité par IA.",
+      link: "/solutions/production-optimization"
     },
     {
       name: "Association Solidarité Genève",
       category: "ONG",
-      description: "Analyse prédictive pour optimiser les collectes de fonds et mieux planifier les campagnes de dons."
+      description: "Analyse prédictive pour optimiser les collectes de fonds et mieux planifier les campagnes de dons.",
+      link: "/solutions/fundraising-optimization"
     },
     {
       name: "Association Enfance et Avenir",
       category: "ONG",
-      description: "Mise en place d'une IA pour analyser les besoins prioritaires des familles en difficulté."
+      description: "Mise en place d'une IA pour analyser les besoins prioritaires des familles en difficulté.",
+      link: "/solutions/family-needs-analysis"
     }
   ];
 
@@ -65,6 +72,10 @@ const TrustSection = () => {
         staggerChildren: 0.1
       }
     }
+  };
+
+  const openProjectPage = (link: string) => {
+    window.open(link, '_blank');
   };
 
   return (
@@ -124,9 +135,16 @@ const TrustSection = () => {
                   {client.category}
                 </span>
               </div>
-              <h3 className="text-xl font-display font-medium text-white mb-3">{client.name}</h3>
+              <h3 className="text-xl font-display font-medium text-white mb-3 cursor-pointer hover:text-mauve transition-colors" 
+                  onClick={() => client.link && openProjectPage(client.link)}>
+                {client.name}
+              </h3>
               <p className="text-white/70 mb-4">{client.description}</p>
-              <Button variant="ghost" className="text-mauve hover:text-mauve-light hover:bg-mauve/5 group p-0">
+              <Button 
+                variant="ghost" 
+                className="text-mauve hover:text-mauve-light hover:bg-mauve/5 group p-0"
+                onClick={() => client.link && openProjectPage(client.link)}
+              >
                 <span className="underline-animation">Voir le projet</span>
                 <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
