@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -28,7 +27,7 @@ const TeamSection = () => {
       description: language === "en"
         ? "Specialist in ethical AI and digital rights, Ornella ensures that our solutions comply with the strictest legal and ethical standards."
         : "Spécialiste en IA éthique et droits numériques, Ornella assure que nos solutions respectent les normes légales et éthiques les plus strictes.",
-      linkedin: "https://www.linkedin.com/in/ornella-l%C3%A9vy-b425b9357/"
+      linkedin: "https://www.linkedin.com/in/ornella-levy/"
     },
     {
       name: "Yohan",
