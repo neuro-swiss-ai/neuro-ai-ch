@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -47,11 +48,11 @@ const TeamSection = () => {
     },
     {
       name: "Sophie",
-      title: language === "en" ? "Lead Data Scientist" : "Lead Data Scientist",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b26a56?q=80&w=250&auto=format&fit=crop",
+      title: language === "en" ? "HR Director" : "Directrice des Ressources Humaines",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=250&auto=format&fit=crop",
       description: language === "en"
-        ? "Expert in advanced AI technologies, Sophie oversees our technical team and the implementation of innovative solutions."
-        : "Experte en technologies d'IA avancées, Sophie supervise notre équipe technique et l'implémentation de solutions innovantes."
+        ? "Responsible for our company culture and talent acquisition, Sophie ensures that our team thrives in an inclusive and dynamic environment."
+        : "Responsable de notre culture d'entreprise et du recrutement de talents, Sophie veille à ce que notre équipe s'épanouisse dans un environnement inclusif et dynamique."
     },
     {
       name: "Marie",
@@ -72,7 +73,7 @@ const TeamSection = () => {
     {
       name: "Bénédicte",
       title: language === "en" ? "Business Developer" : "Business Developer",
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=250&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=250&auto=format&fit=crop",
       description: language === "en"
         ? "Bénédicte develops our professional network and identifies new business opportunities to strengthen our market position."
         : "Bénédicte développe notre réseau professionnel et identifie de nouvelles opportunités commerciales pour renforcer notre position sur le marché."
