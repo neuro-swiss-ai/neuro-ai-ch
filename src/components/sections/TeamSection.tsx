@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -40,7 +41,7 @@ const TeamSection = () => {
     {
       name: "Raphael",
       title: language === "en" ? "Chief Sales Officer" : "Chief Sales Officer",
-      image: "/lovable-uploads/1a17f98f-e020-42b2-ab7a-368014710077.png",
+      image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=250&auto=format&fit=crop",
       description: language === "en"
         ? "With expertise in business development, Raphael drives our growth and develops lasting customer relationships."
         : "Fort d'une expertise en développement commercial, Raphael pilote notre croissance et développe des relations client durables."
@@ -62,20 +63,20 @@ const TeamSection = () => {
         : "Marie accompagne nos clients tout au long de leur parcours, garantissant une adoption réussie de nos solutions d'IA."
     },
     {
-      name: "Johns",
-      title: language === "en" ? "Business Developer" : "Business Developer",
-      image: "/lovable-uploads/c2268e58-18b7-4e25-8564-023dda94fb89.png",
+      name: "Rodry",
+      title: language === "en" ? "Machine Learning Engineer" : "Ingénieur en Machine Learning",
+      image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=250&auto=format&fit=crop",
       description: language === "en"
-        ? "Johns identifies new growth opportunities and develops strategic partnerships to expand our market reach."
-        : "Johns identifie de nouvelles opportunités de croissance et développe des partenariats stratégiques pour étendre notre portée sur le marché."
+        ? "Rodry develops cutting-edge machine learning models that power our most innovative AI solutions."
+        : "Rodry développe des modèles de machine learning de pointe qui alimentent nos solutions d'IA les plus innovantes."
     },
     {
-      name: "Bénédicte",
-      title: language === "en" ? "Business Developer" : "Business Developer",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=250&auto=format&fit=crop",
+      name: "Christelle",
+      title: language === "en" ? "UX/UI Designer" : "Designer UX/UI",
+      image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=250&auto=format&fit=crop",
       description: language === "en"
-        ? "Bénédicte develops our professional network and identifies new business opportunities to strengthen our market position."
-        : "Bénédicte développe notre réseau professionnel et identifie de nouvelles opportunités commerciales pour renforcer notre position sur le marché."
+        ? "Christelle creates intuitive and engaging user experiences that make our AI solutions accessible to everyone."
+        : "Christelle crée des expériences utilisateur intuitives et engageantes qui rendent nos solutions d'IA accessibles à tous."
     }
   ];
 
