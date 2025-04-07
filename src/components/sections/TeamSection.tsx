@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -39,12 +38,12 @@ const TeamSection = () => {
         : "Avec une solide formation en mathématiques et sciences des données, Yohan dirige nos projets d'analyse et d'apprentissage automatique."
     },
     {
-      name: "Jude",
+      name: "Raphael",
       title: language === "en" ? "Chief Sales Officer" : "Chief Sales Officer",
       image: "/lovable-uploads/1a17f98f-e020-42b2-ab7a-368014710077.png",
       description: language === "en"
-        ? "With expertise in business development, Jude drives our growth and develops lasting customer relationships."
-        : "Fort d'une expertise en développement commercial, Jude pilote notre croissance et développe des relations client durables."
+        ? "With expertise in business development, Raphael drives our growth and develops lasting customer relationships."
+        : "Fort d'une expertise en développement commercial, Raphael pilote notre croissance et développe des relations client durables."
     },
     {
       name: "Sophie",
