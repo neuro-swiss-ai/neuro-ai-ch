@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -14,12 +13,12 @@ const TeamSection = () => {
   
   const team = [
     {
-      name: "Nueve",
+      name: "Raphael",
       title: language === "en" ? "CEO & Co-Founder" : "CEO & Co-Founder",
-      image: "/lovable-uploads/bd754d92-0a3c-4db1-83f7-8091455e7fe3.png",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&auto=format&fit=crop",
       description: language === "en" 
-        ? "AI and strategy expert, Nueve leads our company vision with over 10 years of experience in the technology field."
-        : "Expert en IA et stratégie, Nueve dirige notre vision d'entreprise avec plus de 10 ans d'expérience dans le domaine technologique."
+        ? "AI and strategy expert, Raphael leads our company vision with over 10 years of experience in the technology field."
+        : "Expert en IA et stratégie, Raphael dirige notre vision d'entreprise avec plus de 10 ans d'expérience dans le domaine technologique."
     },
     {
       name: "Ornella",
