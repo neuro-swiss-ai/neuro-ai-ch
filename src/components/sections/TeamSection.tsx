@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
@@ -15,7 +16,7 @@ const TeamSection = () => {
     {
       name: "Raphael",
       title: language === "en" ? "CEO & Co-Founder" : "CEO & Co-Founder",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=250&auto=format&fit=crop",
       description: language === "en" 
         ? "AI and strategy expert, Raphael leads our company vision with over 10 years of experience in the technology field."
         : "Expert en IA et stratégie, Raphael dirige notre vision d'entreprise avec plus de 10 ans d'expérience dans le domaine technologique."
