@@ -8,7 +8,6 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import ApproachSection from "@/components/sections/ApproachSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 import ExpertiseSection from "@/components/sections/ExpertiseSection";
-import TeamSection from "@/components/sections/TeamSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import ValueSection from "@/components/sections/ValueSection";
 import CaseStudiesSection from "@/components/sections/CaseStudiesSection";
@@ -45,9 +44,6 @@ const Index = () => {
           <ApproachSection />
         </SectionWithBorder>
         <CaseStudiesSection />
-        <SectionWithBorder>
-          <TeamSection />
-        </SectionWithBorder>
         <PartnersSection />
         <PressSection />
         <CtaSection />
