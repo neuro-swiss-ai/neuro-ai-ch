@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -68,7 +69,7 @@ const Navbar = () => {
     { title: t("services"), path: "/#services", hasSubmenu: true },
     { title: "Nos Assistants IA", path: "/assistants", isNew: true },
     { title: t("blog"), path: "/blog" },
-    { title: t("reservation"), path: "https://meetings.hubspot.com/jmonkam", external: true },
+    { title: t("reservation"), path: "/reservation", external: false },
     { title: t("about"), path: "/about" },
   ];
 
@@ -271,17 +272,15 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <a 
-                href="https://meetings.hubspot.com/jmonkam" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                to="/reservation"
                 className="inline-block mt-2"
                 onClick={() => setIsOpen(false)}
               >
                 <Button variant="default" size="sm">
                   {t("contact_us")}
                 </Button>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
