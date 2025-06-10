@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -69,7 +68,7 @@ const Navbar = () => {
     { title: t("services"), path: "/#services", hasSubmenu: true },
     { title: "Nos Assistants IA", path: "/assistants", isNew: true },
     { title: t("blog"), path: "/blog" },
-    { title: t("reservation"), path: "/reservation", external: false },
+    { title: t("reservation"), path: "mailto:contact@neuroswiss.ai?subject=Demande d'informations - Services IA&body=Bonjour,%0D%0A%0D%0AJe souhaiterais obtenir plus d'informations sur vos services d'intelligence artificielle.%0D%0A%0D%0AMes coordonnées :%0D%0ANom : %0D%0AEntreprise : %0D%0ATéléphone : %0D%0AEmail : %0D%0A%0D%0AMessage : %0D%0A%0D%0ACordialement", external: true },
     { title: t("about"), path: "/about" },
   ];
 
@@ -272,15 +271,15 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <Link 
-                to="/reservation"
+              <a 
+                href="mailto:contact@neuroswiss.ai?subject=Demande d'informations - Services IA&body=Bonjour,%0D%0A%0D%0AJe souhaiterais obtenir plus d'informations sur vos services d'intelligence artificielle.%0D%0A%0D%0AMes coordonnées :%0D%0ANom : %0D%0AEntreprise : %0D%0ATéléphone : %0D%0AEmail : %0D%0A%0D%0AMessage : %0D%0A%0D%0ACordialement"
                 className="inline-block mt-2"
                 onClick={() => setIsOpen(false)}
               >
                 <Button variant="default" size="sm">
                   {t("contact_us")}
                 </Button>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
