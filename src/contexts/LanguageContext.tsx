@@ -22,7 +22,7 @@ const enTranslations: Record<string, string> = {
   
   // Hero Section
   "hero_subtitle": "AI • Innovation • Performance",
-  "hero_title": "Discover the power of AI to transform your business with Neuro Swiss AI",
+  "hero_title": "Discover the power of AI to transform your business with Neuro AI",
   "hero_cta": "Book your discovery call",
   "reserve_call": "Book your discovery call",
   "contact_whatsapp": "Contact us on WhatsApp",
@@ -95,19 +95,19 @@ const enTranslations: Record<string, string> = {
   "blog_footer": "Blog",
   "blog_description": "Articles on AI applied to businesses",
   "contact": "Contact",
-  "copyright": "Copyright © Neuro Swiss AI 2025 - ",
+  "copyright": "Copyright © Neuro AI 2025 - ",
   "privacy_policy": "Privacy Policy",
   
   // About Page
   "about_us": "About Us",
   "back": "Back",
   "our_mission": "Our Mission",
-  "mission_text_1": "At Neuro Swiss AI, our mission is to democratize Artificial Intelligence for Swiss companies of all sizes. We firmly believe that AI should be accessible, understandable, and useful to everyone, not just large corporations with significant resources.",
+  "mission_text_1": "At Neuro AI, our mission is to democratize Artificial Intelligence for companies of all sizes. We firmly believe that AI should be accessible, understandable, and useful to everyone, not just large corporations with significant resources.",
   "mission_text_2": "We are committed to guiding our clients through their digital transformation by offering tailored, pragmatic, and ethical AI solutions that meet their specific needs and generate a concrete positive impact.",
   "our_history": "Our History",
-  "history_text_1": "Founded in 2022 in Geneva by a team of experts passionate about AI and its practical applications, Neuro Swiss AI was born from the conviction that Swiss companies needed a local partner to support them in adopting AI technologies.",
-  "history_text_2": "Faced with a market dominated by generic solutions and international consultants unfamiliar with the specificities of the Swiss economic fabric, we have developed a unique approach, combining cutting-edge technical expertise and deep knowledge of the local context.",
-  "history_text_3": "Today, we are proud to have successfully accompanied numerous Swiss companies in their digital transformation, creating AI solutions that have concretely improved their operational efficiency and competitiveness.",
+  "history_text_1": "Founded in 2022 in Geneva by a team of experts passionate about AI and its practical applications, Neuro AI was born from the conviction that companies needed a local partner to support them in adopting AI technologies.",
+  "history_text_2": "Faced with a market dominated by generic solutions and international consultants, we have developed a unique approach, combining cutting-edge technical expertise and deep knowledge of the local context.",
+  "history_text_3": "Today, we are proud to have successfully accompanied numerous companies in their digital transformation, creating AI solutions that have concretely improved their operational efficiency and competitiveness.",
   "our_values": "Our Values",
   "pragmatism": "Pragmatism",
   "pragmatism_text": "We always prioritize concrete solutions that bring immediate added value to our clients, rather than abstract or trendy technological concepts.",
@@ -151,14 +151,14 @@ const enTranslations: Record<string, string> = {
   "implementation_supervision": "Implementation supervision",
   "results_measurement": "Results measurement and continuous optimization",
   "skills_transfer": "Training and skills transfer",
-  "audit_testimonial": "The AI audit conducted by Neuro Swiss AI allowed us to identify improvement opportunities that we hadn't considered. Their methodical approach and concrete recommendations guided us towards a successful digital transformation.",
+  "audit_testimonial": "The AI audit conducted by Neuro AI allowed us to identify improvement opportunities that we hadn't considered. Their methodical approach and concrete recommendations guided us towards a successful digital transformation.",
   "book_ai_audit": "Book an AI audit",
   
   // Solutions Page
   "our_ai_solutions": "Our AI Solutions",
   "ai_service": "Artificial Intelligence at the service of your business",
   "ai_intro_1": "Artificial Intelligence (AI) today represents a major transformation lever for companies of all sizes. Our customized AI solutions allow you to automate repetitive tasks, optimize your business processes, improve decision-making, and offer new experiences to your customers.",
-  "ai_intro_2": "At Neuro Swiss AI, we design tailored solutions that perfectly adapt to your specific needs, allowing you to remain competitive in a constantly evolving economic environment.",
+  "ai_intro_2": "At Neuro AI, we design tailored solutions that perfectly adapt to your specific needs, allowing you to remain competitive in a constantly evolving economic environment.",
   "ai_methodology": "Our AI integration methodology",
   "needs_analysis_title": "Needs Analysis",
   "needs_analysis_desc": "We start with a deep understanding of your processes, challenges, and objectives. This phase is crucial to identify the areas where AI can create the most value for your business.",
@@ -190,7 +190,7 @@ const frTranslations: Record<string, string> = {
   
   // Hero Section
   "hero_subtitle": "IA • Innovation • Performance",
-  "hero_title": "Découvrez le pouvoir de l'IA pour transformer votre entreprise avec Neuro Swiss AI",
+  "hero_title": "Découvrez le pouvoir de l'IA pour transformer votre entreprise avec Neuro AI",
   "hero_cta": "Réservez votre RDV découverte",
   "reserve_call": "Réservez votre appel découverte",
   "contact_whatsapp": "Contactez-nous sur WhatsApp",
@@ -263,14 +263,14 @@ const frTranslations: Record<string, string> = {
   "blog_footer": "Blog",
   "blog_description": "Articles sur l'IA appliquée aux entreprises",
   "contact": "Contact",
-  "copyright": "Copyright © Neuro Swiss AI 2025 - ",
+  "copyright": "Copyright © Neuro AI 2025 - ",
   "privacy_policy": "Politique de confidentialité",
   
   // About Page
   "about_us": "À Propos de Nous",
   "back": "Retour",
   "our_mission": "Notre Mission",
-  "mission_text_1": "Chez Neuro Swiss AI, notre mission est de démocratiser l'Intelligence Artificielle pour les entreprises suisses de toutes tailles. Nous croyons fermement que l'IA doit être accessible, compréhensible et utile à tous, pas seulement aux grandes corporations disposant de ressources importantes.",
+  "mission_text_1": "Chez Neuro AI, notre mission est de démocratiser l'Intelligence Artificielle pour les entreprises de toutes tailles. Nous croyons fermement que l'IA doit être accessible, compréhensible et utile à tous, pas seulement aux grandes corporations disposant de ressources importantes.",
   "mission_text_2": "Nous nous engageons à guider nos clients à travers leur transformation digitale en proposant des solutions IA sur mesure, pragmatiques et éthiques qui répondent à leurs besoins spécifiques et génèrent un impact positif concret.",
   "our_history": "Notre Histoire",
   "history_text_1": "Fondée en 2022 à Genève par une équipe d'experts passionnés par l'IA et ses applications pratiques, Neuro Swiss AI est née de la conviction que les entreprises suisses avaient besoin d'un partenaire local pour les accompagner dans l'adoption de technologies d'IA.",
@@ -319,14 +319,14 @@ const frTranslations: Record<string, string> = {
   "implementation_supervision": "Supervision de la mise en œuvre",
   "results_measurement": "Mesure des résultats et optimisation continue",
   "skills_transfer": "Formation et transfert de compétences",
-  "audit_testimonial": "L'audit IA réalisé par Neuro Swiss AI nous a permis d'identifier des opportunités d'amélioration que nous n'avions pas envisagées. Leur approche méthodique et leurs recommandations concrètes nous ont guidés vers une transformation numérique réussie.",
+  "audit_testimonial": "L'audit IA réalisé par Neuro AI nous a permis d'identifier des opportunités d'amélioration que nous n'avions pas envisagées. Leur approche méthodique et leurs recommandations concrètes nous ont guidés vers une transformation numérique réussie.",
   "book_ai_audit": "Réserver un audit IA",
   
   // Solutions Page
   "our_ai_solutions": "Nos Solutions IA",
   "ai_service": "L'Intelligence Artificielle au service de votre entreprise",
   "ai_intro_1": "L'Intelligence Artificielle (IA) représente aujourd'hui un levier de transformation majeur pour les entreprises de toutes tailles. Nos solutions IA personnalisées permettent d'automatiser les tâches répétitives, d'optimiser vos processus métier, d'améliorer la prise de décision et d'offrir de nouvelles expériences à vos clients.",
-  "ai_intro_2": "Chez Neuro Swiss AI, nous concevons des solutions sur mesure qui s'adaptent parfaitement à vos besoins spécifiques, vous permettant de rester compétitif dans un environnement économique en constante évolution.",
+  "ai_intro_2": "Chez Neuro AI, nous concevons des solutions sur mesure qui s'adaptent parfaitement à vos besoins spécifiques, vous permettant de rester compétitif dans un environnement économique en constante évolution.",
   "ai_methodology": "Notre méthodologie d'intégration de l'IA",
   "needs_analysis_title": "Analyse des besoins",
   "needs_analysis_desc": "Nous commençons par une compréhension approfondie de vos processus, défis et objectifs. Cette phase est cruciale pour identifier les domaines où l'IA peut créer le plus de valeur pour votre entreprise.",

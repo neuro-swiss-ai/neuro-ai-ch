@@ -31,7 +31,7 @@ const CaseStudiesSection = () => {
       title: language === "fr" ? "Formation IA pour cadres dirigeants" : "AI Training for Executive Leaders",
       description: language === "fr"
         ? "Organisation de séminaires et workshops pour plus de 500 cadres dirigeants suisses sur l'intégration de l'IA dans leur stratégie d'entreprise."
-        : "Organization of seminars and workshops for over 500 Swiss executives on integrating AI into their business strategy.",
+        : "Organization of seminars and workshops for over 500 executives on integrating AI into their business strategy.",
       image: "/lovable-uploads/074b84be-ee3a-4000-8d3f-bcd2abd57825.png",
       link: "/solutions/executive-ai-training"
     },
@@ -46,8 +46,8 @@ const CaseStudiesSection = () => {
     {
       title: language === "fr" ? "Système de prédiction pour la chaîne logistique" : "Predictive System for Supply Chain",
       description: language === "fr"
-        ? "Implémentation d'un système prédictif basé sur l'IA pour optimiser la chaîne logistique d'un leader suisse de l'industrie horlogère."
-        : "Implementation of an AI-based predictive system to optimize the supply chain of a Swiss watchmaking industry leader.",
+        ? "Implémentation d'un système prédictif basé sur l'IA pour optimiser la chaîne logistique d'un leader de l'industrie horlogère."
+        : "Implementation of an AI-based predictive system to optimize the supply chain of a watchmaking industry leader.",
       image: "/lovable-uploads/f507563e-aeda-41c6-95d8-b1e27e9343a2.png",
       link: "/solutions/supply-chain-prediction"
     },
@@ -129,8 +129,8 @@ const CaseStudiesSection = () => {
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
             {language === "fr" 
-              ? "Découvrez comment nous avons transformé des entreprises suisses grâce à l'intelligence artificielle"
-              : "Discover how we've transformed Swiss businesses through artificial intelligence"}
+              ? "Découvrez comment nous avons transformé des entreprises grâce à l'intelligence artificielle"
+              : "Discover how we've transformed businesses through artificial intelligence"}
           </p>
         </div>
 

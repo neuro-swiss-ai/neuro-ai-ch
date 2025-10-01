@@ -31,8 +31,8 @@ const PressSection = () => {
     },
     {
       title: language === "fr"
-        ? "Neuro Swiss AI présente ses solutions lors du forum d'innovation de Genève"
-        : "Neuro Swiss AI presents its solutions at the Geneva Innovation Forum",
+        ? "Neuro AI présente ses solutions lors du forum d'innovation de Genève"
+        : "Neuro AI presents its solutions at the Geneva Innovation Forum",
       link: "#",
       logoUrl: "/lovable-uploads/801f3084-d9bc-4c44-92eb-e554215429a6.png",
       logoAlt: "Geneva Innovation Logo"

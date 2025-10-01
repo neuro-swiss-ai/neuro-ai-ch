@@ -84,13 +84,13 @@ const Navbar = () => {
             <div className="mr-3">
               <img 
                 src="/lovable-uploads/060aa247-724d-42e6-9ffa-74e7759daa18.png" 
-                alt="Neuro Swiss AI Logo" 
+                alt="Neuro AI Logo"
                 className="h-10 w-auto"
               />
             </div>
             <div className="relative font-display text-white font-semibold text-xl flex items-center">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-                Neuro Swiss AI
+                Neuro AI
               </span>
             </div>
           </Link>
